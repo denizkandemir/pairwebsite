@@ -1,0 +1,41 @@
+.navbar-container {
+
+    padding: 40px;
+    .navbar-content-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo-container {
+            display: flex;
+            gap: 20px;
+            .logo-img {
+                max-height: 50px;
+                object-fit: contain;
+            }
+        }
+
+        .navbar-center-container {
+            display: flex;
+            // gap: 25px;
+            flex: 1;
+            justify-content: space-around;
+        }
+
+        .navbar-right-container {
+            display: flex;
+            gap: 15px;
+
+            // .svg-link {
+            //     width: 24px;
+            //     height: 24px;
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            //     // background-color: lightgray;
+            //     border-radius: 50%;
+            //     // padding: 5px;
+            // }
+        }
+    }
+
+}
