@@ -8,6 +8,8 @@ const Header = () => {
     return(
         <div className="header-container">
             <Navbar />
+            <div className="neon-shape-1"></div>
+            <div className="neon-shape-2"></div>
            <div className="header-content-container">
                  <div className="header-texts-container">
                     <h1 className="header-title"> The ForeFront Of Modern Research </h1>
