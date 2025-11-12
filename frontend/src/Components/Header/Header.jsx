@@ -2,6 +2,7 @@ import "./Header.scss";
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import headerImg from "/pairHeader1.png";
+import WhoAreWe from "../WhoAreWe/WhoAreWe";
 
 const Header = () => {
 
@@ -18,6 +19,7 @@ const Header = () => {
                  </div>
                 <img src={headerImg} alt="" className="header-img" />
            </div>
+              <WhoAreWe />
         </div>
     )
 };
