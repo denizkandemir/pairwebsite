@@ -1,7 +1,7 @@
 import "./Navbar.scss";
 import React from "react";
 import { Link } from "react-router-dom";
-import schoolLogo from "/pairSchoolLogo.png";
+import schoolLogo from "/schoolLogoWhite.png";
 import pairLogo from "/pairLogo.png";
 
 const Navbar = () => {
@@ -9,9 +9,8 @@ const Navbar = () => {
         <div className="navbar-container">
             <div className="navbar-content-container">
                 <div className="logo-container">
-                    <img src={pairLogo} alt="" className="logo-img" />
-
-                    <img src={schoolLogo} alt="" className="logo-img" />
+                    <img src={pairLogo} alt="" className="logo-img pair-logo" />
+                    <img src={schoolLogo} alt="" className="logo-img school-logo" />
                 </div>
                 <div className="navbar-center-container">
                     <Link className="navbar-link" to="/">Blog</Link>
