@@ -19,7 +19,7 @@ const Header = () => {
                 <img src={headerImg} alt="" className="header-img" />
            </div>
         </div>
-    )
+     )
 };
 
 export default Header;
