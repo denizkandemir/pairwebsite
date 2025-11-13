@@ -20,7 +20,7 @@ const useFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right',
             }
           });
         },
-        { threshold: 0.25 }
+        { threshold: 0.26 }
       );
 
       elements.forEach((element) => observer.observe(element));
