@@ -1,8 +1,14 @@
+.header-navbar-container {
+    background: linear-gradient(225deg, #000814 0%, #001d3d 25%, #004788 37%, #000000 75%, #000000 100%);
+
+}
+
 .header-container {
     // background: linear-gradient(225deg, #000814 0%, #001d3d 25%, #01284c 50%, #2a3c63 75%, #000f1e 100%);
     overflow: hidden;
+    display: flex;
+    justify-content: center;
     //   background: linear-gradient(225deg, #000814 0%, #001d3d 25%, #003566 50%, #0c2341 75%, #001122 100%);
-    background: linear-gradient(225deg, #000814 0%, #001d3d 25%, #004788 50%, #000000 75%, #001122 100%);
 
     // background: linear-gradient(45deg,
     //         #2055A5 0%,
@@ -21,7 +27,7 @@
     //         /* Siyah */
     //     );
 
- 
+
 
     // Neon glow background effects
     &::before {
@@ -53,11 +59,13 @@
 
     .header-content-container {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         padding: 80px 40px;
+        padding-bottom: 30px;
         position: relative;
         z-index: 2;
         gap: 30px;
+        max-width: 1200px;
 
         .header-texts-container {
             flex: 1;
