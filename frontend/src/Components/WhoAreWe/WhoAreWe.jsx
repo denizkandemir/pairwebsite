@@ -1,5 +1,6 @@
 import "./WhoAreWe.scss";
-import React from "react";
+import React, { use } from "react";
+import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";    
 
 const whoCardsData = [
 
@@ -22,9 +23,11 @@ const whoCardsData = [
 
 const WhoAreWe = () => {
 
+    useFadeInOnScroll();
+
     return(
         <div className="who-container">
-            <div className="who-content-container">
+            <div className="who-content-container fade-in">
                 {whoCardsData.map((card, index) => (
                     <div className="who-card" key={index}>
                         <h2 className="who-card-title">{card.title}</h2>
