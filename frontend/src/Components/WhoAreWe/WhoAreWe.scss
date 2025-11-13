@@ -1,0 +1,229 @@
+.who-container {
+    // background: linear-gradient(225deg, #000814 0%, #001d3d 25%, #003566 50%, #000814 75%, #000000 100%);
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+
+    // Background neon effects similar to header
+    &::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        right: -30%;
+        width: 60%;
+        height: 60%;
+        background: radial-gradient(circle, rgba(79, 195, 247, 0.08) 0%, rgba(0, 123, 255, 0.05) 40%, transparent 70%);
+        animation: neonPulse 20s ease-in-out infinite;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        left: -20%;
+        width: 40%;
+        height: 40%;
+        background: radial-gradient(circle, rgba(57, 255, 20, 0.06) 0%, rgba(0, 255, 255, 0.03) 50%, transparent 70%);
+        border-radius: 50%;
+        animation: floatNeon 25s ease-in-out infinite reverse;
+        z-index: 1;
+    }
+
+    .who-content-container {
+        display: flex;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+        z-index: 2;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .who-card {
+            background: rgba(31, 31, 31, 0.4);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(79, 195, 247, 0.2);
+            overflow: hidden;
+
+            // Neon border effect
+            &::before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                right: -2px;
+                bottom: -2px;
+                background: linear-gradient(45deg, 
+                    rgba(79, 195, 247, 0.3) 0%, 
+                    rgba(139, 92, 246, 0.3) 25%, 
+                    rgba(0, 255, 255, 0.3) 50%, 
+                    rgba(57, 255, 20, 0.3) 75%, 
+                    rgba(79, 195, 247, 0.3) 100%);
+                border-radius: 22px;
+                z-index: -1;
+                opacity: 0;
+                filter: blur(5px);
+                animation: neonBorderRotate 6s linear infinite;
+                transition: opacity 0.3s ease;
+            }
+
+            // Shimmer effect
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, 
+                    transparent, 
+                    rgba(79, 195, 247, 0.15), 
+                    transparent);
+                transition: left 0.6s ease;
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            &:hover {
+                transform: translateY(-8px) scale(1.02);
+                box-shadow: 
+                    0 0 30px rgba(79, 195, 247, 0.4),
+                    0 0 50px rgba(139, 92, 246, 0.3),
+                    0 0 70px rgba(0, 255, 255, 0.2),
+                    0 15px 40px rgba(0, 0, 0, 0.4);
+                border-color: rgba(79, 195, 247, 0.5);
+                background: rgba(31, 31, 31, 0.6);
+
+                &::before {
+                    opacity: 1;
+                    filter: blur(8px);
+                }
+
+                &::after {
+                    left: 100%;
+                }
+
+                .who-card-title {
+                    text-shadow: 0 0 15px rgba(79, 195, 247, 0.6);
+                }
+            }
+
+            .who-card-title {
+                font-size: 1.8rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin-bottom: 20px;
+                text-align: center;
+                background: linear-gradient(135deg, #4FC3F7 0%, #81D4FA 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                transition: all 0.3s ease;
+                position: relative;
+                z-index: 2;
+
+                @media (max-width: 768px) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .who-card-description {
+                font-size: 1.1rem;
+                color: rgba(255, 255, 255, 0.85);
+                line-height: 1.7;
+                text-align: center;
+                position: relative;
+                z-index: 2;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+                @media (max-width: 768px) {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// Animations from header
+@keyframes neonPulse {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.08;
+    }
+    33% {
+        transform: translateY(-15px) rotate(1deg);
+        opacity: 0.15;
+    }
+    66% {
+        transform: translateY(-8px) rotate(-0.5deg);
+        opacity: 0.12;
+    }
+}
+
+@keyframes floatNeon {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) translateX(15px) rotate(3deg);
+    }
+    50% {
+        transform: translateY(-15px) translateX(-10px) rotate(-2deg);
+    }
+    75% {
+        transform: translateY(-25px) translateX(8px) rotate(1deg);
+    }
+}
+
+@keyframes neonBorderRotate {
+    0% {
+        background: linear-gradient(45deg, 
+            rgba(79, 195, 247, 0.3) 0%, 
+            rgba(139, 92, 246, 0.3) 25%, 
+            rgba(0, 255, 255, 0.3) 50%, 
+            rgba(57, 255, 20, 0.3) 75%, 
+            rgba(79, 195, 247, 0.3) 100%);
+    }
+    25% {
+        background: linear-gradient(45deg, 
+            rgba(139, 92, 246, 0.3) 0%, 
+            rgba(0, 255, 255, 0.3) 25%, 
+            rgba(57, 255, 20, 0.3) 50%, 
+            rgba(79, 195, 247, 0.3) 75%, 
+            rgba(139, 92, 246, 0.3) 100%);
+    }
+    50% {
+        background: linear-gradient(45deg, 
+            rgba(0, 255, 255, 0.3) 0%, 
+            rgba(57, 255, 20, 0.3) 25%, 
+            rgba(79, 195, 247, 0.3) 50%, 
+            rgba(139, 92, 246, 0.3) 75%, 
+            rgba(0, 255, 255, 0.3) 100%);
+    }
+    75% {
+        background: linear-gradient(45deg, 
+            rgba(57, 255, 20, 0.3) 0%, 
+            rgba(79, 195, 247, 0.3) 25%, 
+            rgba(139, 92, 246, 0.3) 50%, 
+            rgba(0, 255, 255, 0.3) 75%, 
+            rgba(57, 255, 20, 0.3) 100%);
+    }
+    100% {
+        background: linear-gradient(45deg, 
+            rgba(79, 195, 247, 0.3) 0%, 
+            rgba(139, 92, 246, 0.3) 25%, 
+            rgba(0, 255, 255, 0.3) 50%, 
+            rgba(57, 255, 20, 0.3) 75%, 
+            rgba(79, 195, 247, 0.3) 100%);
+    }
+}
