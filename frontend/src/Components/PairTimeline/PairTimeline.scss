@@ -1,38 +1,52 @@
 @use '../../styles/styles.scss' as styles;
 
-@keyframes timelineFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
+// Floating Orb Animations
+@keyframes orbFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
     }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+    50% {
+        transform: translateY(-20px) rotate(180deg);
     }
 }
 
-@keyframes revealRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
+@keyframes orbGlow {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px rgba(138, 43, 226, 0.4),
+            0 0 40px rgba(138, 43, 226, 0.2),
+            0 0 60px rgba(138, 43, 226, 0.1);
     }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
+    50% {
+        box-shadow: 
+            0 0 30px rgba(138, 43, 226, 0.8),
+            0 0 60px rgba(138, 43, 226, 0.6),
+            0 0 90px rgba(138, 43, 226, 0.4);
     }
 }
 
-@keyframes revealDown {
+@keyframes energyFlow {
     0% {
+        transform: translateX(-100%);
         opacity: 0;
-        transform: translateY(-50px);
     }
-
-    100% {
+    50% {
         opacity: 1;
-        transform: translateY(0);
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10px) scale(1.2);
+        opacity: 0.7;
     }
 }
 
@@ -41,98 +55,355 @@
         opacity: 0;
         transform: translateY(30px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@media only screen and (min-width: 1024px) {
-    .pair-timeline-content-container.show-animation .col-one-fourth {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 0.8s ease-out forwards;
-        animation-fill-mode: both;
-    }
-
-    .pair-timeline-content-container.show-animation .col-one-fourth:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-
-    .pair-timeline-content-container.show-animation .col-one-fourth:nth-child(2) {
-        animation-delay: 0.3s;
-    }
-
-    .pair-timeline-content-container.show-animation .col-one-fourth:nth-child(3) {
-        animation-delay: 0.5s;
-    }
-
-    .pair-timeline-content-container.show-animation .col-one-fourth:nth-child(4) {
-        animation-delay: 0.7s;
-    }
-}
-
-.timeline {
-    transition: transform 2s ease !important;
-}
-
-
-
-@media only screen and (max-width: 1023px) {
-    .pair-timeline-content-container {
-        opacity: 0;
-        transform: translateY(-50px);
-        transition: none;
-    }
-
-    .pair-timeline-content-container.show-animation {
-        animation: revealDown 2s ease-out forwards;
-    }
-}
-
-
-
-
+// Main Container Styles
 .pair-timeline-container {
-
-    // padding-bottom: 130px;
+    padding: 80px 20px;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .pair-timeline-content-container {
-        max-width: 1250px;
-        position: relative;
-        margin: 0 auto;
-        padding: 30px 40px;
+        max-width: 1200px;
         width: 100%;
-        height: 100%;
+        margin: 0 auto;
+        position: relative;
 
-        .pair-timeline-title {
-            font-size: 70px;
-            font-weight: 700;
+        .pair-timeline-titles-container {
             text-align: center;
-            color: #ffffff;
-            margin-bottom: 20px;
-            //   background: linear-gradient(135deg, styles.$softVioletColor 0%, styles.$lavenderColor 70%, #ffffff 100%);
-            //   -webkit-background-clip: text;
-            //   -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 80px;
+            
+            .pair-timeline-title {
+                font-size: clamp(3rem, 6vw, 70px);
+                font-weight: 700;
+                color: #ffffff;
+                margin-bottom: 20px;
+                background: linear-gradient(135deg, #8a2be2, #9370db, #ba55d3);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                letter-spacing: 2px;
+            }
 
-            @media only screen and (max-width: 550px) {
-                line-height: 75px;
+            .pair-timeline-p {
+                font-size: clamp(1rem, 2vw, 22px);
+                color: rgba(255, 255, 255, 0.9);
+                margin: 0 auto;
+                max-width: 700px;
+                line-height: 1.6;
             }
         }
+    }
+}
 
-        .pair-timeline-p {
-            font-size: 22px;
-            text-align: center;
-            margin-bottom: 45px;
-            color: rgba(255, 255, 255, 0.9);
+// Floating Orbs Container
+.floating-orbs-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    position: relative;
+    
+    @media (max-width: 768px) {
+        display: none;
+    }
+    
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: 80px;
+    }
+}
+
+.floating-orb {
+    position: relative;
+    animation: orbFloat 6s ease-in-out infinite;
+    
+    &.orb-1 { animation-delay: 0s; }
+    &.orb-2 { animation-delay: 2s; }
+    &.orb-3 { animation-delay: 4s; }
+}
+
+.orb-glow {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, transparent 70%);
+    animation: orbGlow 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+.orb-content {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.6), transparent);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: -1;
+    }
+    
+    &:hover {
+        transform: scale(1.05);
+        border-color: rgba(138, 43, 226, 0.8);
+        
+        &::before {
+            opacity: 1;
         }
+        
+        .orb-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #8a2be2, #9370db);
+        }
+    }
+}
 
-        .pair-timeline-little-screen {
-            display: none;
+.orb-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.9), rgba(147, 112, 219, 0.8));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.3);
+    
+    span {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.orb-info {
+    .orb-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    
+    .orb-description {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.5;
+        margin: 0;
+        font-weight: 300;
+    }
+}
+
+// Energy Connections
+.energy-connection {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 4px;
+    z-index: -1;
+    
+    @media (max-width: 1024px) {
+        bottom: -80px;
+        right: 50%;
+        top: auto;
+        transform: translateX(50%) rotate(90deg);
+        width: 80px;
+    }
+}
+
+.energy-beam {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(138, 43, 226, 0.8), 
+        rgba(147, 112, 219, 0.6), 
+        rgba(186, 85, 211, 0.8)
+    );
+    border-radius: 2px;
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: linear-gradient(90deg, 
+            rgba(138, 43, 226, 0.4), 
+            rgba(147, 112, 219, 0.3), 
+            rgba(186, 85, 211, 0.4)
+        );
+        filter: blur(4px);
+        border-radius: 4px;
+    }
+}
+
+.energy-particles {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    span {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #8a2be2;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+        animation: energyFlow 3s linear infinite;
+        
+        &:nth-child(1) {
+            animation-delay: 0s;
+            top: -1px;
+        }
+        
+        &:nth-child(2) {
+            animation-delay: 1s;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        &:nth-child(3) {
+            animation-delay: 2s;
+            bottom: -1px;
+        }
+    }
+}
+
+// Mobile Orbs
+.mobile-orbs {
+    display: none;
+    
+    @media (max-width: 768px) {
+        display: block;
+        
+        .mobile-orb {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(138, 43, 226, 0.4);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                transform: translateX(5px);
+                border-color: rgba(138, 43, 226, 0.7);
+                box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+            }
+            
+            .mobile-orb-icon {
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, rgba(138, 43, 226, 0.9), rgba(147, 112, 219, 0.8));
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                box-shadow: 0 6px 15px rgba(138, 43, 226, 0.3);
+                
+                span {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: white;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                }
+            }
+            
+            .mobile-orb-content {
+                flex: 1;
+                
+                h4 {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    color: white;
+                    margin-bottom: 10px;
+                    line-height: 1.3;
+                }
+                
+                p {
+                    font-size: 1rem;
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 1.5;
+                    margin: 0;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+
+// Animation for Intersection Observer
+.pair-timeline-content-container {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+    
+    &.show-animation {
+        opacity: 1;
+        transform: translateY(0);
+        
+        .floating-orb {
+            animation: orbFloat 6s ease-in-out infinite, fadeInUp 1s ease-out;
+            animation-fill-mode: both;
+            
+            &.orb-1 { animation-delay: 0s, 0.2s; }
+            &.orb-2 { animation-delay: 2s, 0.4s; }
+            &.orb-3 { animation-delay: 4s, 0.6s; }
+        }
+        
+        .energy-beam {
+            animation: energyFlow 3s linear infinite;
+            animation-delay: 1s;
+        }
+        
+        .mobile-orb {
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+            
+            &:nth-child(1) { animation-delay: 0.2s; }
+            &:nth-child(2) { animation-delay: 0.4s; }
+            &:nth-child(3) { animation-delay: 0.6s; }
         }
     }
 }

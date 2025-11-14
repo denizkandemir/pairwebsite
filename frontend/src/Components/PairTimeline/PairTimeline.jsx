@@ -49,38 +49,55 @@ const PairTimeline = () => {
     }, []);
 
     return (
-        <div className="pair-timeline-container ">
-            <div className="pair-timeline-content-container ">
+        <div className="pair-timeline-container">
+            <div className="pair-timeline-content-container">
                 <div className="pair-timeline-titles-container fade-in">
                     <h2 className="pair-timeline-title fade-in">We Are PAIR</h2>
-                    <p className="pair-timeline-p fade-in"> Combining Psychology, Artificial Intelligence, and Research Lab </p>
+                    <p className="pair-timeline-p fade-in">Combining Psychology, Artificial Intelligence, and Research Lab</p>
                 </div>
 
-                <div className="row margin-top timeline pair-timeline-big-screen">
-                    {
-                        pairContent.map((project) => (
-                            <div key={project.id} className="col-one-fourth">
-                                <div className="pair-timeline-details-container">
-                                    <h5> {project.title} </h5>
-                                    <p> {project.text} </p>
+                {/* Floating Orbs Design */}
+                <div className="floating-orbs-container">
+                    {pairContent.map((project, index) => (
+                        <div key={project.id} className={`floating-orb orb-${index + 1}`}>
+                            <div className="orb-glow"></div>
+                            <div className="orb-content">
+                                <div className="orb-icon">
+                                    <span>{project.letter}</span>
+                                </div>
+                                <div className="orb-info">
+                                    <h3 className="orb-title">{project.title}</h3>
+                                    <p className="orb-description">{project.text}</p>
                                 </div>
                             </div>
-                        ))
-                    }
-                </div>
-                <div className="row margin-top pair-timeline-little-screen">
-                    <div className="timeline">
-                        {
-                             pairContent.map((project) => (
-                                <div key={project.id} className="col-one-fourth">
-                                    <div className="pair-timeline-details-container">
-                                        <h5> {project.title} </h5>
-                                        <p> {project.text} </p>
+                            {/* Connection energy lines */}
+                            {index < pairContent.length - 1 && (
+                                <div className="energy-connection">
+                                    <div className="energy-beam"></div>
+                                    <div className="energy-particles">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
                                     </div>
                                 </div>
-                            ))
-                        }
-                    </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+
+                {/* Mobile version */}
+                <div className="mobile-orbs">
+                    {pairContent.map((project) => (
+                        <div key={project.id} className="mobile-orb">
+                            <div className="mobile-orb-icon">
+                                <span>{project.letter}</span>
+                            </div>
+                            <div className="mobile-orb-content">
+                                <h4>{project.title}</h4>
+                                <p>{project.text}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
