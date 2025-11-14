@@ -4,6 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import headerImg from "/pairHeader1.png";
 import WhoAreWe from "../WhoAreWe/WhoAreWe";
 import Blog from "../Blog/Blog";
+import PairTimeline from "../PairTimeline/PairTimeline";
 
 const Header = () => {
 
@@ -23,6 +24,7 @@ const Header = () => {
                     <img src={headerImg} alt="" className="header-img" />
                 </div>
             </div>
+            <PairTimeline />
          <WhoAreWe />
          <Blog />
 
