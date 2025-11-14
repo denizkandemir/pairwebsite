@@ -1,7 +1,8 @@
 .header-navbar-container {
-    background: linear-gradient(225deg, #000814 0%, #001d3d 25%, #004788 37%, #000000 75%, #000000 100%);
-
+    // background: linear-gradient(227deg, #000814 0%, #001d3d 25%, #004788 31%, #002a50 54%, #002546 100%);
+    background: linear-gradient(227deg, #000814 0%, #003c7e 25%, #004788 31%, #001428 54%, #002341 100%);
 }
+
 
 .header-container {
     // background: linear-gradient(225deg, #000814 0%, #001d3d 25%, #01284c 50%, #2a3c63 75%, #000f1e 100%);
@@ -65,7 +66,7 @@
         position: relative;
         z-index: 2;
         gap: 30px;
-        max-width: 1200px;
+        max-width: 1250px;
 
         .header-texts-container {
             flex: 1;
