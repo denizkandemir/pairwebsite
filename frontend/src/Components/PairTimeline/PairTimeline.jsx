@@ -1,12 +1,13 @@
 import "./PairTimeline.scss";
 import React from "react";
 import { useEffect } from "react";
+import contentImg1 from "/psychology.png";
 
 const pairContent = [
     {
         id: 1,
         title: "Psychology &",
-        letter: "P",
+        svg: contentImg1,
         text: "The study of mind and behavior, exploring how individuals think, feel, and act in various contexts."
     },
 
@@ -63,7 +64,7 @@ const PairTimeline = () => {
                             <div className="orb-glow"></div>
                             <div className="orb-content">
                                 <div className="orb-icon">
-                                    <span>{project.letter}</span>
+                                    <img src={project.svg} className="orb-img" alt={project.title} />
                                 </div>
                                 <div className="orb-info">
                                     <h3 className="orb-title">{project.title}</h3>
