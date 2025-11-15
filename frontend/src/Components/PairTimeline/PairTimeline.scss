@@ -2,26 +2,32 @@
 
 // Floating Orb Animations
 @keyframes orbFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px) rotate(0deg);
     }
+
     50% {
         transform: translateY(-20px) rotate(180deg);
     }
 }
 
 @keyframes orbGlow {
-    0%, 100% {
-        box-shadow: 
-            0 0 20px rgba(138, 43, 226, 0.4),
-            0 0 40px rgba(138, 43, 226, 0.2),
-            0 0 60px rgba(138, 43, 226, 0.1);
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 14px rgba(215, 201, 247, 0.35),
+            0 0 23px rgba(228, 214, 255, 0.23),
+            0 0 32px rgba(139, 92, 246, 0.12);
     }
+
     50% {
-        box-shadow: 
-            0 0 30px rgba(138, 43, 226, 0.8),
-            0 0 60px rgba(138, 43, 226, 0.6),
-            0 0 90px rgba(138, 43, 226, 0.4);
+        box-shadow:
+            0 0 18px rgba(215, 201, 247, 0.46),
+            0 0 32px rgba(228, 214, 255, 0.35),
+            0 0 46px rgba(139, 92, 246, 0.23);
     }
 }
 
@@ -30,9 +36,11 @@
         transform: translateX(-100%);
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         transform: translateX(200%);
         opacity: 0;
@@ -40,10 +48,13 @@
 }
 
 @keyframes particleFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) scale(1);
         opacity: 1;
     }
+
     50% {
         transform: translateY(-10px) scale(1.2);
         opacity: 0.7;
@@ -55,6 +66,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -78,13 +90,14 @@
 
         .pair-timeline-titles-container {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
 
-            
+
             .pair-timeline-title {
                 font-size: clamp(3rem, 6vw, 70px);
                 font-weight: 700;
                 color: #ffffff;
+                margin-bottom: 10px;
                 // background: linear-gradient(135deg, #8a2be2, #9370db, #ba55d3);
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -110,11 +123,7 @@
     justify-content: space-between;
     gap: 60px;
     position: relative;
-    
-    @media (max-width: 768px) {
-        display: none;
-    }
-    
+
     @media (max-width: 1024px) {
         flex-direction: column;
         gap: 80px;
@@ -124,26 +133,34 @@
 .floating-orb {
     position: relative;
     animation: orbFloat 6s ease-in-out infinite;
-    
-    &.orb-1 { animation-delay: 0s; }
-    &.orb-2 { animation-delay: 2s; }
-    &.orb-3 { animation-delay: 4s; }
+
+    &.orb-1 {
+        animation-delay: 0s;
+    }
+
+    &.orb-2 {
+        animation-delay: 2s;
+    }
+
+    &.orb-3 {
+        animation-delay: 4s;
+    }
 }
 
 .orb-glow {
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
+    top: -9px;
+    left: -9px;
+    right: -9px;
+    bottom: -9px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(72, 209, 204, 0.02) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(215, 201, 247, 0.058) 0%, transparent 70%);
     animation: orbGlow 4s ease-in-out infinite;
     z-index: -1;
 }
 
 .orb-content {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(15px);
     border: none;
     border-radius: 50%;
@@ -159,7 +176,7 @@
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    
+
     // Shimmer effect like WhoAreWe cards
     &::after {
         content: '';
@@ -176,16 +193,16 @@
         z-index: 1;
         pointer-events: none;
     }
-    
+
     &:hover {
         transform: scale(1.10);
         border: 1px solid rgba(72, 209, 204, 0.4);
         background: rgba(255, 255, 255, 0.08);
-        
+
         &::after {
             left: 100%;
         }
-        
+
         .orb-title {
             text-shadow: none;
             filter: brightness(1.05);
@@ -194,12 +211,21 @@
 }
 
 .orb-icon {
-        
-    margin-bottom: 1ch;
-   .orb-img {
+
+    margin-bottom: 5px;
+
+    .orb-img {
         object-fit: contain;
-        max-width: 60px;
-     }
+        max-width: 80px;
+    }
+
+    .psychology-orb-img {
+        max-width: 90px;
+    }
+
+    .ai-orb-img {
+        margin-bottom: 10px;
+    }
 
 }
 
@@ -207,14 +233,17 @@
     .orb-title {
         font-size: 1.3rem;
         font-weight: 600;
-        margin-bottom: 15px;
+        margin-bottom: 7px;
         line-height: 1.3;
         position: relative;
         z-index: 2;
         transition: all 0.3s ease;
         color: #ffffff;
     }
-    
+
+ 
+
+
     .orb-description {
         font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.85);
@@ -224,21 +253,22 @@
         z-index: 2;
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
-        font-weight: 400;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    }
+
+    font-weight: 400;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
 
 
 // Energy Connections
 .energy-connection {
     position: absolute;
     right: -60px;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     width: 120px;
     height: 4px;
     z-index: -1;
-    
+
     @media (max-width: 1024px) {
         bottom: -80px;
         right: 50%;
@@ -251,14 +281,13 @@
 .energy-beam {
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, 
-        rgba(138, 43, 226, 0.8), 
-        rgba(147, 112, 219, 0.6), 
-        rgba(186, 85, 211, 0.8)
-    );
+    background: linear-gradient(90deg,
+            rgba(215, 201, 247, 0.7),
+            rgba(228, 214, 255, 0.5),
+            rgba(139, 92, 246, 0.7));
     border-radius: 2px;
     position: relative;
-    
+
     &::after {
         content: '';
         position: absolute;
@@ -266,11 +295,10 @@
         left: 0;
         right: 0;
         height: 8px;
-        background: linear-gradient(90deg, 
-            rgba(138, 43, 226, 0.4), 
-            rgba(147, 112, 219, 0.3), 
-            rgba(186, 85, 211, 0.4)
-        );
+        background: linear-gradient(90deg,
+                rgba(215, 201, 247, 0.4),
+                rgba(228, 214, 255, 0.3),
+                rgba(139, 92, 246, 0.4));
         filter: blur(4px);
         border-radius: 4px;
     }
@@ -279,29 +307,30 @@
 .energy-particles {
     position: absolute;
     top: 0;
+    left: -20px;
     width: 100%;
     height: 100%;
-    
+
     span {
         position: absolute;
         width: 6px;
         height: 6px;
-        background: #8a2be2;
+        background: rgba(215, 201, 247, 0.9);
         border-radius: 50%;
-        box-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+        box-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
         animation: energyFlow 3s linear infinite;
-        
+
         &:nth-child(1) {
             animation-delay: 0s;
             top: -1px;
         }
-        
+
         &:nth-child(2) {
             animation-delay: 1s;
             top: 50%;
             transform: translateY(-50%);
         }
-        
+
         &:nth-child(3) {
             animation-delay: 2s;
             bottom: -1px;
@@ -309,104 +338,41 @@
     }
 }
 
-// Mobile Orbs
-.mobile-orbs {
-    display: none;
-    
-    @media (max-width: 768px) {
-        display: block;
-        
-        .mobile-orb {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(138, 43, 226, 0.4);
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: all 0.3s ease;
-            
-            &:hover {
-                transform: translateX(5px);
-                border-color: rgba(138, 43, 226, 0.7);
-                box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
-            }
-            
-            .mobile-orb-icon {
-                width: 60px;
-                height: 60px;
-                background: linear-gradient(135deg, rgba(138, 43, 226, 0.9), rgba(147, 112, 219, 0.8));
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                box-shadow: 0 6px 15px rgba(138, 43, 226, 0.3);
-                
-                span {
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                    color: white;
-                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-                }
-            }
-            
-            .mobile-orb-content {
-                flex: 1;
-                
-                h4 {
-                    font-size: 1.3rem;
-                    font-weight: 600;
-                    color: white;
-                    margin-bottom: 10px;
-                    line-height: 1.3;
-                }
-                
-                p {
-                    font-size: 1rem;
-                    color: rgba(255, 255, 255, 0.8);
-                    line-height: 1.5;
-                    margin: 0;
-                    font-weight: 300;
-                }
-            }
-        }
+   .ai-particles {
+        left: 15px;
     }
-}
+
 
 // Animation for Intersection Observer
 .pair-timeline-content-container {
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.8s ease;
-    
+
     &.show-animation {
         opacity: 1;
         transform: translateY(0);
-        
+
         .floating-orb {
             animation: orbFloat 6s ease-in-out infinite, fadeInUp 1s ease-out;
             animation-fill-mode: both;
-            
-            &.orb-1 { animation-delay: 0s, 0.2s; }
-            &.orb-2 { animation-delay: 2s, 0.4s; }
-            &.orb-3 { animation-delay: 4s, 0.6s; }
+
+            &.orb-1 {
+                animation-delay: 0s, 0.2s;
+            }
+
+            &.orb-2 {
+                animation-delay: 2s, 0.4s;
+            }
+
+            &.orb-3 {
+                animation-delay: 4s, 0.6s;
+            }
         }
-        
+
         .energy-beam {
             animation: energyFlow 3s linear infinite;
             animation-delay: 1s;
-        }
-        
-        .mobile-orb {
-            animation: fadeInUp 0.8s ease-out;
-            animation-fill-mode: both;
-            
-            &:nth-child(1) { animation-delay: 0.2s; }
-            &:nth-child(2) { animation-delay: 0.4s; }
-            &:nth-child(3) { animation-delay: 0.6s; }
         }
     }
 }
@@ -503,7 +469,7 @@
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 70%, #7C3AED 100%); // Sol üst daha parlak
+    background: linear-gradient(135deg, styles.$softVioletColor 0%, styles.$lavenderColor 70%, rgba(228, 214, 255, 0.9) 100%); // Sol üst daha parlak
     // background: linear-gradient(135deg, #FFB74D 0%, #FFCC80 50%, #FFF3E0 100%);  // Warm amber/gold
     content: "";
     height: 20px;
@@ -512,9 +478,9 @@
     top: -36px;
     width: 20px;
     box-shadow:
-        0 0 12px rgba(139, 92, 246, 0.5),
-        0 0 20px rgba(167, 139, 250, 0.3),
-        inset -3px -3px 8px rgba(255, 255, 255, 0.4); // Sol üst parlama
+        0 0 10px rgba(215, 201, 247, 0.4),
+        0 0 16px rgba(228, 214, 255, 0.3),
+        inset -3px -3px 8px rgba(228, 214, 255, 0.4); // Sol üst parlama
 }
 
 @media only screen and (max-width: 1023px) {

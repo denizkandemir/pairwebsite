@@ -1,8 +1,11 @@
-.header-navbar-container {
-    // background: linear-gradient(227deg, #000814 0%, #001d3d 25%, #004788 31%, #002a50 54%, #002546 100%);
-    background: linear-gradient(227deg, #000814 0%, #003c7e 25%, #004788 31%, #001428 54%, #002341 100%);
-}
+@use '../../styles/styles.scss' as styles;
 
+.header-navbar-container {
+    background: linear-gradient(227deg, #000814 0%, #001d3d 25%, #004788 31%, #002a50 54%, #002546 100%);
+    background: linear-gradient(227deg, #000814 0%, #003c7e 25%, #004788 31%, #001428 54%, #002341 100%);
+    // background: linear-gradient(227deg, #000814 0%, #003670 25%, #003a71 31%, #001428 54%, #002341 100%);
+        background: linear-gradient(227deg, #000814 0%, #003c7e 25%, #00305c 31%, #001428 54%, #002341 100%);
+}
 
 .header-container {
     // background: linear-gradient(225deg, #000814 0%, #001d3d 25%, #01284c 50%, #2a3c63 75%, #000f1e 100%);
@@ -10,25 +13,6 @@
     display: flex;
     justify-content: center;
     //   background: linear-gradient(225deg, #000814 0%, #001d3d 25%, #003566 50%, #0c2341 75%, #001122 100%);
-
-    // background: linear-gradient(45deg,
-    //         #2055A5 0%,
-    //         /* Daha parlak mavi */
-    //         #1A4580 20%,
-    //         /* Royal blue */
-    //         #13345F 38%,
-    //         /* Orta lacivert */
-    //         #0D2340 54%,
-    //         /* Koyu */
-    //         #071426 70%,
-    //         /* Çok koyu */
-    //         #030B15 85%,
-    //         /* Siyaha yakın */
-    //         #000000 100%
-    //         /* Siyah */
-    //     );
-
-
 
     // Neon glow background effects
     &::before {
