@@ -1,0 +1,588 @@
+@use '../../styles/styles.scss' as styles;
+
+// Floating Orb Animations
+@keyframes orbFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
+@keyframes orbGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 14px rgba(215, 201, 247, 0.35),
+            0 0 23px rgba(228, 214, 255, 0.23),
+            0 0 32px rgba(139, 92, 246, 0.12);
+    }
+
+    50% {
+        box-shadow:
+            0 0 18px rgba(215, 201, 247, 0.46),
+            0 0 32px rgba(228, 214, 255, 0.35),
+            0 0 46px rgba(139, 92, 246, 0.23);
+    }
+}
+
+@keyframes energyFlow {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+}
+
+@keyframes particleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Main Container Styles
+.pair-timeline-container {
+    padding: 40px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .pair-timeline-content-container {
+        max-width: 1250px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+
+        .pair-timeline-titles-container {
+            text-align: center;
+            margin-bottom: 70px;
+
+
+            .pair-timeline-title {
+                font-size: clamp(3rem, 6vw, 70px);
+                font-weight: 700;
+                color: #ffffff;
+                margin-bottom: 10px;
+                // background: linear-gradient(135deg, #8a2be2, #9370db, #ba55d3);
+                background-clip: text;
+                -webkit-background-clip: text;
+                // -webkit-text-fill-color: transparent;
+                letter-spacing: 2px;
+            }
+
+            .pair-timeline-p {
+                font-size: clamp(1rem, 2vw, 22px);
+                color: rgba(255, 255, 255, 0.9);
+                margin: 0 auto;
+                max-width: 700px;
+                line-height: 1.6;
+            }
+        }
+    }
+}
+
+// Floating Orbs Container
+.floating-orbs-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    position: relative;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: 80px;
+    }
+}
+
+.floating-orb {
+    position: relative;
+    animation: orbFloat 6s ease-in-out infinite;
+
+    &.orb-1 {
+        animation-delay: 0s;
+    }
+
+    &.orb-2 {
+        animation-delay: 2s;
+    }
+
+    &.orb-3 {
+        animation-delay: 4s;
+    }
+}
+
+.orb-glow {
+    position: absolute;
+    top: -9px;
+    left: -9px;
+    right: -9px;
+    bottom: -9px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(215, 201, 247, 0.058) 0%, transparent 70%);
+    animation: orbGlow 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+.orb-content {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: none;
+    border-radius: 50%;
+    width: 310px;
+    height: 310px;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+
+    // Shimmer effect like WhoAreWe cards
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(72, 209, 204, 0.15),
+                transparent);
+        transition: left 0.6s ease;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    &:hover {
+        transform: scale(1.10);
+        border: 1px solid rgba(72, 209, 204, 0.4);
+        background: rgba(255, 255, 255, 0.08);
+
+        &::after {
+            left: 100%;
+        }
+
+        .orb-title {
+            text-shadow: none;
+            filter: brightness(1.05);
+        }
+    }
+}
+
+.orb-icon {
+
+    margin-bottom: 5px;
+
+    .orb-img {
+        object-fit: contain;
+        max-width: 80px;
+    }
+
+    .psychology-orb-img {
+        max-width: 90px;
+    }
+
+    .ai-orb-img {
+        margin-bottom: 10px;
+    }
+
+}
+
+.orb-info {
+    .orb-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 7px;
+        line-height: 1.3;
+        position: relative;
+        z-index: 2;
+        transition: all 0.3s ease;
+        color: #ffffff;
+    }
+
+ 
+
+
+    .orb-description {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.5;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    font-weight: 400;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+// Energy Connections
+.energy-connection {
+    position: absolute;
+    right: -60px;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 4px;
+    z-index: -1;
+
+    @media (max-width: 1024px) {
+        bottom: -80px;
+        right: 50%;
+        top: auto;
+        transform: translateX(50%) rotate(90deg);
+        width: 80px;
+    }
+}
+
+.energy-beam {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            rgba(215, 201, 247, 0.7),
+            rgba(228, 214, 255, 0.5),
+            rgba(139, 92, 246, 0.7));
+    border-radius: 2px;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: linear-gradient(90deg,
+                rgba(215, 201, 247, 0.4),
+                rgba(228, 214, 255, 0.3),
+                rgba(139, 92, 246, 0.4));
+        filter: blur(4px);
+        border-radius: 4px;
+    }
+}
+
+.energy-particles {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+
+    span {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: rgba(215, 201, 247, 0.9);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
+        animation: energyFlow 3s linear infinite;
+
+        &:nth-child(1) {
+            animation-delay: 0s;
+            top: -1px;
+        }
+
+        &:nth-child(2) {
+            animation-delay: 1s;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:nth-child(3) {
+            animation-delay: 2s;
+            bottom: -1px;
+        }
+    }
+}
+
+   .ai-particles {
+        left: 15px;
+    }
+
+
+// Animation for Intersection Observer
+.pair-timeline-content-container {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+
+    &.show-animation {
+        opacity: 1;
+        transform: translateY(0);
+
+        .floating-orb {
+            animation: orbFloat 6s ease-in-out infinite, fadeInUp 1s ease-out;
+            animation-fill-mode: both;
+
+            &.orb-1 {
+                animation-delay: 0s, 0.2s;
+            }
+
+            &.orb-2 {
+                animation-delay: 2s, 0.4s;
+            }
+
+            &.orb-3 {
+                animation-delay: 4s, 0.6s;
+            }
+        }
+
+        .energy-beam {
+            animation: energyFlow 3s linear infinite;
+            animation-delay: 1s;
+        }
+    }
+}
+
+
+
+/* Timeline Styling */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.col-one-fourth {
+    flex: 0 0 19%;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.col-one-fourth h5 {
+    font-size: 23px;
+    //   color: styles.$softVioletColor;
+
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.col-one-fourth p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    max-width: 300px;
+    line-height: 1.4;
+    transition: transform 2s ease-in-out !important;
+
+}
+
+.timeline .col-one-fourth:hover {
+    transform: translateY(-10px) !important;
+    transition: transform 2s ease-in-out !important;
+    z-index: 10;
+}
+
+.col-one-fourth:hover {
+    transform: translateY(-15px) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.timeline {
+    border-top: 2px solid rgba(167, 139, 250, 0.6); // İyileştirilmiş mor
+    // border-top: 2px solid rgba(255, 183, 77, 0.5);  // Soft amber
+    padding-top: 1.5rem;
+    position: relative;
+}
+
+.timeline:before,
+.timeline:after {
+    background: rgba(167, 139, 250, 0.6); // İyileştirilmiş mor
+    content: "";
+    height: 2px;
+    position: absolute;
+    top: -1.5px;
+    width: 20px;
+}
+
+.timeline:before {
+    -webkit-border-bottom-left-radius: 50%;
+    -moz-border-radius-bottomleft: 50%;
+    border-bottom-left-radius: 50%;
+    -webkit-border-top-left-radius: 50%;
+    -moz-border-radius-topleft: 50%;
+    border-top-left-radius: 50%;
+    left: -1rem;
+}
+
+.timeline:after {
+    -webkit-border-bottom-right-radius: 50%;
+    -moz-border-radius-bottomright: 50%;
+    border-bottom-right-radius: 50%;
+    -webkit-border-top-right-radius: 50%;
+    -moz-border-radius-topright: 50%;
+    border-top-right-radius: 50%;
+    right: -1rem;
+}
+
+.timeline [class^="col-"] {
+    position: relative;
+}
+
+.timeline [class^="col-"]:before {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, styles.$softVioletColor 0%, styles.$lavenderColor 70%, rgba(228, 214, 255, 0.9) 100%); // Sol üst daha parlak
+    // background: linear-gradient(135deg, #FFB74D 0%, #FFCC80 50%, #FFF3E0 100%);  // Warm amber/gold
+    content: "";
+    height: 20px;
+    left: -3px;
+    position: absolute;
+    top: -36px;
+    width: 20px;
+    box-shadow:
+        0 0 10px rgba(215, 201, 247, 0.4),
+        0 0 16px rgba(228, 214, 255, 0.3),
+        inset -3px -3px 8px rgba(228, 214, 255, 0.4); // Sol üst parlama
+}
+
+@media only screen and (max-width: 1023px) {
+    .timeline {
+
+        border-left: 2px solid rgba(167, 139, 250, 0.6); // İyileştirilmiş mor mobil
+        border-top: none;
+        padding-left: 22px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0;
+    }
+
+
+    .pair-timeline-container {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pair-timeline-big-screen {
+        display: none;
+    }
+
+    .pair-timeline-container {
+        .pair-timeline-content-container {
+            .pair-timeline-little-screen {
+                display: flex;
+            }
+        }
+    }
+
+    .timeline:before,
+    .timeline:after {
+        height: 1rem;
+        left: -2px;
+        width: 2px;
+    }
+
+    .timeline:before {
+        -webkit-border-bottom-left-radius: 0;
+        -moz-border-radius-bottomleft: 0;
+        border-bottom-left-radius: 0;
+        -webkit-border-top-left-radius: 0;
+        -moz-border-radius-topleft: 0;
+        border-top-left-radius: 0;
+        -webkit-border-top-left-radius: 50%;
+        -moz-border-radius-topleft: 50%;
+        border-top-left-radius: 50%;
+        -webkit-border-top-right-radius: 50%;
+        -moz-border-radius-topright: 50%;
+        border-top-right-radius: 50%;
+        top: -1rem;
+    }
+
+    .timeline:after {
+        -webkit-border-bottom-right-radius: 0;
+        -moz-border-radius-bottomright: 0;
+        border-bottom-right-radius: 0;
+        -webkit-border-top-right-radius: 0;
+        -moz-border-radius-topright: 0;
+        border-top-right-radius: 0;
+        -webkit-border-bottom-left-radius: 50%;
+        -moz-border-radius-bottomleft: 50%;
+        border-bottom-left-radius: 50%;
+        -webkit-border-bottom-right-radius: 50%;
+        -moz-border-radius-bottomright: 50%;
+        border-bottom-right-radius: 50%;
+        bottom: -1rem;
+        top: auto;
+    }
+
+    .timeline [class^="col-"] {
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+
+    .timeline [class^="col-"]:nth-child(2) {
+        margin-top: 3rem;
+    }
+
+    .timeline [class^="col-"]:before {
+        left: -33px;
+        top: 7px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .col-one-fourth {
+        flex: 0 0 48%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .col-one-fourth {
+        flex: 0 0 100%;
+    }
+}

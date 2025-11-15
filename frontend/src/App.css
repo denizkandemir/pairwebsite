@@ -3,6 +3,23 @@
   padding: 0;
   margin: 0;
 }
+
+/* Tüm sayfa için profesyonel gradient arka plan */
+body {
+  background: linear-gradient(225deg, 
+    #000814 0%,        /* Derin lacivert başlangıç */
+    #001a35 15%,       /* Yumuşak geçiş */
+    #002650 30%,       /* Orta lacivert */
+    #003366 45%,       /* Balanced mavi */
+    #002a52 60%,       /* Geri dönen lacivert */
+    #001d3d 75%,       /* Familiar ton */
+    #001225 90%,       /* Soft karanlık */
+    #000814 100%       /* Tutarlı bitiş */
+  );
+  min-height: 100vh;
+  background-attachment: fixed; /* Scroll'da sabit kalır */
+}
+
 .fade-in {
     opacity: 0;
     transform: translateY(50px);
