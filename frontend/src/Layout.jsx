@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 import ScrollToTop from "./hooks/scrollToTop";
 import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 
 export function Layout() {
 
@@ -21,7 +22,7 @@ export function Layout() {
                 <Outlet />
             </main>
             {
-            //   !isLogin && <Footer />
+              <Footer />
             }
         </>
     )
