@@ -5,6 +5,7 @@ import headerImg from "/pairHeader1.png";
 import WhoAreWe from "../WhoAreWe/WhoAreWe";
 import Blog from "../Blog/Blog";
 import PairTimeline from "../PairTimeline/PairTimeline";
+import Subscribe from "../Subscribe/Subscribe";
 
 const Header = () => {
 
@@ -27,6 +28,7 @@ const Header = () => {
             <PairTimeline />
              <Blog />
             <WhoAreWe />
+            <Subscribe />
 
 
         </div>
