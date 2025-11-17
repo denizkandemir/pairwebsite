@@ -25,13 +25,14 @@ const Header = () => {
                 </div>
             </div>
             <PairTimeline />
-         <WhoAreWe />
-         <Blog />
+             <Blog />
+            <WhoAreWe />
+
 
         </div>
-     )
+    )
 
-    
+
 };
 
 export default Header;
