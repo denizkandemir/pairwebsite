@@ -1,0 +1,261 @@
+/* Enhanced glassy background with modern styling */
+
+.subscribe-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.subscribe-content-container {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  padding: 80px 60px;
+  width: 100%;
+  align-items: center;
+  max-width: 1180px;
+  border-radius: 30px;
+  position: relative;
+
+  /* Subtle glassy effect */
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  
+  /* Soft shadows for depth */
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+
+  /* Very subtle gradient overlay */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0.01) 50%,
+      rgba(255, 255, 255, 0.005) 100%);
+    border-radius: 30px;
+    pointer-events: none;
+  }
+}
+
+.subscribe-img-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+
+  .subscribe-img  {
+    max-height: 220px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
+  }
+
+  .plane-img {
+    transform: rotate(4deg) translateY(-23px);
+    animation: floatPlane 7s ease-in-out infinite;
+  }
+}
+
+@keyframes floatPlane {
+  0%, 100% {
+        transform: rotate(3deg) translateY(-28px) translateX(0);
+  }
+  50% {
+    transform: rotate(9deg) translateY(0px) translateX(-16px);
+  }
+}
+
+.subscribe-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+.subscribe-title {
+    text-align: center;
+      font-size: 50px;
+  margin: 0 0 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.subscribe-text {
+  opacity: 0.85;
+  margin-bottom: 35px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff9ef;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* MODERN FORM STYLING */
+.subscribe-form {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: 1px solid #7BB8D9;
+  background: rgba(31, 31, 31, 0.5);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  &::placeholder {
+    color: rgba(255, 249, 239, 0.6);
+    font-weight: 400;
+  }
+
+  &:focus {
+    border-color: #7BB8D9;
+    background: rgba(31, 31, 31, 0.7);
+    box-shadow: 
+      0 0 15px rgba(139, 92, 246, 0.4),
+      0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+  }
+
+  &:hover {
+    border-color: rgba(123, 184, 217, 0.8);
+    background: rgba(31, 31, 31, 0.6);
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.3), 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.subscribe-form button {
+  // background: linear-gradient(330deg, #4D7CFF 0%, #22B8D9 100%); // Orijinal canlı gradient
+  // background: linear-gradient(90deg, #7A5CFF 0%, #5E47E6 100%); // Mor gradient
+  
+  // Daha yumuşak gradient alternatifleri:
+  background: linear-gradient(135deg, rgba(77, 124, 255, 0.8) 0%, rgba(34, 184, 217, 0.7) 100%);
+//   background: linear-gradient(135deg, rgba(122, 92, 255, 0.75) 0%, rgba(94, 71, 230, 0.8) 100%);
+//   background: linear-gradient(145deg, rgba(139, 69, 246, 0.7) 0%, rgba(59, 130, 246, 0.75) 100%);
+  
+  border: none;
+  color: white;
+  backdrop-filter: blur(8px);
+  padding: 14.5px 36px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 15px rgba(139, 69, 246, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  text-transform: none;
+  letter-spacing: 0.3px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, rgba(87, 144, 255, 0.85) 0%, rgba(44, 204, 237, 0.8) 100%);
+    box-shadow: 
+      0 6px 20px rgba(77, 124, 255, 0.4),
+      0 3px 12px rgba(34, 184, 217, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .subscribe-container {
+    padding: 30px 15px;
+  }
+
+  .subscribe-content-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 40px;
+    gap: 40px;
+    border-radius: 24px;
+  }
+
+  .subscribe-content h2 {
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+
+  .subscribe-content p {
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .subscribe-form button {
+    width: 100%;
+    padding: 20px 32px;
+  }
+
+  .subscribe-img-container .subscribe-img {
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscribe-content-container {
+    padding: 50px 25px;
+    margin: 0 10px;
+  }
+
+  .subscribe-content h2 {
+    font-size: 30px;
+  }
+
+  .subscribe-content p {
+    font-size: 16px;
+  }
+
+  .subscribe-form input,
+  .subscribe-form button {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+}
