@@ -1,10 +1,12 @@
 .blog-container {
     // WhoAreWe'den uyumlu geçiş için gradual color transition
-  
+
     padding: 50px 40px;
     padding-top: 120px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 
     // Subtle background effects for smooth transition
     &::before {
@@ -35,9 +37,9 @@
 
     .blog-content-container {
         display: flex;
-        max-width: 1200px;
-        margin: 0 auto;
-        gap: 60px;
+        max-width: 1250px;
+        justify-content: space-between;
+        gap: 140px;
         position: relative;
         z-index: 2;
 
@@ -52,29 +54,12 @@
             max-width: 600px;
 
             .blog-title {
-                font-size: 2.8rem;
+                font-size: 45px;
                 font-weight: 700;
                 margin-bottom: 24px;
                 line-height: 1.2;
-                background: linear-gradient(135deg, rgba(215, 201, 247, 0.9) 0%, rgba(228, 214, 255, 0.8) 50%, #ffffff 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                text-shadow: 0 0 20px rgba(215, 201, 247, 0.4);
+                color: rgba(255, 255, 255, 0.89);
                 position: relative;
-                
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: -5px;
-                    left: -5px;
-                    right: -5px;
-                    bottom: -5px;
-                    background: radial-gradient(circle, rgba(215, 201, 247, 0.03) 0%, transparent 70%);
-                    border-radius: 10px;
-                    z-index: -1;
-                    animation: titleGlow 4s ease-in-out infinite;
-                }
 
                 @media (max-width: 768px) {
                     font-size: 2.2rem;
@@ -85,7 +70,7 @@
                 font-size: 1.2rem;
                 color: rgba(255, 255, 255, 0.85);
                 line-height: 1.7;
-                margin-bottom: 32px;
+                margin-bottom: 20px;
                 text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 
                 @media (max-width: 768px) {
@@ -99,11 +84,11 @@
             max-width: 500px;
             position: relative;
             transition: all 0.4s ease;
-  
-            .blog-img{
+
+            .blog-img {
                 object-fit: contain;
-                max-height: 600px;
-                animation: floatImg 6s ease-in-out infinite;
+                max-height: 535px;
+                animation: floatImg 7s ease-in-out infinite;
                 filter: drop-shadow(0 4px 20px rgba(215, 201, 247, 0.2));
                 transition: all 0.4s ease;
             }
@@ -117,9 +102,9 @@
                 right: -3px;
                 bottom: -3px;
                 background: linear-gradient(45deg,
-                    rgba(215, 201, 247, 0.2) 0%,
-                    rgba(228, 214, 255, 0.1) 50%,
-                    rgba(139, 92, 246, 0.2) 100%);
+                        rgba(215, 201, 247, 0.2) 0%,
+                        rgba(228, 214, 255, 0.1) 50%,
+                        rgba(139, 92, 246, 0.2) 100%);
                 border-radius: 15px;
                 opacity: 0;
                 transition: opacity 0.4s ease;
@@ -129,11 +114,11 @@
 
             &:hover {
                 transform: translateY(-8px) scale(1.02);
-                
+
                 &::before {
                     opacity: 1;
                 }
-                
+
                 .blog-img {
                     filter: drop-shadow(0 8px 30px rgba(215, 201, 247, 0.4));
                 }
@@ -144,33 +129,75 @@
                 height: 300px;
             }
         }
+
+        .blog-button {
+            background: rgba(31, 31, 31, 0.6);
+            border: 1px solid #7BB8D9;
+            color: white;
+            backdrop-filter: blur(10px);
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.3), 0 4px 20px rgba(0, 0, 0, 0.2);
+            text-transform: none;
+            letter-spacing: 0.5px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                transition: left 0.5s ease;
+            }
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0 25px rgba(139, 92, 246, 0.5), 0 6px 25px rgba(0, 0, 0, 0.3);
+                background: #003b56;
+                transform: translateY(-2px);
+
+                &::before {
+                    left: 100%;
+                }
+            }
+
+            &:active {
+                transform: translateY(-1px);
+            }
+        }
     }
 }
 
-@keyframes titleGlow {
-    0%, 100% {
-        background: radial-gradient(circle, rgba(215, 201, 247, 0.03) 0%, transparent 70%);
-    }
-    50% {
-        background: radial-gradient(circle, rgba(215, 201, 247, 0.06) 0%, transparent 70%);
-    }
-}
 
 @keyframes floatImg {
-    0%, 100% {
-      transform: translateY(-20px) translateX(-80px)
+
+    0%,
+    100% {
+        transform: translateY(-0px) translateX(-65px)
     }
+
     50% {
-        transform: translateY(-30px) translateX(-77px);
+        transform: translateY(-10px) translateX(-63px);
     }
-}   
+}
 
 // Smooth transition animations
 @keyframes neonPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px) rotate(0deg);
         opacity: 0.06;
     }
+
     50% {
         transform: translateY(-10px) rotate(1deg);
         opacity: 0.1;
@@ -178,12 +205,16 @@
 }
 
 @keyframes floatNeon {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px) translateX(0px) rotate(0deg);
     }
+
     33% {
         transform: translateY(-15px) translateX(10px) rotate(2deg);
     }
+
     66% {
         transform: translateY(-8px) translateX(-8px) rotate(-1deg);
     }
@@ -191,27 +222,30 @@
 
 @keyframes neonBorderRotate {
     0% {
-        background: linear-gradient(45deg, 
-            rgba(79, 195, 247, 0.2) 0%, 
-            rgba(139, 92, 246, 0.2) 50%, 
-            rgba(0, 255, 255, 0.2) 100%);
+        background: linear-gradient(45deg,
+                rgba(79, 195, 247, 0.2) 0%,
+                rgba(139, 92, 246, 0.2) 50%,
+                rgba(0, 255, 255, 0.2) 100%);
     }
+
     33% {
-        background: linear-gradient(45deg, 
-            rgba(139, 92, 246, 0.2) 0%, 
-            rgba(0, 255, 255, 0.2) 50%, 
-            rgba(79, 195, 247, 0.2) 100%);
+        background: linear-gradient(45deg,
+                rgba(139, 92, 246, 0.2) 0%,
+                rgba(0, 255, 255, 0.2) 50%,
+                rgba(79, 195, 247, 0.2) 100%);
     }
+
     66% {
-        background: linear-gradient(45deg, 
-            rgba(0, 255, 255, 0.2) 0%, 
-            rgba(79, 195, 247, 0.2) 50%, 
-            rgba(139, 92, 246, 0.2) 100%);
+        background: linear-gradient(45deg,
+                rgba(0, 255, 255, 0.2) 0%,
+                rgba(79, 195, 247, 0.2) 50%,
+                rgba(139, 92, 246, 0.2) 100%);
     }
+
     100% {
-        background: linear-gradient(45deg, 
-            rgba(79, 195, 247, 0.2) 0%, 
-            rgba(139, 92, 246, 0.2) 50%, 
-            rgba(0, 255, 255, 0.2) 100%);
+        background: linear-gradient(45deg,
+                rgba(79, 195, 247, 0.2) 0%,
+                rgba(139, 92, 246, 0.2) 50%,
+                rgba(0, 255, 255, 0.2) 100%);
     }
 }
