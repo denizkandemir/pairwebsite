@@ -17,10 +17,11 @@
           gap: 30px;
           position: relative;
 
-            .events-left-img {
-                max-width: 200px;
+            .event-img {
+                max-width: 250px;
+                height: 150px;
                 border-radius: 16px;
-                object-fit: contain;
+                object-fit: cover;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  
             }
        }
@@ -31,7 +32,16 @@
             align-items: center;
             justify-content: center;
             gap: 30px;
+            padding: 0 20px;
     
+            .events-little-title {
+                font-size: 20px;
+                text-align: center;
+                color: #ffffff;
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+            }   
+
             .events-title {
                 font-size: 2.5rem;
                 font-weight: 700;
