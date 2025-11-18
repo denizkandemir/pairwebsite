@@ -25,16 +25,12 @@
 
 
 //parlak black
-  background: linear-gradient(335deg, #0f0f23 0%, #000000 50%, #0a0a1a 100%);
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.7),
-    inset 0 1px 3px rgba(100, 150, 255, 0.2),
-    0 0 60px rgba(0, 100, 255, 0.1);
-  border: 1px solid rgba(100, 150, 255, 0.2);
+  // background: linear-gradient(335deg, #0f0f23 0%, #000000 50%, #0a0a1a 100%);
+ 
   
 
   //laccivert siyah karışımı
-  background: linear-gradient(200deg, rgba(1, 43, 80, 0.95) 0%, rgba(0, 8, 20, 0.98) 100%);
+  background: linear-gradient(200deg, rgba(2, 47, 87, 0.95) 0%, rgba(0, 8, 20, 0.98) 100%);
 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
