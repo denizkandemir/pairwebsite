@@ -5,24 +5,60 @@
     padding: 80px 20px;
 
     .events-homepage-content-container {
-       max-width: 1250px;
+       max-width: 1350px;
        width: 100%;
        display: flex;
+            //    flex-direction: row-reverse;
+
        justify-content: space-between;
        padding: 0 40px;   
        
        .events-img-container {
           display: flex;
           flex-direction: column;
-          gap: 30px;
+          gap: 50px;
           position: relative;
 
             .event-img {
-                max-width: 250px;
-                height: 150px;
+                max-width: 330px;
+                height: 210px;
                 border-radius: 16px;
                 object-fit: cover;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  
+                box-shadow: 0 0 15px rgba(100, 200, 255, 0.3), 0 0 50px rgba(100, 200, 255, 0.15), inset 0 1px 3px rgba(255, 255, 255, 0.12);
+ 
+            }
+
+            .event-img-collage {
+                 object-fit: contain;
+                 max-width: 600px;
+                box-shadow: 0 0 15px rgba(100, 200, 255, 0.3), 0 0 50px rgba(100, 200, 255, 0.15), inset 0 1px 3px rgba(255, 255, 255, 0.12);
+
+            }
+
+
+            .img-left-up {
+                transform: translateX(50px);
+            }
+
+            .img-left-center{
+             transform: translateX(-50px);
+            }
+
+            .img-left-down {
+                transform: translateX(50px);
+            }
+
+            
+            .img-right-up {
+                transform: translateX(-50px);
+            }
+
+            .img-right-center{
+             transform: translateX(50px);
+            }
+
+            .img-right-down {
+                transform: translateX(-50px);
             }
        }
 
@@ -52,8 +88,9 @@
     
             .events-text {
                 font-size: 1.1rem;
-                max-width: 700px;
+                max-width: 600px;
                 color: #cccccc;
+
                 text-align: center;
                 line-height: 1.6;
             }

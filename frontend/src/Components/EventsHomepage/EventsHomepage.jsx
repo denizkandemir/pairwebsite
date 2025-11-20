@@ -5,21 +5,63 @@ import { Link } from "react-router-dom";
 import eventImg1 from "/eventsImage1.png";
 import eventImg2 from "/eventsImage2.png";
 import eventImg3 from "/eventsImage3.png";
-import eventImg4 from "/eventsImage4.png";
-import eventImg5 from "/eventsImage5.png";
+import eventImg4 from "/eventsImg8.png";
+import eventImg5 from "/eventsImg10.png";
 import eventImg6 from "/eventsImage6.png";
+import eventCollage from "/eventsCollage.png";
 
 const EventsHomepage = () => {
 
     useFadeInOnScroll();
 
+    const eventsImg = {
+        left: [
+            {
+                id: 1,
+                img: eventImg1,
+                classname: "img-left-up"
+            },
+               {
+                id: 2,
+                img: eventImg2 ,
+                classname: "img-left-center"
+            },
+               {
+                id: 3,
+                img: eventImg3,
+                classname: "img-left-down"
+            }
+        ],
+
+        right: [
+            {
+                id: 4,
+                img: eventImg5,
+                classname: "img-right-up"
+            },
+               {
+                id: 5,
+                img: eventImg4,
+                classname: "img-right-center"
+            },
+            {
+                id: 6,
+                img: eventImg6,
+                classname: "img-right-down"
+            }
+        ]
+    };
+
     return (
         <div className="events-homepage-container">
             <div className="events-homepage-content-container">
                 <div className="events-img-container">
-                    <img src={eventImg1} alt="" className="event-img" />
-                    <img src={eventImg3} alt="" className="event-img" />
-                    <img src={eventImg2} alt="" className="event-img" />
+                    {
+                        eventsImg.left.map((img) => (
+                          <img key={img.id} src={img.img} alt="" className={`event-img ${img.classname}`} />
+                        ))
+                    }
+                    {/* <img src={eventCollage} alt="" className="event-img-collage" /> */}
                 </div>
 
                 <div className="events-center-container">
@@ -38,9 +80,11 @@ const EventsHomepage = () => {
                 </div>
 
                 <div className="events-img-container">
-                    <img src={eventImg5} alt="" className="event-img" />
-                    <img src={eventImg4} alt="" className="event-img" />
-                    <img src={eventImg6} alt="" className="event-img" />
+                    {
+                      eventsImg.right.map((img) => (        
+                          <img key={img.id} src={img.img} alt="" className={`event-img ${img.classname}`} />
+                        ))
+                    }
                 </div>
             </div>
         </div>
