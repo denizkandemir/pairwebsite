@@ -2,7 +2,7 @@
     padding: 40px 40px;
     border-bottom: 1px solid rgba(125, 185, 217, 0.3);
     position: relative;
-    
+
     // Neon glow effect for navbar
     &::before {
         content: '';
@@ -93,6 +93,7 @@
         .navbar-right-container {
             display: flex;
             gap: 15px;
+            transform: translateX(-10px);
 
             .svg-link {
                 color: #b3e5fc;
