@@ -30,8 +30,8 @@ const Header = () => {
             <Blog />
             <WhoAreWe />
             <EventsHomepage />
-
             <Subscribe />
+            {/* <div className="content-end"></div> */}
         </div>
     )
 

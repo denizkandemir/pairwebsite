@@ -31,7 +31,10 @@ const Subscribe = () => {
                    <img src={subscribePlane} alt="" className="subscribe-img plane-img" />
                 </div>
 
+           
+
             </div>
+      
         </div>
 
     )
