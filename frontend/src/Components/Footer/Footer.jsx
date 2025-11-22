@@ -12,12 +12,12 @@ const Footer = () => {
                 <div className="footer-content-container">
 
                    <div className="footer-logo-container">
+                        <img src={pairLogo} alt="Pair Logo" className="footer-logo-img" />
                        <img src={schoolLogo} alt="School Logo" className="footer-logo-img" />
-                       <img src={pairLogo} alt="Pair Logo" className="footer-logo-img" />
                    </div>
 
                     <div className="footer-contact-svg-container">
-                        <h3 className="footer-title"> İletişim </h3>
+                        <h3 className="footer-title"> Contact </h3>
                         {
                             // contactCards.map((info) => (
                             //     <div key={info.id} className="footer-wrapper">
@@ -30,7 +30,12 @@ const Footer = () => {
                         }
                     </div>
                     <div className="footer-menu-container">
-                     
+                        <h3 className="footer-title"> Menü </h3>
+                        <Link className="footer-link" to="/"> <p className="footer-p"> Homepage </p> </Link>
+                        <Link className="footer-link" to="/aboutus"> <p className="footer-p"> About Us  </p></Link>
+                        <Link className="footer-link" to="/events"> <p className="footer-p"> Events  </p></Link>
+                        <Link className="footer-link" to="/blog"> <p className="footer-p"> Blog  </p></Link>
+                        <Link className="footer-link" to="/contact"> <p className="footer-p"> Contact  </p></Link>
                     </div>
                     <div className="footer-menu-container footer-middle">
                         <h3 className="footer-title"> Bağlantılar </h3>
