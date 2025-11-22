@@ -6,6 +6,7 @@ import WhoAreWe from "../WhoAreWe/WhoAreWe";
 import Blog from "../Blog/Blog";
 import PairTimeline from "../PairTimeline/PairTimeline";
 import Subscribe from "../Subscribe/Subscribe";
+import EventsHomepage from "../EventsHomepage/EventsHomepage";
 
 const Header = () => {
 
@@ -26,11 +27,11 @@ const Header = () => {
                 </div>
             </div>
             <PairTimeline />
-             <Blog />
+            <Blog />
             <WhoAreWe />
+            <EventsHomepage />
+
             <Subscribe />
-
-
         </div>
     )
 
