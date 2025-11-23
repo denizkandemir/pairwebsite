@@ -6,38 +6,47 @@
 
 /* Tüm sayfa için profesyonel gradient arka plan */
 body {
-  background: linear-gradient(225deg, 
-    #000814 0%,        /* Derin lacivert başlangıç */
-    #001a35 15%,       /* Yumuşak geçiş */
-    #002650 30%,       /* Orta lacivert */
-    #003366 45%,       /* Balanced mavi */
-    #002a52 60%,       /* Geri dönen lacivert */
-    #001d3d 75%,       /* Familiar ton */
-    #001225 90%,       /* Soft karanlık */
-    #000814 100%       /* Tutarlı bitiş */
-  );
+  background: linear-gradient(225deg,
+      #000814 0%,
+      /* Derin lacivert başlangıç */
+      #001a35 15%,
+      /* Yumuşak geçiş */
+      #002650 30%,
+      /* Orta lacivert */
+      #003366 45%,
+      /* Balanced mavi */
+      #002a52 60%,
+      /* Geri dönen lacivert */
+      #001d3d 75%,
+      /* Familiar ton */
+      #001225 90%,
+      /* Soft karanlık */
+      #000814 100%
+      /* Tutarlı bitiş */
+    );
   min-height: 100vh;
-  background-attachment: fixed; /* Scroll'da sabit kalır */
+  background-attachment: fixed;
+  /* Scroll'da sabit kalır */
+  overflow-x: hidden;
 }
 
 .fade-in {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-  }
-  
-  .fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .fade-in-left {
   opacity: 0;
-    transform: translateX(-60%);
-    transition: opacity 3s ease-in-out, transform 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    overflow: hidden;
-
-}  
+  transform: translateX(-60%);
+  transition: opacity 3s ease-in-out, transform 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
 
 .fade-in-left.show {
   opacity: 1;
@@ -46,15 +55,14 @@ body {
 }
 
 .fade-in-right {
-    opacity: 0;
-    transform: translateX(60%);
-    transition: opacity 3s ease-in-out, transform 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    overflow: hidden;
-  }
-  
-  .fade-in-right.show {
-    opacity: 1;
-    overflow: visible;
-    transform: translateX(0);
-  }
-  
+  opacity: 0;
+  transform: translateX(60%);
+  transition: opacity 3s ease-in-out, transform 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.fade-in-right.show {
+  opacity: 1;
+  overflow: visible;
+  transform: translateX(0);
+}
