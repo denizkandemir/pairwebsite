@@ -94,6 +94,7 @@ const Footer = () => {
                         <h3 className="footer-title"> Our University </h3>
                         <a className="footer-link" target="blank" href="https://en.uw.edu.pl"> <p className="footer-p"> University Of Warsaw </p> </a>
                         <a className="footer-link" target="blank" href="https://psych.uw.edu.pl"> <p className="footer-p"> Faculty Of Psychology </p></a>
+                        <a className="footer-link" target="blank" href="https://wisp.uw.edu.pl"> <p className="footer-p"> WISP </p></a>
                     </div>
                 </div>
             </div>
