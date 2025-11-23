@@ -7,13 +7,19 @@ import Blog from "../Blog/Blog";
 import PairTimeline from "../PairTimeline/PairTimeline";
 import Subscribe from "../Subscribe/Subscribe";
 import EventsHomepage from "../EventsHomepage/EventsHomepage";
+import { useState } from "react";
+import Sidebar from "../Sidebar/Sidebar";
 
 const Header = () => {
 
+    const [isSidebarOpen, setSidebarOpen] = useState(false);    
+
+   
+
     return (
         <div className="header-navbar-container">
-
-            <Navbar />
+            <Sidebar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+            <Navbar setSidebarOpen={setSidebarOpen} />
             <div className="header-container">
                 <div className="neon-shape-1"></div>
                 <div className="neon-shape-2"></div>

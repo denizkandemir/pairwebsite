@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import schoolLogo from "/schoolLogoWhite.png";
 import pairLogo from "/pairLogo.png";
 
-const Navbar = () => {
+const Navbar = ({ setSidebarOpen }) => {
+
+    const openSidebar = () => {
+        setSidebarOpen(true);
+    }
+
     return (
         <div className="navbar-container">
             <div className="navbar-content-container">
@@ -37,6 +42,14 @@ const Navbar = () => {
                             <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24V15.564H7.078V12.073H10.125V9.405C10.125 6.348 11.917 4.688 14.658 4.688C15.97 4.688 17.344 4.922 17.344 4.922V7.875H15.83C14.34 7.875 13.875 8.8 13.875 9.75V12.073H17.203L16.671 15.564H13.875V24C19.612 23.094 24 18.1 24 12.073Z" fill="white" />
                         </svg>
                     </a>
+
+                    <div onClick={openSidebar} className="navbar-sidebar-icon-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 24 24" fill="none" stroke="#ffffff">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                            <g id="SVGRepo_iconCarrier"> <path d="M20 7L4 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" /> <path d="M20 12L4 12" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" /> <path d="M20 17L4 17" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" /> </g>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
