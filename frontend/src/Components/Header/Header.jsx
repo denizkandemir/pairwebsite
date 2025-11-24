@@ -12,13 +12,23 @@ import Sidebar from "../Sidebar/Sidebar";
 
 const Header = () => {
 
-    const [isSidebarOpen, setSidebarOpen] = useState(false);    
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-   
+    const root = document.querySelector("#root");
+
+    if (isSidebarOpen) {
+        root.classList.add("no-scroll");
+        document.body.classList.add("no-scroll");
+    } else {
+        root.classList.remove("no-scroll");
+        document.body.classList.remove("no-scroll");
+    }
 
     return (
         <div className="header-navbar-container">
-            <Sidebar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+            <div className={isSidebarOpen ? "open-sidebar" : "close-sidebar"}>
+                <Sidebar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
+            </div>
             <Navbar setSidebarOpen={setSidebarOpen} />
             <div className="header-container">
                 <div className="neon-shape-1"></div>
@@ -32,11 +42,11 @@ const Header = () => {
                     <img src={headerImg} alt="" className="header-img" />
                 </div>
             </div>
-            <PairTimeline />
+            {/* <PairTimeline />
             <Blog />
             <WhoAreWe />
             <EventsHomepage />
-            <Subscribe />
+            <Subscribe /> */}
             {/* <div className="content-end"></div> */}
         </div>
     )
