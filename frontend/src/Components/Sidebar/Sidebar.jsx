@@ -17,11 +17,6 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
 
             <div className="sidebar-content-container">
 
-                <div className="sidebar-logo-container">
-                    <img src={pairLogo} alt="" className="logo-img pair-logo-sidebar" />
-                    <img src={schoolLogo} alt="" className="logo-img school-logo-sidebar" />
-                </div>
-
                 <div className="sidebar-center-container">
                     <Link className="sidebar-link" to="/">Blog</Link>
                     <Link className="sidebar-link" to="/about">Newsletter</Link>

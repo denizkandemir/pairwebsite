@@ -42,16 +42,13 @@ const Header = () => {
                     <img src={headerImg} alt="" className="header-img" />
                 </div>
             </div>
-            {/* <PairTimeline />
+            <PairTimeline />
             <Blog />
             <WhoAreWe />
             <EventsHomepage />
-            <Subscribe /> */}
-            {/* <div className="content-end"></div> */}
+            <Subscribe />
         </div>
     )
-
-
 };
 
 export default Header;

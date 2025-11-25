@@ -38,11 +38,21 @@
         justify-content: space-between;
         gap: 50px;
 
+        @media screen and (max-width:1200px) {
+            flex-wrap: wrap;
+            gap: 100px;
+            justify-content: center;
+        }
+
+        @media screen and (max-width:600px) {
+            gap: 50px;
+        }
+
         .footer-logo-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            
+
             .footer-logo-img {
                 max-width: 300px;
                 height: 110px;
@@ -67,19 +77,19 @@
         align-items: flex-start;
         gap: 15px;
         margin-bottom: 7px;
-    
+
         // .footer-contact-p {
         //     transform: translateY(2px);
         // }
     }
 
-      .footer-title {
-            font-size: 25px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 5px;
-            text-shadow: 0 0 3px rgba(255, 249, 239, 0.2), 0 0 16px rgba(255, 249, 239, 0.1);
-        }
+    .footer-title {
+        font-size: 25px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 5px;
+        text-shadow: 0 0 3px rgba(255, 249, 239, 0.2), 0 0 16px rgba(255, 249, 239, 0.1);
+    }
 
     .footer-menu-container {
         display: flex;
@@ -88,28 +98,34 @@
         gap: 10px;
         text-align: left;
 
-      
+        @media screen and (max-width:1200px) {
+            width: 200px;
+        }
 
-         .footer-link {
-                text-decoration: none;
-                color: #ffffff;
-                
-                transition: color 0.3s ease;
 
-                &:hover {
-                    color: rgba(100, 200, 255, 0.8);
-                }
+        .footer-link {
+            text-decoration: none;
+            color: #ffffff;
+
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: rgba(100, 200, 255, 0.8);
             }
+        }
 
-            .footer-p {
-                text-decoration: none;
-                color: rgba(255,255,255,0.89);
-                transition: color 0.3s ease;
-                font-size: 20px;
+        .footer-p {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.89);
+            transition: color 0.3s ease;
+            font-size: 20px;
 
-                &:hover {
-                    color: rgba(100, 200, 255, 0.8);
-                }
+            max-width: 200px;
+            line-height: 25px;
+
+            &:hover {
+                color: rgba(100, 200, 255, 0.8);
             }
+        }
     }
 }
