@@ -8,9 +8,6 @@
   padding-bottom: 130px;
 }
 
-
-
-
 .subscribe-content-container {
   display: flex;
   gap: 50px;
@@ -21,24 +18,34 @@
   max-width: 1180px;
   border-radius: 30px;
   position: relative;
+    
 
   /* Subtle glassy effect */
   // background: rgba(255, 255, 255, 0.04);
 
 
-//parlak black
+  //parlak black
   // background: linear-gradient(335deg, #0f0f23 0%, #000000 50%, #0a0a1a 100%);
- 
-  
+
+
 
   //laccivert siyah karışımı
   background: linear-gradient(200deg, rgba(2, 47, 87, 0.95) 0%, rgba(0, 8, 20, 0.98) 100%);
 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(100, 200, 255, 0.4);
-    box-shadow: 0 0 30px rgba(100, 200, 255, 0.4), 0 0 60px rgba(100, 200, 255, 0.2), inset 0 1px 3px rgba(255, 255, 255, 0.15);
- 
+  border: 1px solid rgba(100, 200, 255, 0.4);
+  box-shadow: 0 0 30px rgba(100, 200, 255, 0.4), 0 0 60px rgba(100, 200, 255, 0.2), inset 0 1px 3px rgba(255, 255, 255, 0.15);
+
+
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
 
   /* Very subtle gradient overlay */
   &::before {
@@ -69,11 +76,20 @@
     max-height: 220px;
     object-fit: contain;
     filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
+
+      @media (max-width: 768px) {
+      margin-top: 10px;
+    }
   }
 
   .plane-img {
     transform: rotate(4deg) translateY(-23px);
     animation: floatPlane 7s ease-in-out infinite;
+
+    @media (max-width: 768px) {
+      animation: responsiveFloatPlane 7s ease-in-out infinite;
+      margin-top: 10px;
+    }
   }
 }
 
@@ -86,6 +102,31 @@
 
   50% {
     transform: rotate(9deg) translateY(0px) translateX(-16px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translateX(-100px) translateY(300px);
+  }
+  50% {
+    transform: rotate(720deg) translateX(100px) translateY(-300px);
+  }
+  100% {
+        transform: rotate(0deg) translateX(-100px) translateY(300px);
+
+  }
+}
+
+@keyframes responsiveFloatPlane {
+
+  0%,
+  100% {
+    transform: rotate(3deg) translateY(-25px) translateX(0);
+  }
+
+  50% {
+    transform: rotate(9deg) translateY(-5px) translateX(-16px);
   }
 }
 
@@ -113,6 +154,7 @@
   color: #fff9ef;
   line-height: 1.5;
   font-weight: 400;
+  
 }
 
 /* MODERN FORM STYLING */
@@ -120,6 +162,7 @@
   display: flex;
   gap: 15px;
   align-items: center;
+  
 }
 
 .subscribe-form input {
@@ -238,15 +281,8 @@
     margin-bottom: 30px;
   }
 
-  .subscribe-form {
-    flex-direction: column;
-    gap: 12px;
-  }
+ 
 
-  .subscribe-form button {
-    width: 100%;
-    padding: 20px 32px;
-  }
 
   .subscribe-img-container .subscribe-img {
     max-height: 180px;
@@ -258,6 +294,12 @@
     padding: 50px 25px;
     margin: 0 10px;
   }
+
+   .subscribe-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+
 
   .subscribe-content h2 {
     font-size: 30px;
@@ -271,5 +313,6 @@
   .subscribe-form button {
     padding: 16px 20px;
     font-size: 15px;
+    width: 100%;
   }
 }
