@@ -44,10 +44,12 @@
         position: relative;
         z-index: 2;
 
-        @media (max-width: 768px) {
-            grid-template-columns: 1fr;
+        @media (max-width: 1000px) {
+            flex-wrap: wrap;
             gap: 30px;
-            padding: 0 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
         }
 
         .who-card-img-container {
@@ -72,6 +74,11 @@
             transition: all 0.4s ease;
             border: 1px solid rgba(79, 195, 247, 0.2);
             overflow: hidden;
+
+            @media (max-width: 750px) {
+                width: 100%;
+                max-width: 100%;
+            }
 
             // Neon border effect
             &::before {

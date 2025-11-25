@@ -8,6 +8,10 @@
     display: flex;
     justify-content: center;
 
+    @media (max-width: 700px) {
+        padding: 30px 30px;
+    }
+
     // Subtle background effects for smooth transition
     &::before {
         content: '';
@@ -43,15 +47,28 @@
         position: relative;
         z-index: 2;
 
+
         @media (max-width: 968px) {
             flex-direction: column;
-            text-align: center;
             gap: 40px;
+            align-items: center;
+            justify-content: center;
         }
+
+
+        @media (max-width: 700px) {
+            gap: 10px;
+        }
+
 
         .blog-text-container {
             flex: 1;
             max-width: 600px;
+
+
+            @media (max-width: 700px) {
+                padding: 0 20px;
+            }
 
             .blog-title {
                 font-size: 45px;
@@ -64,6 +81,11 @@
                 @media (max-width: 768px) {
                     font-size: 2.2rem;
                 }
+
+                @media (max-width: 600px) {
+                    font-size: 33px;
+                    margin-bottom: 17px;
+                }
             }
 
             .blog-description {
@@ -75,6 +97,11 @@
 
                 @media (max-width: 768px) {
                     font-size: 1.1rem;
+                }
+
+                @media (max-width: 600px) {
+
+                    margin-bottom: 17px;
                 }
             }
         }
@@ -91,6 +118,12 @@
                 animation: floatImg 7s ease-in-out infinite;
                 filter: drop-shadow(0 4px 20px rgba(215, 201, 247, 0.2));
                 transition: all 0.4s ease;
+
+                @media (max-width: 800px) {
+                    width: 100%;
+                    animation: responsiveFloatImg 7s ease-in-out infinite;
+
+                }
             }
 
             // Subtle tech border effect
@@ -147,6 +180,12 @@
             text-transform: none;
             letter-spacing: 0.5px;
 
+
+            @media (max-width: 600px) {
+                padding: 11px 27px;
+                font-size: 15px;
+            }
+
             &::before {
                 content: '';
                 position: absolute;
@@ -176,6 +215,17 @@
     }
 }
 
+@keyframes responsiveFloatImg {
+
+    0%,
+    100% {
+        transform: translateY(-0px) translateX(0px)
+    }
+
+    50% {
+        transform: translateY(-12px) translateX(5px);
+    }
+}
 
 @keyframes floatImg {
 
