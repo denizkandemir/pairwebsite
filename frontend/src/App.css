@@ -45,27 +45,25 @@ body {
   opacity: 0;
   transform: translateX(-60%);
   transition: opacity 3s ease-in-out, transform 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow: hidden;
 }
 
 .fade-in-left.show {
   opacity: 1;
   transform: translateX(0);
-  overflow: visible;
 }
 
 .fade-in-right {
   opacity: 0;
   transform: translateX(60%);
   transition: opacity 3s ease-in-out, transform 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  overflow: hidden;
 }
 
 .fade-in-right.show {
   opacity: 1;
-  overflow: visible;
   transform: translateX(0);
 }
+
+
 
 .no-scroll {
   overflow: hidden;

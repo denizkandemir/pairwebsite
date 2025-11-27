@@ -30,8 +30,8 @@ const EventsHomepage = () => {
                     </div>
                 </div>
 
-                <div className="events-img-container fade-in-right">
-                    <img src={eventBrain} alt="" className="event-img-collage " />
+                <div className="events-img-container">
+                    <img src={eventBrain} alt="" className="event-img-collage fade-in" />
                 </div>
             </div>
         </div>

@@ -13,26 +13,24 @@
   opacity: 0;
     transform: translateX(-80%);
     transition: opacity 4s ease-in-out, transform 3.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    overflow: hidden;
 
 }  
 
 .fade-in-left.show {
   opacity: 1;
   transform: translateX(0);
-  overflow: visible;
 }
 
 .fade-in-right {
     opacity: 0;
     transform: translateX(80%);
     transition: opacity 4s ease-in-out, transform 3.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    overflow: hidden;
   }
   
   .fade-in-right.show {
     opacity: 1;
-    overflow: visible;
     transform: translateX(0);
   }
+
+
   
