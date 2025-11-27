@@ -2,9 +2,19 @@ import "./Subscribe.scss";
 import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
 import subscribeMail from "/mail2.png";
 import subscribePlane from "/plane3.png";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Subscribe = () => {
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 1000);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useFadeInOnScroll();
 
@@ -12,7 +22,7 @@ const Subscribe = () => {
         <div className="subscribe-container">
             <div className="subscribe-content-container">
 
-                <div className="subscribe-img-container fade-in-left">
+                <div className={`subscribe-img-container ${isSmallScreen ? "fade-in" : "fade-in-left"}`}>
                    <img src={subscribeMail} alt="" className="subscribe-img" />
                 </div>
 
@@ -27,12 +37,9 @@ const Subscribe = () => {
                 </div>
 
                 
-                <div className="subscribe-img-container fade-in-right">
+                <div className={`subscribe-img-container ${isSmallScreen ? "fade-in" : "fade-in-right"}`}>
                    <img src={subscribePlane} alt="" className="subscribe-img plane-img" />
                 </div>
-
-           
-
             </div>
       
         </div>

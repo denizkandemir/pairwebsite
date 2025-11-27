@@ -11,7 +11,7 @@
   
 .fade-in-left {
   opacity: 0;
-    transform: translateX(-80%);
+    transform: translateX(-40%);
     transition: opacity 4s ease-in-out, transform 3.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 }  
@@ -23,7 +23,7 @@
 
 .fade-in-right {
     opacity: 0;
-    transform: translateX(80%);
+    transform: translateX(40%);
     transition: opacity 4s ease-in-out, transform 3.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
   

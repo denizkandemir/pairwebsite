@@ -3,10 +3,22 @@ import React, { use } from "react";
 import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
 import { Link } from "react-router-dom";
 import eventBrain from "/eventBrain6.png";
+import { useState, useEffect } from "react";
 
 const EventsHomepage = () => {
 
     useFadeInOnScroll();
+
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 1000);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     return (
         <div className="events-homepage-container">
@@ -31,7 +43,7 @@ const EventsHomepage = () => {
                 </div>
 
                 <div className="events-img-container">
-                    <img src={eventBrain} alt="" className="event-img-collage fade-in" />
+                    <img src={eventBrain} alt="" className={`event-img-collage ${isSmallScreen ? "fade-in" : "fade-in-right"}`} />
                 </div>
             </div>
         </div>
