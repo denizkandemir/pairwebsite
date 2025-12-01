@@ -1,0 +1,28 @@
+@use '../../styles/styles.scss' as styles;
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    padding-top: 50px;
+
+    .contact-content-container {
+        max-width: 1250px;
+        padding: 0 0px;
+
+        .contact-cards-container {
+            display: flex;
+            gap: 30px;
+            padding: 0 40px;
+            justify-content: space-between;
+           
+            .contact-card {
+               box-shadow: styles.$primaryBoxShadow;
+               padding: 40px;
+               border-radius: 10px;
+            }
+        }
+
+    }
+}
+

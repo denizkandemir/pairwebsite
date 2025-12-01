@@ -3,6 +3,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from './Layout';
 import HomePage from './Pages/HomePage';
+import ContactPage from './Pages/ContactPage';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
+            <Route path="/contact" element={<ContactPage/>} />
 
             {/* <Route path="/events">
               <Route path=":path/:routeId" element={<EventInfoPage />} />
