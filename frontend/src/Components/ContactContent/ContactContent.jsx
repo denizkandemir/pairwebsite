@@ -29,7 +29,7 @@ const ContactContent = () => {
                             ))
                         }
                     </div>
-                    <Subscribe title={"Never Loose Contact"} />
+                    <Subscribe title={"Get in Touch"} />
                 </div>
             </div>
         </>
