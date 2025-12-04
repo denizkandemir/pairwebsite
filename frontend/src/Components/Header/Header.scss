@@ -141,7 +141,10 @@
         .header-img {
             flex: 1;
             max-width: 600px;
+            width: 100%;
             height: auto;
+            display: block;
+            object-fit: contain;
             border-radius: 20px;
             position: relative;
             margin-bottom: 40px;
@@ -199,6 +202,13 @@
             @media (max-width: 768px) {
                 max-width: 100%;
                 margin-top: 40px;
+            }
+        }
+
+        // Disable hover scale on touch devices to avoid layout glitches (iOS Safari)
+        @media (hover: none) {
+            .header-img:hover {
+                transform: none;
             }
         }
 

@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom"
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import ScrollToTop from "./hooks/ScrollToTop";
+import Banner from "./Components/Banner/Banner";
 
 export function Layout() {
 

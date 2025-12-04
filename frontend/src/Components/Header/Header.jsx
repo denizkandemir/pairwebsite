@@ -46,7 +46,7 @@ const Header = () => {
             <Blog />
             <WhoAreWe />
             <EventsHomepage />
-            <Subscribe />
+            <Subscribe title={"Stay in the Loop"}/>
         </div>
     )
 };

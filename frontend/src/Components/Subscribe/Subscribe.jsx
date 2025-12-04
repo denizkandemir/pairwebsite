@@ -4,7 +4,7 @@ import subscribeMail from "/mail2.png";
 import subscribePlane from "/plane3.png";
 import React, { useState, useEffect } from "react";
 
-const Subscribe = () => {
+const Subscribe = ({title}) => {
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const Subscribe = () => {
                 </div>
 
                 <div className="subscribe-content">
-                    <h2 className="subscribe-title">Stay in the Loop</h2>
+                    <h2 className="subscribe-title">{title}</h2>
                     <p className="subscribe-text">Psychology & AI research updates delivered monthly.</p>
 
                     <form className="subscribe-form">

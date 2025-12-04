@@ -14,8 +14,12 @@ const Navbar = ({ setSidebarOpen }) => {
         <div className="navbar-container">
             <div className="navbar-content-container">
                 <div className="logo-container">
-                    <img src={pairLogo} alt="" className="logo-img pair-logo" />
-                    <img src={schoolLogo} alt="" className="logo-img school-logo" />
+                    <Link to={"/"}>
+                        <img src={pairLogo} alt="" className="logo-img pair-logo" />
+                    </Link>
+                    <Link to={"/"}>
+                        <img src={schoolLogo} alt="" className="logo-img school-logo" />
+                    </Link>
                 </div>
                 <div className="navbar-center-container">
                     <Link className="navbar-link" to="/">Blog</Link>
