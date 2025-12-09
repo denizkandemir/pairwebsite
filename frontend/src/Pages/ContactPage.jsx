@@ -1,11 +1,25 @@
 import ContactContent from "/src/Components/ContactContent/ContactContent.jsx";
 import Banner from "../Components/Banner/Banner";
-import bannerBackground from "/bannerBackground2.png";
+import contactBannerImg from "/contactBanner1.png";
 
 const ContactPage = () => {
+
+
+    const contactTexts = [
+        {
+            id: 1,
+            text: "We would love to hear from you! Whether you’re interested in our work, have questions about our research, or want to explore potential collaborations, our team is here to help!"
+        },
+
+        {
+            id: 2,
+            text: "Feel free to reach out with your questions, feedback, partnership proposals, or even new project ideas you’d like to develop with us.",
+        }
+    ]
+
     return (
         <>
-         <Banner title="Contact Us" backgroundImage={bannerBackground} text="We would love to hear from you! Reach out to us with any questions, feedback, or collaboration ideas."  />
+         <Banner title="Contact Us" backgroundImage={contactBannerImg} texts={contactTexts} />
          <div className="banner-transition"></div>
          <ContactContent/>
         </>

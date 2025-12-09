@@ -1,6 +1,6 @@
 import "./Banner.scss";
 
-const Banner = ({ title, backgroundImage, text }) => {
+const Banner = ({ title, backgroundImage, texts }) => {
     return (
         <div className="banner-container">
             <div className="banner-content-container">
@@ -8,9 +8,13 @@ const Banner = ({ title, backgroundImage, text }) => {
                     <h3 className="banner-title">
                         {title}
                     </h3>
-                    <p className="banner-text">
-                        {text}
-                    </p>
+                    {
+                        texts.map((text) => (
+                            <p className="banner-text" key={text.id}>
+                                {text.text}
+                            </p>
+                        ))
+                    }
                 </div>
                 <div className="banner-background-img-container">
                     <img src={backgroundImage} alt="" className="banner-background-img" />

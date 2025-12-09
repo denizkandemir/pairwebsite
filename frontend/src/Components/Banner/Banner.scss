@@ -1,8 +1,8 @@
-
 .banner-container {
     display: flex;
     justify-content: center;
-    padding: 150px 0;
+    padding: 50px 0;
+    padding-bottom: 0;
     align-items: center;
     position: relative;
 
@@ -10,19 +10,18 @@
         display: flex;
 
         justify-content: center;
-        text-align: center;
         max-width: 1250px;
         padding: 0 40px;
+        gap: 50px;
 
-        .banner-text-container  {
+        .banner-text-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+            gap: 20px;
+            transform: translateY(50px);
 
             .banner-title {
-                font-size: 36px;
+                font-size: 75px;
                 font-weight: 700;
                 color: #ffffff;
             }
@@ -30,27 +29,28 @@
             .banner-text {
                 font-size: 20px;
                 font-weight: 600;
-                color: rgba(255,255,255,0.8);
-                max-width: 600px;
+                max-width: 500px;
+                font-size: 1.2rem;
+                color: rgba(255, 255, 255, 0.85);
+                line-height: 1.4;
+                margin-bottom: 20px;
             }
         }
 
-          .banner-background-img-container {
-           
+        .banner-background-img-container {
+
 
             .banner-background-img {
-                top: 0;
-                bottom: 0;
-                z-index: -10;
+
                 object-fit: cover;
                 height: 100%;
-                width: 100%;
+                max-width: 500px;
 
             }
         }
-       
-    }
-
-   
 
     }
+
+
+
+}
