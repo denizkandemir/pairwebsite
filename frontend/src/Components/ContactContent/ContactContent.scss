@@ -15,14 +15,21 @@
             gap: 30px;
             padding: 0 40px;
             justify-content: space-between;
-           
+
             .contact-card {
-               box-shadow: styles.$primaryBoxShadow;
-               padding: 40px;
-               border-radius: 10px;
+                box-shadow: styles.$primaryBoxShadow;
+                padding: 40px;
+                border-radius: 10px;
+
+                .contact-card-link {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                }
             }
         }
 
     }
 }
-

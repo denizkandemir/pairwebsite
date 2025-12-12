@@ -19,7 +19,7 @@ const ContactPage = () => {
 
     return (
         <>
-         <Banner title="Contact Us" backgroundImage={contactBannerImg} texts={contactTexts} />
+         <Banner title="Contact Us" backgroundImage={contactBannerImg} texts={contactTexts} imgClass={"banner-img-float"} />
          <div className="banner-transition"></div>
          <ContactContent/>
         </>

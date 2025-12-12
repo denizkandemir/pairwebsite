@@ -12,17 +12,17 @@ const ContactContent = () => {
         <>
             <div className="contact-container">
                 <div className="contact-content-container">
-                    <div className="contact-title-container">
-                        <h3 className="contact-title"> Contact Us! </h3>
-                    </div>
+
                     <div className="contact-cards-container">
                         {
                             contactInfo.slice().reverse().map((info) => (
                                 <div key={info.id} className="contact-card-wrapper">
                                     <div className="contact-card">
                                         <Link to={info.link}>
-                                            {info.svg}
-                                            <h4 className="contact-card-title"> {info.method} </h4>
+                                            <div className="contact-card-link">
+                                                {info.svg }
+                                                <h4 className="contact-card-title"> {info.info} </h4>
+                                            </div>
                                         </Link>
                                     </div>
                                 </div>
