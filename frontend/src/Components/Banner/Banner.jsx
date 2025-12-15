@@ -1,22 +1,29 @@
 import "./Banner.scss";
 
-const Banner = ({title,backgroundImage,text}) => {
+const Banner = ({ title, backgroundImage, texts , buttonText, imgClass }) => {
     return (
         <div className="banner-container">
             <div className="banner-content-container">
-               <div className="banner-text-container">
-                   <h3 className="banner-title"> 
-                      {title}
-                   </h3>
-                   <p className="banner-text">
-                     {text}
-                   </p>
-               </div>
+                <div className="banner-text-container">
+                    <h3 className="banner-title">
+                        {title}
+                    </h3>
+                    {
+                        texts.map((text) => (
+                            <p className="banner-text" key={text.id}>
+                                {text.text}
+                            </p>
+                        ))
+                    }
+                    {/* <button className="banner-button">{buttonText}</button> */}
+                    <div className="banner-line"></div>
+                </div>
+                <div className="banner-background-img-container">
+                    <img src={backgroundImage} alt="" className={`banner-background-img ${imgClass}`} />
+                </div>
             </div>
-            <div className="banner-background-img-container">
-                <img src={backgroundImage} alt="" className="banner-background-img" />
-            </div>
-        </div>  
+
+        </div>
     )
 }
 

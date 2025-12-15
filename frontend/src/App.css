@@ -24,7 +24,10 @@ body {
       #000814 100%
       /* Tutarlı bitiş */
     );
+
+
   min-height: 100vh;
+  
   background-attachment: fixed;
   /* Scroll'da sabit kalır */
   overflow-x: hidden;
