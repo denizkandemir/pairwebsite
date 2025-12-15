@@ -12,15 +12,15 @@ const ContactContent = () => {
         <>
             <div className="contact-container">
                 <div className="contact-content-container">
-
                     <div className="contact-cards-container">
                         {
-                            contactInfo.slice().reverse().map((info) => (
+                            contactInfo.map((info) => (
                                 <div key={info.id} className="contact-card-wrapper">
                                     <div className="contact-card">
-                                        <Link to={info.link}>
+                                        <Link className="contact-card-link" to={info.link}>
                                             <div className="contact-card-link">
-                                                {info.svg }
+                                                <img src={info.img} alt="" className="contact-card-img" />
+                                                <h4 className="contact-card-title main-title">  {info.title} Address  </h4>
                                                 <h4 className="contact-card-title"> {info.info} </h4>
                                             </div>
                                         </Link>
@@ -29,7 +29,10 @@ const ContactContent = () => {
                             ))
                         }
                     </div>
-                    <Subscribe title={"Get in Touch"} />
+                    <div className="contact-subscribe-container">
+                        <Subscribe title={"Get in Touch"} />
+
+                    </div>
                 </div>
             </div>
         </>

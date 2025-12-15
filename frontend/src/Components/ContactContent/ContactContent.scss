@@ -5,31 +5,98 @@
     justify-content: center;
     padding: 60px 0;
     padding-top: 80px;
+    padding-bottom: 0px;
 
     .contact-content-container {
         max-width: 1250px;
         padding: 0 0px;
 
+
         .contact-cards-container {
             display: flex;
             gap: 30px;
             padding: 0 40px;
+            margin-top: 20px;
+            margin-bottom: 40px;
             justify-content: space-between;
 
+            @media (max-width: 1100px) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .contact-card-wrapper {
+                @media screen and (max-width:600px) {
+                    width: 100%;
+                }
+            }
+
+
             .contact-card {
-                box-shadow: styles.$primaryBoxShadow;
-                padding: 40px;
+
+                padding-top: 40px;
+                padding-bottom: 40px;
+                box-shadow: #0006 0 2px 4px, #0000004d 0 7px 13px -3px, #0003 0 -3px inset;
                 border-radius: 10px;
+                width: 245px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: transform .3s ease, box-shadow .3s ease;
+                border-radius: 10px;
+
+                background: rgba(255, 255, 255, 0.04);
+                backdrop-filter: blur(10px);
+
+                @media screen and (max-width:600px) {
+                    width: 100%;
+                }
+
 
                 .contact-card-link {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    gap: 10px;
+                    text-decoration: none;
+                    color: white;
+
+
+
+                    .contact-card-title {
+                        font-size: 21px;
+                        font-weight: 600;
+                        text-decoration: none;
+                        color: rgba(255, 255, 255, 0.85);
+
+                    }
+
+                    .main-title {
+                        font-size: 20px;
+                        margin-top: 25px;
+                        word-spacing: 3px;
+                        margin-bottom: 10px;
+                        font-weight: 700;
+                        text-align: center;
+                        width: 100%;
+                        color: rgba(255, 255, 255, 0.95);
+                    }
                 }
+
+                .contact-card-img {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: contain;
+                }
+            }
+
+            .contact-card:hover {
+                transform: scale(1.1);
+                box-shadow: 0 10px 20px #0003;
             }
         }
 
     }
+
 }
