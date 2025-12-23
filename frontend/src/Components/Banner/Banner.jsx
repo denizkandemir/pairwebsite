@@ -1,11 +1,11 @@
 import "./Banner.scss";
 
-const Banner = ({ title, backgroundImage, texts , buttonText, imgClass }) => {
+const Banner = ({ title,titleClass, backgroundImage, texts , buttonText, imgClass }) => {
     return (
         <div className="banner-container">
             <div className="banner-content-container">
                 <div className="banner-text-container">
-                    <h3 className="banner-title">
+                    <h3 className={`banner-title ${titleClass}`}>
                         {title}
                     </h3>
                     {
@@ -22,7 +22,6 @@ const Banner = ({ title, backgroundImage, texts , buttonText, imgClass }) => {
                     <img src={backgroundImage} alt="" className={`banner-background-img ${imgClass}`} />
                 </div>
             </div>
-
         </div>
     )
 }

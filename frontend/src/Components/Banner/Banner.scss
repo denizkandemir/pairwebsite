@@ -38,6 +38,10 @@
                 margin-bottom: 5px;
             }
 
+            .events-banner-title {
+                font-size: 50px;
+            }
+
             .banner-text {
                 font-size: 21.5px;
                 line-height: 29px;
@@ -77,6 +81,11 @@
             .banner-img-float {
              animation: floatPlane2 ease-in-out infinite 10s; 
             }
+
+            .events-page-img {
+                transform: translateY(-30px);  
+             }
+
         }
 
     }
