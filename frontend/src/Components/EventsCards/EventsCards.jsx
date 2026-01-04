@@ -1,4 +1,4 @@
-import "./eventsCards.scss";
+import "./EventsCards.scss";
 import eventsCardImg from "/eventBrain.png";
 import React, { use } from "react";
 import { Link } from "react-router-dom";
