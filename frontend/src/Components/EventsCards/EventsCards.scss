@@ -1,5 +1,89 @@
 @use '../../styles/styles.scss' as vars;
 
+.events-cards-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 20px;
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+
+    @media(max-width:1370px) {
+        padding: 30px 30px 20px;
+    }
+
+    @media(max-width:550px) {
+        padding: 20px 30px 20px;
+    }
+}
+
+.events-cards-buttons-wrapper {
+    display: flex;
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 6px;
+    border: 2px solid rgba(79, 195, 247, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(135deg, #060f88 0%, #2684c7 100%);
+        border-radius: 12px 0 0 12px;
+        transition: transform 0.3s ease, border-radius 0.3s ease;
+        box-shadow: 0 4px 15px rgba(38, 132, 199, 0.5);
+        z-index: 0;
+    }
+
+    &.past-active::before {
+        transform: translateX(100%);
+        border-radius: 0 12px 12px 0;
+    }
+}
+
+.events-cards-active-btn,
+.events-cards-inactive-btn {
+    padding: 14px 45px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    border: none;
+    outline: none;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+
+    @media(max-width:550px) {
+        padding: 12px 30px;
+        font-size: 15px;
+    }
+
+    @media(max-width:420px) {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+.events-cards-active-btn {
+    color: white;
+}
+
+.events-cards-inactive-btn {
+    color: rgba(255, 255, 255, 0.7);
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.9);
+    }
+}
 
 .events-cards-container {
     display: flex;
@@ -19,7 +103,27 @@
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
+        transition: opacity 0.3s ease-in-out;
 
+        &.fade-in-active {
+            opacity: 1;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        &.fade-out {
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .events-cards-title-container {
