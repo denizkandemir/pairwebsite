@@ -84,7 +84,13 @@
 
             .events-page-img {
                 transform: translateY(-30px);  
+
+                  @media  screen and (max-width:1100px) {
+                margin-top: 45px;
              }
+             }
+
+           
 
         }
 
