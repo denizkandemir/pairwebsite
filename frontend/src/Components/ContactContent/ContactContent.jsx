@@ -31,7 +31,6 @@ const ContactContent = () => {
                     </div>
                     <div className="contact-subscribe-container">
                         <Subscribe title={"Get in Touch"} />
-
                     </div>
                 </div>
             </div>

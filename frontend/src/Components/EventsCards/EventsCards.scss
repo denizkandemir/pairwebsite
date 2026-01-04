@@ -1,0 +1,376 @@
+@use '../../styles/styles.scss' as vars;
+
+
+.events-cards-container {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+
+
+    @media(max-width:1370px) {
+        padding: 45px 30px;
+        padding-bottom: 60px;
+    }
+
+    .events-cards-content-container {
+        max-width: 1200px;
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+
+    }
+
+    .events-cards-title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .events-cards-p {
+        color: rgba(0, 0, 0, 0.8);
+        font-size: 20px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 45px;
+        font-weight: 500;
+        max-width: 900px;
+        word-spacing: 0.8px;
+
+        @media only screen and (max-width: 550px) {
+            text-align: left;
+            font-size: 19px;
+            margin: 15px 0;
+            margin-bottom: 25px;
+        }
+    }
+
+    .events-cards-title {
+        font-size: 45px;
+        line-height: 52px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .events-cards-data-container {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 10;
+
+        @media only screen and (max-width: 840px) {
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 420px) {
+            grid-template-columns: repeat(auto-fill, 320px);
+        }
+    }
+}
+
+.events-info-card-wrapper {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 10px;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    max-width: 350px;
+    position: relative;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(79, 195, 247, 0.2);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+
+    @media only screen and (max-width: 420px) {
+        width: 320px;
+    }
+
+    .events-info-content-container {
+        padding: 20px 15px;
+    }
+
+    .events-info-img-container {
+        width: 100%;
+    }
+
+    .events-info-meta {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.8);
+
+        font-weight: 500;
+    }
+
+    .events-info-info-img {
+        object-fit: cover;
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 200px;
+    }
+
+    .events-info-text-container {
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin-bottom: 20px;
+
+        @media only screen and (max-width: 420px) {
+            margin-bottom: 25px;
+            gap: 10px;
+        }
+
+        .events-info-p {
+            font-size: 24px;
+            margin-top: 8px;
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .events-info-text {
+            color: rgba(255, 255, 255, 0.94);
+            font-size: 19px;
+            font-weight: 500;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+
+            @media only screen and (max-width: 420px) {
+                font-size: 17px;
+            }
+        }
+    }
+
+    .events-info-button-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+
+        .events-info-logo-container {
+            display: flex;
+            gap: 5px;
+
+            .fcl-logo-texts-container {
+                display: flex;
+                gap: 5px;
+                align-items: center;
+
+                .fcl-text {
+                    font-weight: 500;
+                    font-size: 10px;
+
+                }
+
+                .fcl-bottom-text {
+                    // color: #5999cf;
+                    color: #04bce8;
+                    margin-top: 1px;
+                    font-size: 8px;
+                }
+
+                .events-info-logo {
+                    object-fit: contain;
+                    max-width: 100px;
+                }
+            }
+
+
+        }
+
+        .events-info-button {
+            // background-color: black;
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+
+    .events-info-meta-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .events-speaker-container {
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 20px;
+        gap: 10px;
+        .events-speaker-img {
+            max-width: 20px;
+            object-fit: contain;
+        }
+    }
+
+    .events-info-date-type-container {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .events-location-container {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+.events-cards-button-container {
+    overflow: hidden;
+}
+
+.events-cards-buttons {
+    border-radius: 10px;
+    height: 42px;
+    max-width: 111px;
+
+    @media only screen and (max-width: 420px) {
+        max-width: 120px;
+    }
+}
+
+.events-cards-blob-btn {
+    $numOfBlobs: 4;
+    z-index: 1;
+    position: relative;
+    padding: 10px 15px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    color: #fff;
+
+    @media only screen and (max-width: 420px) {
+        font-size: 13px;
+    }
+
+    &:before {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        border: none;
+    }
+
+    &:after {
+        content: "";
+        z-index: -2;
+        position: absolute;
+        left: vars.$borderW*1.5;
+        top: vars.$borderW*1.5;
+        width: 100%;
+        height: 100%;
+
+        transition: all 0.3s 0.2s;
+        border-radius: 5px;
+    }
+
+    &:hover {
+        border-radius: 5px;
+
+        &:after {
+            transition: all 0.3s;
+            left: 0;
+            top: 0;
+            border-radius: 5px;
+        }
+    }
+
+    &__inner {
+        z-index: -1;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    &__blobs {
+        position: relative;
+        display: block;
+        height: 100%;
+        filter: url('#goo');
+    }
+
+    &__blob {
+        position: absolute;
+        width: 100% / $numOfBlobs;
+        height: 100%;
+        // background-color: vars.$blue-color5;
+        background-color: #060f88;
+
+        border-radius: 100%;
+        transform: translate3d(0, 150%, 0) scale(1.7);
+        transition: transform 0.45s;
+
+        @supports(filter: url('#goo')) {
+            transform: translate3d(0, 150%, 0) scale(1.4);
+        }
+
+        @for $i from 1 through $numOfBlobs {
+            &:nth-child(#{$i}) {
+                left: ($i - 1) * (120% / $numOfBlobs);
+                transition-delay: ($i - 1) * 0.08s;
+            }
+        }
+
+        .events-cards-blob-btn:hover & {
+            transform: translateZ(0) scale(1.7);
+
+            @supports(filter: url('#goo')) {
+                transform: translateZ(0) scale(1.4);
+            }
+        }
+    }
+
+}
