@@ -1,6 +1,4 @@
 import "./EventsCards.scss";
-import eventsCardImg from "/eventBrain.png";
-import React, { use } from "react";
 import { Link } from "react-router-dom";
 import pairLogo from "/pairLogo.png";
 import speakerImg from "/speaker.png";
@@ -16,13 +14,19 @@ const eventsCards = ({ }) => {
     const [comingEvents, setComingEvents] = useState(upcomingEvents);
     const [isUpcoming, setIsUpcoming] = useState("upcoming");
     const [fadeClass, setFadeClass] = useState('fade-in-active');
-    const [sortOption, setSortOption] = useState('');
+    const [sortOption, setSortOption] = useState('all');
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    console.log("Coming Events:", comingEvents);
+    const sortOptions = [
+        { value: 'all', label: 'All' },
+        { value: 'date', label: 'Date (Upcoming)' },
+        { value: 'event', label: 'Event' },
+        { value: 'webinar', label: 'Webinar' }
+    ];
 
-    const handleSort = (e) => {
-        const selectedOption = e.target.value;
+    const handleSort = (selectedOption) => {
         setSortOption(selectedOption);
+        setIsDropdownOpen(false);
         
         const baseEvents = isUpcoming === "upcoming" ? upcomingEvents : pastEvents;
 
@@ -67,12 +71,42 @@ const eventsCards = ({ }) => {
                     <button className={isUpcoming === "past" ? "events-cards-active-btn" : "events-cards-inactive-btn"} onClick={() => handleEventButtons("past")}>Past Events</button>
                 </div>
                 <div className="sort-by-container">
-                    <select onChange={handleSort} className="sort-by-select" name="sort-by" id="sort-by">
-                        <option value="sort"> Sort By : All </option>
-                        <option value="date"> Date (Upcoming) </option>
-                        <option value="event"> Event </option>
-                        <option value="webinar"> Webinar </option>
-                    </select>
+                    <div 
+                        className="sort-by-dropdown"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    >
+                        <span className="dropdown-selected">
+                            Sort By : {sortOptions.find(opt => opt.value === sortOption)?.label}
+                        </span>
+                        <svg 
+                            className={`dropdown-arrow ${isDropdownOpen ? 'open' : ''}`}
+                            width="14" 
+                            height="8" 
+                            viewBox="0 0 14 8" 
+                            fill="none"
+                        >
+                            <path 
+                                d="M1 1L7 7L13 1" 
+                                stroke="rgba(79, 195, 247, 0.8)" 
+                                strokeWidth="2" 
+                                strokeLinecap="round" 
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </div>
+                    {isDropdownOpen && (
+                        <div className="dropdown-menu">
+                            {sortOptions.map((option) => (
+                                <div
+                                    key={option.value}
+                                    className={`dropdown-item ${sortOption === option.value ? 'active' : ''}`}
+                                    onClick={() => handleSort(option.value)}
+                                >
+                                    {option.label}
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
             <div className="events-cards-container">
