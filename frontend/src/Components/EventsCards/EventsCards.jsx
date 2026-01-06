@@ -18,6 +18,8 @@ const eventsCards = ({ }) => {
     const [fadeClass, setFadeClass] = useState('fade-in-active');
     const [sortOption, setSortOption] = useState('');
 
+    console.log("Coming Events:", comingEvents);
+
     const handleSort = (e) => {
         const selectedOption = e.target.value;
         setSortOption(selectedOption);
