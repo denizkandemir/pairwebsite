@@ -9,6 +9,9 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
 
     const closeSidebar = () => {
         setSidebarOpen(false);
+
+        root.classList.remove("no-scroll");
+        document.body.classList.remove("no-scroll");
     }
 
     return (
