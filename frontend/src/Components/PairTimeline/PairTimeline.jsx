@@ -45,8 +45,8 @@ const PairTimeline = () => {
                     }
                 });
             },
-            { threshold: 0.25 }
-        );
+            { threshold: 0.12 }
+        );          
 
         const elements = document.querySelectorAll(".pair-timeline-content-container");
         elements.forEach((el) => observer.observe(el));
@@ -57,9 +57,9 @@ const PairTimeline = () => {
     return (
         <div className="pair-timeline-container">
             <div className="pair-timeline-content-container">
-                <div className="pair-timeline-titles-container fade-in">
-                    <h2 className="pair-timeline-title fade-in">We Are PAIR</h2>
-                    <p className="pair-timeline-p fade-in">Combining Psychology, Artificial Intelligence, and Research Lab</p>
+                <div className="pair-timeline-titles-container ">
+                    <h2 className="pair-timeline-title ">We Are PAIR</h2>
+                    <p className="pair-timeline-p ">Combining Psychology, Artificial Intelligence, and Research Lab</p>
                 </div>
 
                 <div className="floating-orbs-container">
