@@ -19,9 +19,9 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
 
                 <div className="sidebar-center-container">
                     <Link className="sidebar-link" to="/">Blog</Link>
-                    <Link className="sidebar-link" to="/about">Newsletter</Link>
-                    <Link className="sidebar-link" to="/about">Events</Link>
-                    <Link className="sidebar-link" to="/about">About Us</Link>
+                    <Link className="sidebar-link" to="/">Newsletter</Link>
+                    <Link className="sidebar-link" to="/events">Events</Link>
+                    <Link className="sidebar-link" to="/">About Us</Link>
                     <Link className="sidebar-link" to="/contact">Contact</Link>
                 </div>
 

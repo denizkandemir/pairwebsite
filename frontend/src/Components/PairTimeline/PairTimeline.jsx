@@ -45,7 +45,7 @@ const PairTimeline = () => {
                     }
                 });
             },
-            { threshold: 0.45 }
+            { threshold: 0.25 }
         );
 
         const elements = document.querySelectorAll(".pair-timeline-content-container");
