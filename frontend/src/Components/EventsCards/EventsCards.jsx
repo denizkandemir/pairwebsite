@@ -65,7 +65,7 @@ const eventsCards = ({ }) => {
 
     return (
         <>
-            <div className="events-cards-buttons-container">
+            <div className="events-cards-buttons-container fade-in">
                 <div className={`events-cards-buttons-wrapper ${isUpcoming === "past" ? 'past-active' : ''}`}>
                     <button className={isUpcoming === "upcoming" ? "events-cards-active-btn" : "events-cards-inactive-btn"} onClick={() => handleEventButtons("upcoming")}>Upcoming Events</button>
                     <button className={isUpcoming === "past" ? "events-cards-active-btn" : "events-cards-inactive-btn"} onClick={() => handleEventButtons("past")}>Past Events</button>
@@ -113,7 +113,7 @@ const eventsCards = ({ }) => {
                 <div className={`events-cards-content-container ${fadeClass}`}>
                     {
                        comingEvents.map((events) => (
-                            <div key={events.id} className={`events-info-card-wrapper`}>
+                            <div key={events.id} className={`events-info-card-wrapper fade-in`}>
                                 <div className="events-info-img-container">
                                     {
                                         events.imgs.slice(0, 1).map((img) => (

@@ -2,6 +2,7 @@ import "./UpcomingEvent.scss";
 import { upcomingEvents } from "../../objects/UpcomingEvents";
 import { useState, useEffect } from "react";
 import speakerImg from "/speaker.png";
+import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
 
 const UpcomingEvent = () => {
   const [weekEvents, setWeekEvents] = useState([]);
@@ -67,7 +68,7 @@ const UpcomingEvent = () => {
 
   return (
     <>
-      <div className="upcoming-events-container">
+      <div className="upcoming-events-container fade-in">
         {weekEvents.map((event) => {
           const countdown = countdowns[event.id];
 
