@@ -2,6 +2,7 @@ import Banner from "../../Components/Banner/Banner"
 import eventsBannerImg from "/eventsBackground.png"
 import "./EventsPage.scss"
 import EventsCards from "../../Components/EventsCards/EventsCards"
+import UpcomingEvent from "../../Components/UpComingEvent/UpcomingEvent"
 
 const EventsPage = () => {
 
@@ -20,6 +21,7 @@ const EventsPage = () => {
  return (
     <div className="events-page-container">
        <Banner title={"Our Events and Webinars"} titleClass={"events-banner-title"} backgroundImage={eventsBannerImg} texts={eventsBannerTexts} imgClass={"events-page-img"}/>
+       <UpcomingEvent/>
        <EventsCards/>
     </div>
  )
