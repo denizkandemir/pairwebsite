@@ -5,6 +5,7 @@ import { Layout } from './Layout';
 import HomePage from './Pages/HomePage';
 import ContactPage from './Pages/ContactPage';
 import EventsPage from './Pages/EventsPage/EventsPage';
+import EventDetailPage from './Pages/EventDetailPage';
 
 function App() {
 
@@ -17,9 +18,9 @@ function App() {
             <Route path="/contact" element={<ContactPage/>} />
             <Route path="/events" element={<EventsPage />} />
 
-            {/* <Route path="/events">
-              <Route path=":path/:routeId" element={<EventInfoPage />} />
-            </Route> */}
+            <Route path="/events">
+              <Route path=":path/:routeId" element={<EventDetailPage />} />
+            </Route>
             {/* <Route path="/login" element={<LoginPage />} />
             <Route
               path="/admin"
