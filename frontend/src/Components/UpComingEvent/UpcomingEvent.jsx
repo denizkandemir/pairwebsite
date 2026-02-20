@@ -1,5 +1,5 @@
 import "./UpcomingEvent.scss";
-import { upcomingEvents } from "../../objects/UpcomingEvents";
+import { allEvents } from "../../objects/Events";
 import { useState, useEffect } from "react";
 import speakerImg from "/speaker.png";
 import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
@@ -14,6 +14,13 @@ const UpcomingEvent = () => {
       today.setHours(0, 0, 0, 0);
       const oneMonthLater = new Date(today);
       oneMonthLater.setDate(today.getDate() + 30);
+
+      // Events.jsx'ten upcoming eventleri filtrele
+      const upcomingEvents = allEvents.filter((event) => {
+        const eventDate = new Date(event.date);
+        eventDate.setHours(0, 0, 0, 0);
+        return eventDate >= today;
+      });
 
       const filteredEvents = upcomingEvents.filter((event) => {
         const eventDate = new Date(event.date);

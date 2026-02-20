@@ -8,6 +8,7 @@ import {
 } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "./Slide.scss";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
@@ -64,6 +65,7 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen , containerRef,
                                 <div  className={`swiper-button-prev-${id} slide-button2`}>
                                     <MdKeyboardArrowLeft />
                                 </div>
+                                <div className={`swiper-pagination-${id}`}></div>
                             </Swiper>
                         )}
                     </div>

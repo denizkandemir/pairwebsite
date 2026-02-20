@@ -75,7 +75,10 @@ const eventsCards = ({ }) => {
         setFadeClass('fade-out');
         setTimeout(() => {
             setIsUpcoming(status);
-            setFadeClass('fade-in-active');
+            // React'in DOM'u güncellemesi için kısa bir gecikme
+            setTimeout(() => {
+                setFadeClass('fade-in-active');
+            }, 50);
         }, 300);
     }
 
@@ -129,7 +132,7 @@ const eventsCards = ({ }) => {
                 <div className={`events-cards-content-container ${fadeClass}`}>
                     {
                        comingEvents.map((events) => (
-                            <div key={events.id} className={`events-info-card-wrapper fade-in`}>
+                            <div key={events.id} className="events-info-card-wrapper">
                                 <div className="events-info-img-container">
                                     {
                                         events.imgs.slice(0, 1).map((img) => (
@@ -174,7 +177,8 @@ const eventsCards = ({ }) => {
                                         </div>
                                         <Link
                                             className="events-info-link"
-                                            to={{ pathname: `/events${events.path}/${events.id}` }}                                        >
+                                            to={`/events/${events.id}`}
+                                        >
                                             <div className="events-cards-button-container">
                                                 <div className="events-cards-buttons">
                                                     <button className="events-cards-blob-btn">

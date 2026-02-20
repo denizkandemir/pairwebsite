@@ -141,7 +141,7 @@ export const allEvents = [
         imgs: [{ id: 1, url: getRandomImage() }],
         title: "Upcoming Event One",
         texts: [{ id: 1, text: "lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet." }],
-        date: "January 10, 2026",
+        date: "February 25, 2026",
         type: getRandomType(),
         location: getRandomLocation(),
         speaker: getRandomSpeaker()
@@ -151,7 +151,7 @@ export const allEvents = [
         imgs: [{ id: 1, url: getRandomImage() }],
         title: "Upcoming Event Two",
         texts: [{ id: 1, text: "lorem ipsum dolor sit amet, consectetur adipiscing elit." }],
-        date: "January 15, 2026",
+        date: "February 23, 2026",
         type: getRandomType(),
         location: getRandomLocation(),
         speaker: getRandomSpeaker()
