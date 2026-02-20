@@ -6,6 +6,7 @@ import HomePage from './Pages/HomePage';
 import ContactPage from './Pages/ContactPage';
 import EventsPage from './Pages/EventsPage/EventsPage';
 import EventDetailPage from './Pages/EventDetailPage';
+import NewsletterPage from './Pages/NewsletterPage';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/contact" element={<ContactPage/>} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/events/:id" element={<EventDetailPage />} />
+            <Route path="/newsletter" element={<NewsletterPage />} />
             {/* <Route path="/login" element={<LoginPage />} />
             <Route
               path="/admin"
