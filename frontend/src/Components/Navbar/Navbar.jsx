@@ -22,7 +22,6 @@ const Navbar = ({ setSidebarOpen }) => {
                     </Link>
                 </div>
                 <div className="navbar-center-container">
-                    <Link className="navbar-link" to="/">Blog</Link>
                     <Link className="navbar-link" to="/newsletter">Newsletter</Link>
                     <Link className="navbar-link" to="/events">Events</Link>
                     <Link className="navbar-link" to="/aboutUs">About Us</Link>
