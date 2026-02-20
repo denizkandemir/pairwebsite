@@ -2,20 +2,42 @@ import "./EventsCards.scss";
 import { Link } from "react-router-dom";
 import pairLogo from "/pairLogo.png";
 import speakerImg from "/speaker.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
-import { upcomingEvents } from "../../objects/UpcomingEvents";
-import { pastEvents } from "../../objects/PastEvents";
+import { allEvents } from "../../objects/Events";
 
 const eventsCards = ({ }) => {
 
     useFadeInOnScroll();
+
+    // Tarihe göre upcoming ve past events'leri ayır
+    const { upcomingEvents, pastEvents } = useMemo(() => {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const upcoming = allEvents
+            .filter(event => new Date(event.date) >= today)
+            .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+        const past = allEvents
+            .filter(event => new Date(event.date) < today)
+            .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        return { upcomingEvents: upcoming, pastEvents: past };
+    }, []);
 
     const [comingEvents, setComingEvents] = useState(upcomingEvents);
     const [isUpcoming, setIsUpcoming] = useState("upcoming");
     const [fadeClass, setFadeClass] = useState('fade-in-active');
     const [sortOption, setSortOption] = useState('all');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    // isUpcoming değiştiğinde events'leri güncelle
+    useEffect(() => {
+        const currentEvents = isUpcoming === "upcoming" ? upcomingEvents : pastEvents;
+        setComingEvents(currentEvents);
+        setSortOption('all');
+    }, [isUpcoming, upcomingEvents, pastEvents]);
 
     const sortOptions = [
         { value: 'all', label: 'All' },
@@ -53,13 +75,10 @@ const eventsCards = ({ }) => {
         setFadeClass('fade-out');
         setTimeout(() => {
             setIsUpcoming(status);
-            if (status === "upcoming") {
-                setComingEvents(upcomingEvents);
-            }
-            else {
-                setComingEvents(pastEvents);
-            }
-            setFadeClass('fade-in-active');
+            // React'in DOM'u güncellemesi için kısa bir gecikme
+            setTimeout(() => {
+                setFadeClass('fade-in-active');
+            }, 50);
         }, 300);
     }
 
@@ -113,7 +132,7 @@ const eventsCards = ({ }) => {
                 <div className={`events-cards-content-container ${fadeClass}`}>
                     {
                        comingEvents.map((events) => (
-                            <div key={events.id} className={`events-info-card-wrapper fade-in`}>
+                            <div key={events.id} className="events-info-card-wrapper">
                                 <div className="events-info-img-container">
                                     {
                                         events.imgs.slice(0, 1).map((img) => (

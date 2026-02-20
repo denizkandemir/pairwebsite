@@ -2,11 +2,15 @@ import { useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 
 const useFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right', shouldRun = true) => {
-  const { routeId } = useParams();
+  const params = useParams();
   const location = useLocation();
 
   useEffect(() => {
     if (!shouldRun) return;
+
+    // Remove 'show' class from all elements first
+    const allElements = document.querySelectorAll(selector);
+    allElements.forEach(element => element.classList.remove('show'));
 
     const elements = document.querySelectorAll(selector);
 
@@ -27,7 +31,7 @@ const useFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right',
 
       return () => observer.disconnect();
     }
-  }, [selector, routeId, location, shouldRun]);
+  }, [selector, params, location, shouldRun]);
 };
 
 export default useFadeInOnScroll;
