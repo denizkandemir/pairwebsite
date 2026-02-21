@@ -8,7 +8,12 @@ export const newsletterArticles = [
         description: "Artificial intelligence-driven chatbots are no longer simple customer service tools; they are rapidly becoming the primary interface between brands and consumers. Acting as digital storefronts, these systems personalize recommendations, simulate human conversation, and collect behavioral data in real time. This shift is fundamentally changing how users explore products, form trust, and make purchasing decisions. By combining natural language processing, predictive analytics, and behavioral psychology principles, AI chatbots are reshaping digital commerce into a dynamic, conversational ecosystem.",
         date: "2025-12-22",
         image: "/eventsImage2.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. Sarah Mitchell", title: "AI Research Lead" },
+            { name: "Prof. James Chen", title: "Cognitive Science Expert" },
+            { name: "Dr. Emily Rodriguez", title: "UX Psychology Specialist" }
+        ]
     },
     {
         id: 2,
@@ -19,7 +24,12 @@ export const newsletterArticles = [
         description: "User ratings and reviews serve as powerful social proof mechanisms within competitive app marketplaces. Beyond numerical scores, they reflect collective trust, emotional reactions, and perceived value. Research in behavioral economics and social psychology shows that even minor rating fluctuations can significantly impact download decisions and long-term retention rates. Understanding how cognitive biases—such as negativity bias and bandwagon effects—shape user perception is essential for developers seeking sustainable digital success.",
         date: "2024-11-12",
         image: "/eventsImage2.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. Michael Thompson", title: "Behavioral Economics Researcher" },
+            { name: "Dr. Lisa Wang", title: "User Experience Strategist" },
+            { name: "Prof. Ahmed Hassan", title: "Digital Psychology Professor" }
+        ]
     },
     {
         id: 3,
@@ -30,7 +40,13 @@ export const newsletterArticles = [
         description: "Triangulation in user experience research refers to the strategic integration of quantitative, qualitative, and observational methods to enhance validity and reliability. By converging findings from surveys, usability testing, interviews, and analytics data, researchers reduce bias and uncover deeper behavioral patterns. This multidimensional approach not only strengthens methodological rigor but also produces insights that are more actionable and contextually grounded. In complex digital ecosystems, triangulation is essential for evidence-based design decisions.",
         date: "2024-11-04",
         image: "/eventsImage3.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. Rachel Green", title: "Research Methodology Expert" },
+            { name: "Prof. David Kim", title: "UX Research Lead" },
+            { name: "Dr. Maria Santos", title: "Qualitative Analysis Specialist" },
+            { name: "Dr. Robert Brown", title: "Data Science Researcher" }
+        ]
     },
     {
         id: 4,
@@ -41,7 +57,11 @@ export const newsletterArticles = [
         description: "Low-code and no-code platforms are transforming the traditional boundaries of software development by enabling non-technical professionals to build functional digital solutions. These platforms reduce development cycles, foster rapid prototyping, and empower interdisciplinary collaboration. However, their rise also raises strategic and ethical questions regarding scalability, security, and long-term sustainability. By examining both opportunities and structural limitations, this guide provides a critical overview of how these tools are redefining design and innovation workflows.",
         date: "2024-10-21",
         image: "/eventsImage4.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. Jennifer Park", title: "Software Architecture Expert" },
+            { name: "Prof. Thomas Anderson", title: "Innovation Technology Professor" }
+        ]
     },
     {
         id: 5,
@@ -53,7 +73,12 @@ export const newsletterArticles = [
         date: "2026-01-15",
         image: "/eventsImage3.png",
         isFeatured: true,
-        isHighlighted: true
+        isHighlighted: true,
+        authors: [
+            { name: "Dr. Alex Turner", title: "Technology Trends Analyst" },
+            { name: "Prof. Nina Patel", title: "Industry Research Director" },
+            { name: "Dr. Marcus Lee", title: "Strategic Innovation Lead" }
+        ]
     },
     {
         id: 6,
@@ -64,7 +89,12 @@ export const newsletterArticles = [
         description: "Human interaction with artificial intelligence systems is deeply shaped by cognitive biases such as automation bias, confirmation bias, and anthropomorphism. Users often overestimate AI accuracy or attribute human-like intentions to algorithmic outputs. These psychological patterns directly impact trust formation, risk assessment, and ethical evaluation of intelligent systems. By understanding these biases, researchers and designers can create AI interfaces that encourage critical thinking and responsible engagement.",
         date: "2025-11-28",
         image: "/eventsImage2.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. Sophia Martinez", title: "Cognitive Psychology Researcher" },
+            { name: "Prof. Kevin O'Brien", title: "Human-AI Interaction Expert" },
+            { name: "Dr. Yuki Tanaka", title: "Behavioral Science Analyst" }
+        ]
     },
     {
         id: 7,
@@ -75,7 +105,13 @@ export const newsletterArticles = [
         description: "Modern neural network architectures—including transformers and deep reinforcement learning systems—are pushing the boundaries of machine learning performance. These models demonstrate remarkable capabilities in language processing, image recognition, and predictive analytics. However, challenges related to explainability, energy consumption, and data dependency remain unresolved. This article explores both the technological advancements and structural limitations shaping the next phase of AI research.",
         date: "2025-10-15",
         image: "/eventsImage2.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. William Zhang", title: "Machine Learning Researcher" },
+            { name: "Prof. Emma Watson", title: "Deep Learning Specialist" },
+            { name: "Dr. Carlos Ruiz", title: "AI Architecture Lead" },
+            { name: "Dr. Anna Kowalski", title: "Neural Networks Expert" }
+        ]
     },
     {
         id: 8,
@@ -86,7 +122,12 @@ export const newsletterArticles = [
         description: "The intersection of psychology and artificial intelligence reveals how human cognitive principles inform machine learning architectures and interface design. Concepts such as attention, memory, and decision-making inspire algorithmic modeling and user-centered innovation. By integrating psychological research with computational methods, interdisciplinary collaboration enables more adaptive, ethical, and human-aware systems. This bridge between disciplines is essential for sustainable AI development.",
         date: "2025-09-20",
         image: "/eventsImage2.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. Oliver Schmidt", title: "Interdisciplinary Research Lead" },
+            { name: "Prof. Grace Chen", title: "Computational Psychology Expert" },
+            { name: "Dr. Fatima Al-Rashid", title: "AI Ethics Researcher" }
+        ]
     },
     {
         id: 9,
@@ -97,7 +138,11 @@ export const newsletterArticles = [
         description: "In 2026, top UX design agencies distinguish themselves through rigorous research methodologies, cross-functional collaboration, and measurable impact. These firms integrate psychology, usability testing, and advanced prototyping to deliver user-centered solutions. Beyond aesthetics, their work emphasizes behavioral insight and long-term product strategy. This overview highlights agencies shaping digital experience standards through innovation and empirical design practices.",
         date: "2026-01-22",
         image: "/ai4.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. Isabella Romano", title: "UX Design Director" },
+            { name: "Prof. Jacob Miller", title: "Design Thinking Specialist" }
+        ]
     },
     {
         id: 10,
@@ -108,7 +153,12 @@ export const newsletterArticles = [
         description: "Recent neuroimaging research using fMRI and EEG technologies demonstrates how digital interfaces activate neural networks associated with attention, reward, and memory. Interface complexity, visual hierarchy, and interaction speed directly affect cognitive load and emotional response. Understanding these neural mechanisms enables the development of more intuitive and cognitively sustainable technologies. This article synthesizes neuroscientific findings with practical design implications.",
         date: "2025-08-10",
         image: "/eventBrain.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. Lucas Bergman", title: "Neuroscience Researcher" },
+            { name: "Prof. Olivia Chang", title: "Cognitive Neuroscience Expert" },
+            { name: "Dr. Hassan Ibrahim", title: "Neuroimaging Specialist" }
+        ]
     },
     {
         id: 11,
@@ -119,7 +169,13 @@ export const newsletterArticles = [
         description: "As autonomous systems become increasingly embedded in transportation, healthcare, and finance, ethical governance becomes imperative. Frameworks addressing transparency, fairness, accountability, and bias mitigation guide responsible development. However, operationalizing ethical principles into enforceable technical standards remains a challenge. This article examines global policy approaches and interdisciplinary strategies for aligning AI innovation with human values.",
         date: "2025-07-18",
         image: "/eventBrain2.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. Victoria Larsen", title: "AI Ethics & Governance Lead" },
+            { name: "Prof. Samuel Johnson", title: "Applied Ethics Professor" },
+            { name: "Dr. Priya Sharma", title: "Policy & Technology Researcher" },
+            { name: "Dr. Erik Johansson", title: "Autonomous Systems Expert" }
+        ]
     },
     {
         id: 12,
@@ -130,6 +186,11 @@ export const newsletterArticles = [
         description: "Quantitative and qualitative research methodologies offer complementary strengths in user experience investigation. While quantitative data provides measurable patterns and statistical validation, qualitative methods uncover motivations, emotions, and contextual depth. Effective UX research requires strategic alignment between research questions and methodological design. This comparative analysis outlines when and how to integrate both approaches for comprehensive user insight generation.",
         date: "2025-06-25",
         image: "/target.png",
-        isFeatured: false
+        isFeatured: false,
+        authors: [
+            { name: "Dr. Rebecca Foster", title: "Research Methods Expert" },
+            { name: "Prof. Daniel Wright", title: "Mixed Methods Researcher" },
+            { name: "Dr. Ayesha Khan", title: "UX Research Strategist" }
+        ]
     }
 ];

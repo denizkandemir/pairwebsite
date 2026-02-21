@@ -1,5 +1,6 @@
 import './Newsletter.scss';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import bannerImg from "/aiBannerImg2.png";
 import Banner from '../Banner/Banner';
 import { newsletterArticles } from '../../objects/NewsletterArticles';
@@ -50,6 +51,7 @@ const Newsletter = () => {
         <div className="newsletter-page">
           <Banner 
             title="Newsletter" 
+            titleClass="newsletter-banner-title"
             backgroundImage={bannerImg} 
             texts={newsletterTexts} 
             imgClass={"banner-img"} 
@@ -60,7 +62,7 @@ const Newsletter = () => {
               {/* Featured Article Section */}
               <div className="newsletter-featured-section fade-in">
                 {featuredArticle && (
-                  <article className="featured-article">
+                  <Link to={`/newsletter/${featuredArticle.id}`} className="featured-article">
                     <div className="featured-badge">HIGHLIGHTED ARTICLE</div>
                     <div className="featured-image-container">
                       <img src={featuredArticle.image} alt={featuredArticle.title} />
@@ -72,8 +74,8 @@ const Newsletter = () => {
                     </div>
                     <h2 className="featured-title">{featuredArticle.title}</h2>
                     <p className="featured-description">{featuredArticle.shortDescription}</p>
-                    <a href="#" className="featured-link">Read full article</a>
-                  </article>
+                    <span className="featured-link">Read full article</span>
+                  </Link>
                 )}
               </div>
 
@@ -82,7 +84,7 @@ const Newsletter = () => {
                 <h3 className="sidebar-title">ALL TIME FAVOURITES</h3>
                 <div className="favorite-articles-list">
                   {favoriteArticles.map((article) => (
-                    <article key={article.id} className="favorite-article">
+                    <Link key={article.id} to={`/newsletter/${article.id}`} className="favorite-article">
                       <div className="favorite-meta">
                         <span className="favorite-category">[{article.category}]</span>
                         <span className="favorite-separator">—</span>
@@ -90,7 +92,7 @@ const Newsletter = () => {
                       </div>
                       <h4 className="favorite-title">{article.title}</h4>
                       <p className="favorite-date">{article.date}</p>
-                    </article>
+                    </Link>
                   ))}
                 </div>
               </aside>
@@ -102,7 +104,7 @@ const Newsletter = () => {
               <div className={`articles-grid-container ${!showAllArticles ? 'has-fade' : ''}`}>
                 <div className="articles-grid">
                   {displayedArticles.map((article) => (
-                    <article key={article.id} className="article-card">
+                    <Link key={article.id} to={`/newsletter/${article.id}`} className="article-card">
                       <div className="article-image">
                         <img src={article.image} alt={article.title} />
                       </div>
@@ -116,7 +118,7 @@ const Newsletter = () => {
                         <p className="article-short-description">{article.shortDescription}</p>
                         <p className="article-date">{article.date}</p>
                       </div>
-                    </article>
+                    </Link>
                   ))}
                 </div>
                 {!showAllArticles && allArticlesList.length > 5 && (

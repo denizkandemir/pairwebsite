@@ -7,6 +7,7 @@ import ContactPage from './Pages/ContactPage';
 import EventsPage from './Pages/EventsPage/EventsPage';
 import EventDetailPage from './Pages/EventDetailPage';
 import NewsletterPage from './Pages/NewsletterPage';
+import NewsletterDetailPage from './Pages/NewsletterDetailPage';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Route path="/events" element={<EventsPage />} />
             <Route path="/events/:id" element={<EventDetailPage />} />
             <Route path="/newsletter" element={<NewsletterPage />} />
+            <Route path="/newsletter/:id" element={<NewsletterDetailPage />} />
             {/* <Route path="/login" element={<LoginPage />} />
             <Route
               path="/admin"

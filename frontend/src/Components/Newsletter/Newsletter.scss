@@ -9,14 +9,18 @@
 .newsletter-content-container {
     max-width: 1250px;
     margin: 0 auto;
-    padding: 80px 40px;
+    padding: 50px 40px;
 
     @media(max-width: 1024px) {
-        padding: 60px 30px;
+        padding: 40px 30px;
     }
 
     @media(max-width: 768px) {
-        padding: 40px 20px;
+        padding: 30px 20px;
+    }
+
+    @media(max-width: 500px) {
+        padding: 25px 15px;
     }
 }
 
@@ -35,17 +39,23 @@
     display: grid;
     grid-template-columns: 1fr 380px;
     gap: 50px;
-    margin-bottom: 100px;
-     margin-top: 20px;
+    margin-bottom: 60px;
+    margin-top: 20px;
 
     @media(max-width: 1024px) {
         grid-template-columns: 1fr;
-        gap: 60px;
-        margin-bottom: 80px;
+        gap: 40px;
+        margin-bottom: 50px;
     }
 
     @media(max-width: 768px) {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
+        gap: 30px;
+    }
+
+    @media(max-width: 500px) {
+        margin-bottom: 30px;
+        gap: 25px;
     }
 }
 
@@ -60,6 +70,8 @@
         border: 1px solid rgba(79, 195, 247, 0.2);
         transition: all 0.4s ease;
         position: relative;
+        text-decoration: none;
+        display: block;
 
         &:hover {
             transform: translateY(-8px);
@@ -229,6 +241,8 @@
             border-bottom: 1px solid rgba(79, 195, 247, 0.15);
             transition: all 0.3s ease;
             cursor: pointer;
+            text-decoration: none;
+            display: block;
 
             &:last-child {
                 border-bottom: none;
@@ -288,10 +302,14 @@
 
 // Articles Section with Load More
 .articles-section {
-    margin-top: 80px;
+    margin-top: 50px;
 
     @media(max-width: 768px) {
-        margin-top: 60px;
+        margin-top: 40px;
+    }
+
+    @media(max-width: 500px) {
+        margin-top: 30px;
     }
 
     .articles-section-title {
@@ -341,6 +359,7 @@
                 display: flex;
                 flex-direction: row;
                 cursor: pointer;
+                text-decoration: none;
 
                 @media(max-width: 600px) {
                     flex-direction: column;
@@ -427,9 +446,10 @@
                     }
 
                     .article-short-description {
-                        font-size: 20px;
-                        color: rgba(255, 255, 255, 0.8);
-                        margin-bottom: 15px;
+                        font-size: 14px;
+                        line-height: 1.6;
+                        color: rgba(255, 255, 255, 0.7);
+                        margin-bottom: 12px;
                     }
 
                     .article-date {
@@ -449,7 +469,7 @@
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            padding-bottom: 40px;
+            padding-bottom: 0px;
             pointer-events: none;
 
             .load-more-button {

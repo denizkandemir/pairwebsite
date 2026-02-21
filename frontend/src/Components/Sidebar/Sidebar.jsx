@@ -10,7 +10,10 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
     const closeSidebar = () => {
         setSidebarOpen(false);
 
-        root.classList.remove("no-scroll");
+        const root = document.querySelector("#root");
+        if (root) {
+            root.classList.remove("no-scroll");
+        }
         document.body.classList.remove("no-scroll");
     }
 
@@ -21,11 +24,10 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
             <div className="sidebar-content-container">
 
                 <div className="sidebar-center-container">
-                    <Link className="sidebar-link" to="/">Blog</Link>
-                    <Link className="sidebar-link" to="/">Newsletter</Link>
-                    <Link className="sidebar-link" to="/events">Events</Link>
-                    <Link className="sidebar-link" to="/">About Us</Link>
-                    <Link className="sidebar-link" to="/contact">Contact</Link>
+                    <Link onClick={() => closeSidebar()} className="sidebar-link" to="/newsletter">Newsletter</Link>
+                    <Link onClick={() => closeSidebar()} className="sidebar-link" to="/events">Events</Link>
+                    <Link onClick={() => closeSidebar()} className="sidebar-link" to="/aboutus">About Us</Link>
+                    <Link onClick={() => closeSidebar()}  className="sidebar-link" to="/contact">Contact</Link>
                 </div>
 
                 <div className="sidebar-right-container">

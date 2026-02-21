@@ -1,4 +1,16 @@
 
 .events-page-container {
     padding-top: 30px;
+     background: linear-gradient(200deg, rgba(2, 47, 87, 0.95) 0%, rgba(0, 8, 20, 0.98) 100%);
+     position: relative;
+}
+
+.events-page-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, rgba(100, 200, 255, 0.5) 50%, transparent 100%);
 }

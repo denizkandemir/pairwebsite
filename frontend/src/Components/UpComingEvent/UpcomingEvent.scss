@@ -31,6 +31,7 @@
   padding: 0;
   transition: all 0.3s ease;
   display: flex;
+  text-decoration: none;
   overflow: hidden;
 
   @media(max-width: 1020px) {
@@ -58,6 +59,7 @@
   gap: 6px;
   flex-wrap: wrap;
   justify-content: space-between;
+   text-decoration: none;
 }
 
 .events-speaker-container {
@@ -67,6 +69,7 @@
   font-size: 20px;
   gap: 10px;
   margin-top: 10px;
+   text-decoration: none;
 
   @media(max-width: 550px) {
     font-size: 17px;
@@ -103,8 +106,13 @@
 .events-info-meta {
   font-size: 15px;
   color: rgba(255, 255, 255, 0.8);
-
+ text-decoration: none;
   font-weight: 500;
+}
+
+.events-info-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .events-info-text {
@@ -116,6 +124,7 @@
   -webkit-line-clamp: 4;
   line-clamp: 4;
   display: -webkit-box;
+   text-decoration: none;
   -webkit-box-orient: vertical;
 
   @media(max-width: 1020px) {
