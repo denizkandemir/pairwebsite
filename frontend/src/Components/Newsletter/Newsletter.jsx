@@ -51,6 +51,7 @@ const Newsletter = () => {
         <div className="newsletter-page">
           <Banner 
             title="Newsletter" 
+            titleClass="newsletter-banner-title"
             backgroundImage={bannerImg} 
             texts={newsletterTexts} 
             imgClass={"banner-img"} 

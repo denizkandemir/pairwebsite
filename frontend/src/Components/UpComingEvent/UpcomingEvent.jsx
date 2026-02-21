@@ -3,6 +3,7 @@ import { allEvents } from "../../objects/Events";
 import { useState, useEffect } from "react";
 import speakerImg from "/speaker.png";
 import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
+import { Link } from "react-router-dom";
 
 const UpcomingEvent = () => {
   const [weekEvents, setWeekEvents] = useState([]);
@@ -73,6 +74,8 @@ const UpcomingEvent = () => {
     return () => clearInterval(interval);
   }, [weekEvents]);
 
+  useFadeInOnScroll();
+
   return (
     <>
       <div className="upcoming-events-container fade-in">
@@ -80,65 +83,71 @@ const UpcomingEvent = () => {
           const countdown = countdowns[event.id];
 
           return (
-            <div key={event.id} className="upcoming-event-card">
-              <div className="upcoming-event-image">
-                {event.imgs && event.imgs[0] && (
-                  <img src={event.imgs[0].url} alt={event.title} />
-                )}
-              </div>
-
-              <div className="upcoming-event-content">
-                <div className="events-info-meta-wrapper">
-                  <div className="events-info-date-type-container">
-                    <span className="events-info-meta">{event.type}</span>
-                    <span className="events-info-meta">•</span>
-                    <span className="events-info-meta">{event.date}</span>
-                  </div>
-                  <div className="events-location-container">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="2">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                      <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <span className="events-info-meta">{event.location}</span>
-                  </div>
-                </div>
-                <h3>{event.title}</h3>
-                {
-                  event.texts.slice(0, 1).map((text) => (
-                    <p key={text.id} className="events-info-text"> {text.text} </p>
-                  ))
-                }
-
-                <div className="events-speaker-container">
-                  <img className="events-speaker-img" src={speakerImg} alt="Speaker" />
-                  <span className="events-speaker-text">{event.speaker}</span>
+            <Link
+              className="events-info-link"
+              to={`/events/${event.id}`}
+            >
+              <div key={event.id} className="upcoming-event-card">
+                <div className="upcoming-event-image">
+                  {event.imgs && event.imgs[0] && (
+                    <img src={event.imgs[0].url} alt={event.title} />
+                  )}
                 </div>
 
-                {countdown && !countdown.isExpired ? (
-                  <div className="countdown">
-                    <div className="countdown-item">
-                      <span className="countdown-value">{countdown.days}</span>
-                      <span className="countdown-label">Days</span>
+                <div className="upcoming-event-content">
+                  <div className="events-info-meta-wrapper">
+                    <div className="events-info-date-type-container">
+                      <span className="events-info-meta">{event.type}</span>
+                      <span className="events-info-meta">•</span>
+                      <span className="events-info-meta">{event.date}</span>
                     </div>
-                    <div className="countdown-item">
-                      <span className="countdown-value">{countdown.hours}</span>
-                      <span className="countdown-label">Hours</span>
-                    </div>
-                    <div className="countdown-item">
-                      <span className="countdown-value">{countdown.minutes}</span>
-                      <span className="countdown-label">Minutes</span>
-                    </div>
-                    <div className="countdown-item">
-                      <span className="countdown-value">{countdown.seconds}</span>
-                      <span className="countdown-label">Seconds</span>
+                    <div className="events-location-container">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                      <span className="events-info-meta">{event.location}</span>
                     </div>
                   </div>
-                ) : (
-                  <p className="event-started">Event has started!</p>
-                )}
+                  <h3>{event.title}</h3>
+                  {
+                    event.texts.slice(0, 1).map((text) => (
+                      <p key={text.id} className="events-info-text"> {text.text} </p>
+                    ))
+                  }
+
+                  <div className="events-speaker-container">
+                    <img className="events-speaker-img" src={speakerImg} alt="Speaker" />
+                    <span className="events-speaker-text">{event.speaker}</span>
+                  </div>
+
+                  {countdown && !countdown.isExpired ? (
+                    <div className="countdown">
+                      <div className="countdown-item">
+                        <span className="countdown-value">{countdown.days}</span>
+                        <span className="countdown-label">Days</span>
+                      </div>
+                      <div className="countdown-item">
+                        <span className="countdown-value">{countdown.hours}</span>
+                        <span className="countdown-label">Hours</span>
+                      </div>
+                      <div className="countdown-item">
+                        <span className="countdown-value">{countdown.minutes}</span>
+                        <span className="countdown-label">Minutes</span>
+                      </div>
+                      <div className="countdown-item">
+                        <span className="countdown-value">{countdown.seconds}</span>
+                        <span className="countdown-label">Seconds</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="event-started">Event has started!</p>
+                  )}
+                </div>
               </div>
-            </div>
+            </Link>
           );
+
         })}
       </div>
     </>
