@@ -1,0 +1,172 @@
+@use '../../styles/styles.scss' as styles;
+
+.about-hero-container {
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #000814 0%, #001233 50%, #000814 100%);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -20%;
+        left: -10%;
+        width: 50%;
+        height: 80%;
+        background: radial-gradient(circle, rgba(193, 255, 114, 0.08) 0%, rgba(193, 255, 114, 0.04) 40%, transparent 70%);
+        animation: neonPulse 15s ease-in-out infinite;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -30%;
+        right: -10%;
+        width: 60%;
+        height: 70%;
+        background: radial-gradient(circle, rgba(79, 195, 247, 0.06) 0%, rgba(0, 123, 255, 0.03) 50%, transparent 70%);
+        animation: floatNeon 20s ease-in-out infinite reverse;
+        z-index: 1;
+    }
+
+    .about-hero-content {
+        display: flex;
+        gap: 60px;
+        max-width: 1250px;
+        width: 100%;
+        padding: 0 40px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        @media (max-width: 968px) {
+            flex-direction: column;
+            gap: 40px;
+            padding: 0 30px;
+        }
+
+        .about-hero-text {
+            flex: 1;
+            
+            .about-hero-title {
+                font-size: 3.5rem;
+                font-weight: 700;
+                color: white;
+                margin-bottom: 30px;
+                line-height: 1.2;
+
+                @media (max-width: 768px) {
+                    font-size: 2.5rem;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 2rem;
+                }
+
+                .about-hero-title-highlight {
+                    background: linear-gradient(135deg, styles.$pairYellow 0%, #a8ff3a 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    display: block;
+                    animation: gradientShift 4s ease infinite;
+                }
+            }
+
+            .about-hero-description {
+                font-size: 1.2rem;
+                color: rgba(255, 255, 255, 0.8);
+                line-height: 1.8;
+                max-width: 550px;
+
+                @media (max-width: 768px) {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        .about-hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .about-hero-image-wrapper {
+                position: relative;
+                max-width: 450px;
+                width: 100%;
+
+                .about-hero-image {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 20px;
+                    position: relative;
+                    z-index: 2;
+                    border: 2px solid rgba(193, 255, 114, 0.3);
+                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                                0 0 40px rgba(193, 255, 114, 0.2);
+                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+                    &:hover {
+                        transform: scale(1.02);
+                        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6),
+                                    0 0 60px rgba(193, 255, 114, 0.3);
+                    }
+                }
+
+                .image-glow {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 110%;
+                    height: 110%;
+                    background: radial-gradient(circle, rgba(193, 255, 114, 0.15) 0%, transparent 70%);
+                    z-index: 1;
+                    animation: pulsGlow 3s ease-in-out infinite;
+                }
+            }
+        }
+    }
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes floatNeon {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(20px, -20px) scale(1.05);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        filter: hue-rotate(0deg) brightness(1);
+    }
+    50% {
+        filter: hue-rotate(10deg) brightness(1.1);
+    }
+}
+
+@keyframes pulsGlow {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
