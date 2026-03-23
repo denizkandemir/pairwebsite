@@ -168,7 +168,10 @@ const Newsletter = () => {
                       <p className="must-read-description">
                         {event.date} • Speaker: {event.speaker}
                       </p>
-                      <a href={`/events/${event.id}`} className="must-read-link">View Details</a>
+                      <p className="must-read-description">
+                         {event.texts[0].text}  
+                      </p>
+                      <Link to={`/events/${event.id}`} className="must-read-link">View Details</Link>
                     </div>
                   </article>
                 ))}
