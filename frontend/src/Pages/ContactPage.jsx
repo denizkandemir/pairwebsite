@@ -3,23 +3,23 @@ import Banner from "../Components/Banner/Banner";
 import contactBannerImg from "/contactBanner1.png";
 
 const ContactPage = () => {
-
-
-    const contactTexts = [
-        {
-            id: 1,
-            text: "We would love to hear from you! Whether you’re interested in our work, have questions about our research, or want to explore potential collaborations, our team is here to help!"
-        },
-
-        {
-            id: 2,
-            text: "Feel free to reach out with your questions, feedback, partnership proposals, or even new project ideas you’d like to develop with us.",
-        }
-    ]
+    const contactDescription = "Whether you are interested in our work, have questions about ongoing studies, or want to explore collaboration, the PAIR team is here to connect.";
+    const contactSecondaryDescription = "Reach out with research questions, partnership ideas, and opportunities to build interdisciplinary projects together.";
 
     return (
         <>
-         <Banner title="Contact Us" backgroundImage={contactBannerImg} texts={contactTexts} imgClass={"banner-img-float"} />
+         <Banner
+            badgeText="Connect With PAIR"
+            title="Contact Our Research Community"
+            titleHighlight="Research Community"
+            imageSrc={contactBannerImg}
+            imageAlt="Contact PAIR team"
+            description={contactDescription}
+            secondaryDescription={contactSecondaryDescription}
+            chips={["Collaboration", "Partnerships", "Research Support"]}
+            floatingLabels={["Open Dialogue", "Interdisciplinary Team"]}
+            imgClass={"banner-img-float"}
+         />
          <div className="banner-transition"></div>
          <ContactContent/>
         </>
