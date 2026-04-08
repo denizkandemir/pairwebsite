@@ -1,6 +1,13 @@
 @use '../../styles/styles.scss' as styles;
 
 .banner-container {
+    --detail-dot-opacity: 0.34;
+    --detail-orbit-opacity: 0.56;
+    --detail-curve-opacity: 0.52;
+    --detail-connector-opacity: 0.62;
+    --detail-node-opacity: 0.9;
+    --detail-tag-opacity: 0.96;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,54 +224,131 @@
                 pointer-events: none;
                 z-index: 3;
 
+                .banner-dot-field {
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    background: rgba(176, 215, 255, calc(var(--detail-dot-opacity) + 0.08));
+                    opacity: var(--detail-dot-opacity);
+                }
+
+                .dot-field-1 {
+                    top: 10%;
+                    right: 16%;
+                    box-shadow:
+                        22px 14px 0 rgba(177, 216, 255, 0.7),
+                        44px 4px 0 rgba(177, 216, 255, 0.55),
+                        62px 22px 0 rgba(177, 216, 255, 0.65),
+                        14px 40px 0 rgba(177, 216, 255, 0.45),
+                        42px 46px 0 rgba(177, 216, 255, 0.52),
+                        76px 58px 0 rgba(177, 216, 255, 0.38),
+                        -12px 58px 0 rgba(177, 216, 255, 0.33);
+                }
+
+                .dot-field-2 {
+                    bottom: 16%;
+                    left: 10%;
+                    box-shadow:
+                        20px 10px 0 rgba(171, 212, 255, 0.62),
+                        38px -2px 0 rgba(171, 212, 255, 0.44),
+                        58px 18px 0 rgba(171, 212, 255, 0.58),
+                        11px 38px 0 rgba(171, 212, 255, 0.35),
+                        34px 52px 0 rgba(171, 212, 255, 0.46),
+                        62px 43px 0 rgba(171, 212, 255, 0.32);
+                }
+
                 .banner-orbit {
                     position: absolute;
                     border: 1px dashed rgba(165, 206, 255, 0.28);
                     border-radius: 999px;
-                    opacity: 0.6;
+                    opacity: var(--detail-orbit-opacity);
                 }
 
                 .orbit-1 {
-                    width: 170px;
-                    height: 170px;
-                    top: 4%;
-                    right: 3%;
-                    transform: rotate(-12deg);
+                    width: 198px;
+                    height: 198px;
+                    top: 0;
+                    right: 0;
+                    transform: rotate(-16deg);
                 }
 
                 .orbit-2 {
-                    width: 142px;
-                    height: 142px;
-                    bottom: 10%;
-                    left: 6%;
+                    width: 162px;
+                    height: 162px;
+                    bottom: 9%;
+                    left: 4%;
                     transform: rotate(14deg);
+                }
+
+                .orbit-3 {
+                    width: 224px;
+                    height: 130px;
+                    right: 8%;
+                    bottom: 12%;
+                    transform: rotate(-14deg);
+                    border-style: solid;
+                    border-color: rgba(156, 201, 255, 0.22);
+                    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.42) 26%, rgba(0, 0, 0, 0.85) 70%, transparent 100%);
+                }
+
+                .banner-curve {
+                    position: absolute;
+                    border: 1px solid rgba(163, 208, 255, 0.28);
+                    border-radius: 999px;
+                    opacity: var(--detail-curve-opacity);
+                    mask-image: linear-gradient(115deg, transparent 0%, rgba(0, 0, 0, 0.95) 42%, transparent 100%);
+                }
+
+                .curve-1 {
+                    width: 286px;
+                    height: 136px;
+                    top: 20%;
+                    right: 16%;
+                    transform: rotate(18deg);
+                }
+
+                .curve-2 {
+                    width: 232px;
+                    height: 108px;
+                    left: 2%;
+                    bottom: 24%;
+                    transform: rotate(-12deg);
+                    border-style: dashed;
                 }
 
                 .banner-node {
                     position: absolute;
-                    width: 7px;
-                    height: 7px;
+                    width: 6px;
+                    height: 6px;
                     border-radius: 50%;
                     background: #a9d8ff;
                     border: 1px solid rgba(224, 242, 255, 0.92);
                     box-shadow: 0 0 0 2px rgba(11, 34, 66, 0.5), 0 0 10px rgba(141, 204, 255, 0.56);
+                    opacity: var(--detail-node-opacity);
                     animation: microPulse 4.8s ease-in-out infinite;
                 }
 
                 .node-1 {
-                    top: 14%;
-                    right: 19%;
+                    top: 13%;
+                    right: 24%;
                 }
 
                 .node-2 {
-                    right: 11%;
-                    bottom: 21%;
+                    right: 11.5%;
+                    bottom: 24%;
                 }
 
                 .node-3 {
-                    left: 21%;
-                    bottom: 19%;
+                    left: 17%;
+                    bottom: 18%;
                     animation-delay: 1.1s;
+                }
+
+                .node-4 {
+                    left: 30%;
+                    top: 18%;
+                    animation-delay: 2s;
                 }
 
                 .banner-connector {
@@ -273,20 +357,73 @@
                     background: linear-gradient(90deg, rgba(165, 206, 255, 0.08), rgba(181, 214, 255, 0.72), rgba(165, 206, 255, 0.08));
                     filter: drop-shadow(0 0 2px rgba(126, 190, 251, 0.36));
                     transform-origin: left center;
+                    opacity: var(--detail-connector-opacity);
                 }
 
                 .connector-1 {
-                    width: 90px;
-                    top: 18%;
-                    right: 13%;
-                    transform: rotate(36deg);
+                    width: 104px;
+                    top: 17%;
+                    right: 15%;
+                    transform: rotate(32deg);
                 }
 
                 .connector-2 {
-                    width: 88px;
-                    bottom: 21%;
-                    left: 20%;
-                    transform: rotate(-12deg);
+                    width: 94px;
+                    bottom: 20%;
+                    left: 16%;
+                    transform: rotate(-14deg);
+                }
+
+                .connector-3 {
+                    width: 118px;
+                    right: 10%;
+                    top: 42%;
+                    transform: rotate(-24deg);
+                }
+
+                .connector-dashed {
+                    background: none;
+                    border-top: 1px dashed rgba(172, 212, 255, 0.58);
+                }
+
+                .banner-marker {
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    opacity: 0.46;
+
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        background: rgba(176, 215, 255, 0.66);
+                    }
+
+                    &::before {
+                        width: 10px;
+                        height: 1px;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+
+                    &::after {
+                        width: 1px;
+                        height: 10px;
+                        left: 50%;
+                        top: 0;
+                        transform: translateX(-50%);
+                    }
+                }
+
+                .marker-1 {
+                    right: 6%;
+                    top: 34%;
+                }
+
+                .marker-2 {
+                    left: 9%;
+                    bottom: 30%;
                 }
 
                 .banner-micro-tag {
@@ -305,6 +442,7 @@
                     gap: 7px;
                     box-shadow: 0 8px 18px rgba(3, 17, 38, 0.28), 0 0 10px rgba(86, 161, 238, 0.1);
                     animation: microFloat 6.5s ease-in-out infinite;
+                    opacity: var(--detail-tag-opacity);
 
                     .tag-dot {
                         width: 6px;
@@ -320,19 +458,19 @@
                 }
 
                 .tag-1 {
-                    top: 8%;
-                    left: 3%;
+                    top: 9%;
+                    left: 1%;
                 }
 
                 .tag-2 {
-                    right: 5%;
-                    bottom: 11%;
+                    right: 3%;
+                    bottom: 12%;
                     animation-delay: 1.1s;
                 }
 
                 .tag-3 {
-                    left: 15%;
-                    bottom: 8%;
+                    left: 12%;
+                    bottom: 6%;
                     animation-delay: 2.2s;
                 }
             }
@@ -375,6 +513,33 @@
         }
     }
 
+    &.banner-detail-about {
+        --detail-dot-opacity: 0.36;
+        --detail-orbit-opacity: 0.57;
+        --detail-curve-opacity: 0.54;
+    }
+
+    &.banner-detail-events {
+        --detail-dot-opacity: 0.37;
+        --detail-orbit-opacity: 0.64;
+        --detail-curve-opacity: 0.57;
+        --detail-connector-opacity: 0.69;
+    }
+
+    &.banner-detail-newsletter {
+        --detail-dot-opacity: 0.32;
+        --detail-orbit-opacity: 0.53;
+        --detail-curve-opacity: 0.6;
+        --detail-connector-opacity: 0.58;
+    }
+
+    &.banner-detail-contact {
+        --detail-dot-opacity: 0.31;
+        --detail-orbit-opacity: 0.5;
+        --detail-curve-opacity: 0.48;
+        --detail-connector-opacity: 0.64;
+    }
+
     @media screen and (max-width: 1100px) {
         padding: 46px 0 36px;
 
@@ -393,6 +558,13 @@
 
             .banner-background-img-container {
                 min-height: 280px;
+
+                .banner-floating-system {
+                    .banner-micro-tag {
+                        font-size: 0.62rem;
+                        padding: 5px 9px;
+                    }
+                }
 
                 .banner-background-img {
                     max-width: 460px;
@@ -459,7 +631,48 @@
                 min-height: 220px;
 
                 .banner-floating-system {
-                    display: none;
+                    .banner-micro-tag,
+                    .dot-field-2,
+                    .curve-2,
+                    .orbit-3,
+                    .connector-3,
+                    .marker-2,
+                    .node-4 {
+                        display: none;
+                    }
+
+                    .orbit-1 {
+                        width: 162px;
+                        height: 162px;
+                        top: 3%;
+                        right: 2%;
+                    }
+
+                    .orbit-2 {
+                        width: 124px;
+                        height: 124px;
+                        left: 6%;
+                        bottom: 10%;
+                    }
+
+                    .curve-1 {
+                        width: 206px;
+                        height: 94px;
+                        top: 26%;
+                        right: 16%;
+                    }
+
+                    .connector-1 {
+                        width: 78px;
+                        top: 19%;
+                        right: 16%;
+                    }
+
+                    .connector-2 {
+                        width: 72px;
+                        left: 19%;
+                        bottom: 20%;
+                    }
                 }
 
                 .banner-background-img {

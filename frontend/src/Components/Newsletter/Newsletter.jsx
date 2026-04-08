@@ -50,7 +50,8 @@ const Newsletter = () => {
             description={newsletterDescription}
             secondaryDescription={newsletterSecondaryDescription}
             chips={["Psychology", "Artificial Intelligence", "Monthly Updates"]}
-            floatingLabels={["Monthly", "Insights", "AI + Psychology"]}
+            floatingLabels={["Monthly", "AI + Psychology", "Insights", ]}
+            detailVariant="newsletter"
             imgClass={"banner-img"} 
           />
 

@@ -27,6 +27,10 @@
     overflow: hidden;
     isolation: isolate;
 
+    --hero-atmo-line: rgba(166, 206, 255, 0.66);
+    --hero-atmo-dot: rgba(176, 214, 255, 0.68);
+    --hero-atmo-node: rgba(192, 225, 255, 0.54);
+
     .header-grid-layer {
         position: absolute;
         inset: 0;
@@ -62,6 +66,183 @@
         right: -90px;
         top: 9%;
         background: rgba(125, 185, 245, 0.14);
+    }
+
+    .header-atmosphere-layer {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.95;
+
+        .atmo-orbit,
+        .atmo-curve,
+        .atmo-ring,
+        .atmo-path {
+            position: absolute;
+            border-radius: 999px;
+            border: 1px solid var(--hero-atmo-line);
+        }
+
+        .atmo-orbit {
+            opacity: 0.5;
+        }
+
+        .orbit-left {
+            width: 360px;
+            height: 360px;
+            left: -130px;
+            top: 10%;
+            border-style: dashed;
+            transform: rotate(-14deg);
+            mask-image: linear-gradient(128deg, transparent 10%, rgba(0, 0, 0, 0.92) 40%, transparent 84%);
+        }
+
+        .orbit-right {
+            width: 390px;
+            height: 390px;
+            right: -150px;
+            top: -4%;
+            border-style: dashed;
+            opacity: 0.5;
+            mask-image: linear-gradient(118deg, transparent 0%, rgba(0, 0, 0, 0.9) 33%, transparent 88%);
+        }
+
+        .orbit-lower {
+            width: 430px;
+            height: 210px;
+            left: 8%;
+            bottom: -112px;
+            border-style: dashed;
+            transform: rotate(-8deg);
+            opacity: 0.3;
+            mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.75) 38%, transparent 94%);
+        }
+
+        .atmo-curve {
+            opacity: 0.38;
+            border-color: rgba(162, 205, 255, 0.26);
+            mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.95) 48%, transparent 100%);
+        }
+
+        .curve-left {
+            width: 280px;
+            height: 108px;
+            left: 16%;
+            top: 27%;
+            transform: rotate(-15deg);
+        }
+
+        .curve-right {
+            width: 282px;
+            height: 116px;
+            left: 70%;
+            top: 15%;
+            transform: rotate(19deg);
+            opacity: 0.42;
+        }
+
+        .atmo-ring {
+            width: 176px;
+            height: 176px;
+            left: 78%;
+            top: 10%;
+            border-color: rgba(156, 200, 255, 0.24);
+            opacity: 0.38;
+            mask-image: linear-gradient(142deg, transparent 0%, rgba(0, 0, 0, 0.95) 52%, transparent 90%);
+        }
+
+        .atmo-dots {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--hero-atmo-dot);
+        }
+
+        .dots-left-top {
+            left: 10%;
+            top: 17%;
+            box-shadow:
+                14px 10px 0 rgba(175, 213, 255, 0.28),
+                26px 2px 0 rgba(175, 213, 255, 0.22),
+                39px 15px 0 rgba(175, 213, 255, 0.26),
+                9px 28px 0 rgba(175, 213, 255, 0.2),
+                30px 31px 0 rgba(175, 213, 255, 0.24);
+        }
+
+        .dots-right-edge {
+            left: 81%;
+            top: 13%;
+            box-shadow:
+                11px 7px 0 rgba(175, 213, 255, 0.32),
+                22px 19px 0 rgba(175, 213, 255, 0.27),
+                -8px 18px 0 rgba(175, 213, 255, 0.23),
+                8px 34px 0 rgba(175, 213, 255, 0.26),
+                25px 37px 0 rgba(175, 213, 255, 0.21);
+        }
+
+        .dots-lower-left {
+            left: 22%;
+            bottom: 16%;
+            box-shadow:
+                12px 8px 0 rgba(175, 213, 255, 0.24),
+                24px 1px 0 rgba(175, 213, 255, 0.18),
+                36px 13px 0 rgba(175, 213, 255, 0.22),
+                16px 24px 0 rgba(175, 213, 255, 0.18);
+        }
+
+        .atmo-node {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--hero-atmo-node);
+            box-shadow: 0 0 0 1px rgba(13, 36, 72, 0.5), 0 0 12px rgba(133, 196, 255, 0.3);
+            opacity: 0.68;
+        }
+
+        .node-left {
+            left: 21%;
+            top: 36%;
+            opacity: 0.72;
+        }
+
+        .node-right {
+            left: 79%;
+            top: 22%;
+            opacity: 0.74;
+        }
+
+        .node-lower {
+            left: 31%;
+            bottom: 20%;
+            opacity: 0.44;
+        }
+
+        .atmo-path {
+            height: 1px;
+            border: 0;
+            background: linear-gradient(90deg, rgba(165, 205, 255, 0), rgba(178, 214, 255, 0.56), rgba(165, 205, 255, 0));
+            transform-origin: left center;
+            opacity: 0.48;
+        }
+
+        .path-left {
+            width: 148px;
+            left: 18%;
+            top: 38%;
+            transform: rotate(8deg);
+            opacity: 0.46;
+        }
+
+        .path-right {
+            width: 184px;
+            left: 73%;
+            top: 24%;
+            transform: rotate(-21deg);
+            opacity: 0.48;
+        }
     }
 
     .header-content-container {
@@ -495,6 +676,112 @@
                     opacity: 0.62;
                 }
             }
+        }
+    }
+
+    @media (max-width: 980px) {
+        .header-atmosphere-layer {
+            .ring-right {
+                display: none;
+            }
+
+            .orbit-right {
+                width: 286px;
+                height: 286px;
+                right: -124px;
+                top: 3%;
+                opacity: 0.3;
+            }
+
+            .dots-right-edge {
+                left: 79%;
+                top: 10%;
+            }
+
+            .node-right {
+                left: 77%;
+                top: 18%;
+                opacity: 0.58;
+            }
+
+            .path-right {
+                width: 138px;
+                left: 72%;
+                top: 22%;
+                opacity: 0.28;
+            }
+
+            .orbit-left {
+                left: -160px;
+                top: 12%;
+                opacity: 0.26;
+            }
+
+            .orbit-lower {
+                left: 2%;
+                opacity: 0.2;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header-atmosphere-layer {
+            .curve-left,
+            .curve-right,
+            .orbit-lower,
+            .ring-right,
+            .path-left,
+            .node-lower,
+            .node-right,
+            .dots-lower-left {
+                display: none;
+            }
+
+            .orbit-right {
+                width: 224px;
+                height: 224px;
+                right: -122px;
+                top: 6%;
+                opacity: 0.24;
+            }
+
+            .dots-right-edge {
+                left: 78%;
+                top: 9%;
+                opacity: 0.78;
+            }
+
+            .path-right {
+                width: 108px;
+                left: 74%;
+                top: 19%;
+                opacity: 0.2;
+            }
+
+            .orbit-left {
+                width: 290px;
+                height: 290px;
+                left: -140px;
+                top: 10%;
+                opacity: 0.2;
+            }
+
+            .dots-left-top {
+                left: 8%;
+                top: 15%;
+            }
+
+            .node-left {
+                left: 19%;
+                top: 30%;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    @media (max-width: 520px) {
+        .header-atmosphere-layer {
+            display: none;
         }
     }
 }

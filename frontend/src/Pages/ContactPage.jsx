@@ -18,6 +18,7 @@ const ContactPage = () => {
             secondaryDescription={contactSecondaryDescription}
             chips={["Collaboration", "Partnerships", "Research Support"]}
             floatingLabels={["Open Dialogue", "Interdisciplinary Team"]}
+            detailVariant="contact"
             imgClass={"banner-img-float"}
          />
          <div className="banner-transition"></div>

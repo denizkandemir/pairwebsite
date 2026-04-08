@@ -198,6 +198,50 @@
                 }
             }
 
+            .about-team-card {
+                position: absolute;
+                right: -2%;
+                bottom: 4.5%;
+                width: clamp(150px, 20vw, 188px);
+                border-radius: 14px;
+                overflow: hidden;
+                border: 1px solid rgba(167, 206, 255, 0.36);
+                background: linear-gradient(145deg, rgba(9, 28, 58, 0.78), rgba(9, 22, 43, 0.7));
+                box-shadow: 0 10px 22px rgba(2, 13, 30, 0.32), 0 0 10px rgba(95, 171, 246, 0.08);
+                z-index: 3;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(180deg, rgba(12, 35, 68, 0.14), rgba(8, 22, 44, 0.34));
+                    pointer-events: none;
+                }
+
+                .about-team-image {
+                    width: 100%;
+                    aspect-ratio: 1.28 / 1;
+                    object-fit: cover;
+                    display: block;
+                }
+
+                .about-team-label {
+                    position: absolute;
+                    left: 9px;
+                    bottom: 8px;
+                    margin: 0;
+                    border-radius: 999px;
+                    border: 1px solid rgba(173, 210, 255, 0.46);
+                    background: rgba(8, 27, 54, 0.78);
+                    color: #d9edff;
+                    font-size: 0.56rem;
+                    letter-spacing: 0.09em;
+                    text-transform: uppercase;
+                    padding: 5px 8px;
+                    z-index: 1;
+                }
+            }
+
             .about-micro-label {
                 position: absolute;
                 right: 4%;
@@ -246,6 +290,12 @@
                     left: 6%;
                     bottom: 5%;
                 }
+
+                .about-team-card {
+                    right: 4%;
+                    bottom: 3.5%;
+                    width: clamp(146px, 27vw, 180px);
+                }
             }
         }
 
@@ -292,6 +342,17 @@
                     }
                 }
 
+                .about-team-card {
+                    width: 150px;
+                    right: 2%;
+                    bottom: 3.5%;
+
+                    .about-team-label {
+                        font-size: 0.53rem;
+                        padding: 4px 7px;
+                    }
+                }
+
                 .about-micro-label {
                     display: none;
                 }
@@ -319,6 +380,12 @@
                     margin-top: 12px;
                     min-width: 100%;
                     max-width: 100%;
+                }
+
+                .about-team-card {
+                    position: static;
+                    width: min(78%, 280px);
+                    margin: 10px auto 0;
                 }
             }
         }

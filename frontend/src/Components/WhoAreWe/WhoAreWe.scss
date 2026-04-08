@@ -44,12 +44,44 @@
         position: relative;
         z-index: 2;
 
+        &::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: -52px;
+            top: -24px;
+            border: 1px solid rgba(163, 203, 255, 0.2);
+            border-radius: 999px;
+            opacity: 0.5;
+            mask-image: linear-gradient(145deg, transparent 0%, rgba(0, 0, 0, 0.88) 50%, transparent 90%);
+            pointer-events: none;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 102px;
+            height: 1px;
+            right: 6%;
+            top: 12%;
+            background: linear-gradient(90deg, rgba(168, 208, 255, 0), rgba(182, 217, 255, 0.48), rgba(168, 208, 255, 0));
+            transform: rotate(-16deg);
+            opacity: 0.54;
+            pointer-events: none;
+        }
+
         @media (max-width: 1000px) {
             flex-wrap: wrap;
             gap: 30px;
             justify-content: center;
             align-items: center;
             padding: 0 30px;
+
+            &::before,
+            &::after {
+                opacity: 0.38;
+            }
         }
 
         .who-card-img-container {

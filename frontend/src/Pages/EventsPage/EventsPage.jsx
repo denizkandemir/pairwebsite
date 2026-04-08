@@ -22,6 +22,7 @@ const EventsPage = () => {
             secondaryDescription={eventsSecondaryDescription}
             chips={["Talks", "Sessions", "Community"]}
             floatingLabels={["Talks", "Sessions", "Community"]}
+            detailVariant="events"
             imgClass={"events-page-img"}
          />
          <UpcomingEvent />

@@ -22,6 +22,7 @@ const Banner = ({
     primaryCtaHref,
     secondaryCtaLabel,
     secondaryCtaHref,
+    detailVariant = "default",
     align = "left",
     buttonText
 }) => {
@@ -32,6 +33,8 @@ const Banner = ({
 
     const resolvedPrimaryCta = primaryCta || (primaryCtaLabel ? { label: primaryCtaLabel, href: primaryCtaHref } : null) || (buttonText ? { label: buttonText } : null);
     const resolvedSecondaryCta = secondaryCta || (secondaryCtaLabel ? { label: secondaryCtaLabel, href: secondaryCtaHref } : null);
+    const allowedDetailVariants = ["default", "about", "events", "newsletter", "contact"];
+    const resolvedDetailVariant = allowedDetailVariants.includes(detailVariant) ? detailVariant : "default";
 
     const renderTitle = () => {
         if (!titleHighlight || !title || !title.includes(titleHighlight)) {
@@ -71,7 +74,7 @@ const Banner = ({
     };
 
     return (
-        <div className={`banner-container ${imagePosition === "left" ? "image-left" : "image-right"}`}>
+        <div className={`banner-container banner-detail-${resolvedDetailVariant} ${imagePosition === "left" ? "image-left" : "image-right"}`}>
             <div className="banner-content-container">
                 <div className={`banner-text-container ${align === "center" ? "banner-text-center" : ""}`}>
                     {badgeText && <p className="banner-badge">{badgeText}</p>}
@@ -87,13 +90,13 @@ const Banner = ({
                         <p className="banner-text banner-text-secondary">{resolvedSecondaryDescription}</p>
                     )}
 
-                    {!!chips?.length && (
+                    {/* {!!chips?.length && (
                         <div className="banner-chips" aria-label="Banner topics">
                             {chips.map((chip) => (
                                 <span className="banner-chip" key={chip}>{chip}</span>
                             ))}
                         </div>
-                    )}
+                    )} */}
 
                     {(resolvedPrimaryCta || resolvedSecondaryCta) && (
                         <div className="banner-cta-row">
@@ -107,23 +110,30 @@ const Banner = ({
 
                 <div className="banner-background-img-container">
                     <div className="banner-visual-glow" aria-hidden="true"></div>
-                    {!!floatingLabels?.length && (
-                        <div className="banner-floating-system" aria-hidden="true">
-                            <span className="banner-orbit orbit-1"></span>
-                            <span className="banner-orbit orbit-2"></span>
-                            <span className="banner-node node-1"></span>
-                            <span className="banner-node node-2"></span>
-                            <span className="banner-node node-3"></span>
-                            <span className="banner-connector connector-1"></span>
-                            <span className="banner-connector connector-2"></span>
-                            {floatingLabels.slice(0, 3).map((label, index) => (
-                                <span key={`${label}-${index}`} className={`banner-micro-tag tag-${index + 1}`}>
-                                    <span className="tag-dot"></span>
-                                    <span className="tag-text">{label}</span>
-                                </span>
-                            ))}
-                        </div>
-                    )}
+                    <div className="banner-floating-system" aria-hidden="true">
+                        <span className="banner-dot-field dot-field-1"></span>
+                        <span className="banner-dot-field dot-field-2"></span>
+                        <span className="banner-orbit orbit-1"></span>
+                        <span className="banner-orbit orbit-2"></span>
+                        <span className="banner-orbit orbit-3"></span>
+                        <span className="banner-curve curve-1"></span>
+                        <span className="banner-curve curve-2"></span>
+                        <span className="banner-node node-1"></span>
+                        <span className="banner-node node-2"></span>
+                        <span className="banner-node node-3"></span>
+                        <span className="banner-node node-4"></span>
+                        <span className="banner-connector connector-1"></span>
+                        <span className="banner-connector connector-2"></span>
+                        <span className="banner-connector connector-3 connector-dashed"></span>
+                        <span className="banner-marker marker-1"></span>
+                        <span className="banner-marker marker-2"></span>
+                        {!!floatingLabels?.length && floatingLabels.slice(0, 3).map((label, index) => (
+                            <span key={`${label}-${index}`} className={`banner-micro-tag tag-${index + 1}`}>
+                                <span className="tag-dot"></span>
+                                <span className="tag-text">{label}</span>
+                            </span>
+                        ))}
+                    </div>
                     <img src={resolvedImageSrc} alt={resolvedImageAlt} className={`banner-background-img ${imgClass || ''}`} />
                 </div>
             </div>

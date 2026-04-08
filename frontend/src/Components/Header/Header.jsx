@@ -1,27 +1,77 @@
 import "./Header.scss";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import headerImg from "/pairHeader1.png";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import WhoAreWe from "../WhoAreWe/WhoAreWe";
 import Blog from "../Blog/Blog";
 import PairTimeline from "../PairTimeline/PairTimeline";
 import Subscribe from "../Subscribe/Subscribe";
 import EventsHomepage from "../EventsHomepage/EventsHomepage";
-import { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 
-const heroHeadlineOptions = [
-    "Psychology Meets Artificial Intelligence",
-    "Where Mind and Machine Converge",
-    "Exploring the Future of Human Intelligence"
-];
-
-const selectedHeadline = heroHeadlineOptions[1];
 
 const Header = () => {
 
+    const heroHeadlineOptions = [
+        {
+            text: "Psychology Meets Artificial Intelligence",
+            highlight: "Artificial Intelligence",
+        },
+        {
+            text: "Where Mind and Machine Converge",
+            highlight: "Machine",
+        },
+        {
+            text: "Exploring the Future of Human Intelligence",
+            highlight: "Human Intelligence",
+        },
+        {
+            text: "Forefront of Modern Research",
+            highlight: "Modern Research",
+        },
+        {
+            text: "Advancing Cognitive Science through AI",
+            highlight: "Cognitive Science",
+        }
+    ];
+
     const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const [selectedHeadlineIndex, setSelectedHeadlineIndex] = useState(0);
+
+    useEffect(() => {
+        const headlineInterval = setInterval(() => {
+            setSelectedHeadlineIndex((prevIndex) => (prevIndex + 1) % heroHeadlineOptions.length);
+        }, 10000); // Change headline every 10 seconds
+
+        return () => clearInterval(headlineInterval);
+    }, []);
+
+    const currentHeadline = heroHeadlineOptions[selectedHeadlineIndex];
+    const parts = currentHeadline.text.split(currentHeadline.highlight);
+    const words = currentHeadline.text.split(" ");
+
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.06,
+            },
+        },
+        exit: {
+            transition: {
+                staggerChildren: 0.03,
+                staggerDirection: -1,
+            },
+        },
+    };
+
+    const wordVariants = {
+        hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
+        visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+        exit: { opacity: 0, y: -20, filter: "blur(6px)" },
+    };
 
     const root = document.querySelector("#root");
 
@@ -43,14 +93,51 @@ const Header = () => {
                 <div className="header-grid-layer"></div>
                 <div className="header-ambient header-ambient-left"></div>
                 <div className="header-ambient header-ambient-right"></div>
+                <div className="header-atmosphere-layer" aria-hidden="true">
+                    <span className="atmo-orbit orbit-left"></span>
+                    <span className="atmo-orbit orbit-right"></span>
+                    <span className="atmo-orbit orbit-lower"></span>
+                    <span className="atmo-curve curve-left"></span>
+                    <span className="atmo-curve curve-right"></span>
+                    <span className="atmo-ring ring-right"></span>
+                    <span className="atmo-dots dots-left-top"></span>
+                    <span className="atmo-dots dots-right-edge"></span>
+                    <span className="atmo-dots dots-lower-left"></span>
+                    <span className="atmo-node node-left"></span>
+                    <span className="atmo-node node-right"></span>
+                    <span className="atmo-node node-lower"></span>
+                    <span className="atmo-path path-left"></span>
+                    <span className="atmo-path path-right"></span>
+                </div>
                 <div className="header-content-container">
                     <div className="header-texts-container">
                         <p className="header-kicker">PAIR Research Initiative</p>
-                        <h1 className="header-title">
-                            {selectedHeadline.split("Machine")[0]}
-                            <span className="highlight-text">Machine</span>
-                            {selectedHeadline.split("Machine")[1]}
-                        </h1>
+                        <AnimatePresence mode="wait">
+                            <motion.h1
+                                key={currentHeadline.text}
+                                variants={containerVariants}
+                                initial="hidden"
+                                animate="visible"
+                                exit="exit"
+                                className="header-title"
+                            >
+                                {words.map((word, index) => {
+                                    const isHighlight = currentHeadline.highlight.includes(word);
+
+                                    return (
+                                        <motion.span
+                                            key={`${word}-${index}`}
+                                            variants={wordVariants}
+                                            transition={{ duration: 0.45, ease: "easeOut" }}
+                                            style={{ display: "inline-block", marginRight: "0.25em" }}
+                                            className={isHighlight ? "highlight-text" : ""}
+                                        >
+                                            {word}
+                                        </motion.span>
+                                    );
+                                })}
+                            </motion.h1>
+                        </AnimatePresence>
                         <p className="header-text">
                             PAIR is a university-affiliated interdisciplinary lab advancing cognitive science through
                             artificial intelligence, psychological theory, and rigorous empirical research.
@@ -97,7 +184,7 @@ const Header = () => {
             <Blog />
             <WhoAreWe />
             <EventsHomepage />
-            <Subscribe title={"Stay in the Loop"}/>
+            <Subscribe title={"Stay in the Loop"} />
         </div>
     )
 };
