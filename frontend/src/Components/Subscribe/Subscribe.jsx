@@ -31,8 +31,10 @@ const Subscribe = ({title}) => {
                     <p className="subscribe-text">Psychology & AI research updates delivered monthly.</p>
 
                     <form className="subscribe-form">
-                        <input type="email" placeholder="Enter your email..." />
-                        <button type="submit">Subscribe</button>
+                        {/* <input type="email" placeholder="Enter your email..." /> */}
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGGAzOOeoN3JWcLSNTGAv7XtFcYz3qyTC0an7miLJkImA-rA/viewform?usp=publish-editor" className="link subscribe-link" target="blank">
+                         <button type="button">Subscribe</button>
+                        </a>
                     </form>
                 </div>
 

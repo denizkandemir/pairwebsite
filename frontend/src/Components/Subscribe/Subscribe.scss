@@ -38,6 +38,9 @@
   box-shadow: 0 0 30px rgba(100, 200, 255, 0.4), 0 0 60px rgba(100, 200, 255, 0.2), inset 0 1px 3px rgba(255, 255, 255, 0.15);
 
 
+.subscribe-link {
+  width: 100%;
+}
 
   @media (max-width: 1200px) {
     flex-direction: column;
@@ -227,6 +230,7 @@
   border: none;
   color: white;
   backdrop-filter: blur(8px);
+  width: 100%;
   padding: 14.5px 36px;
   font-size: 16px;
   font-weight: 500;
