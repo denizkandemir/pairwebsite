@@ -1,4 +1,3 @@
-
 .about-us-team-container {
     --team-atmo-line: rgba(164, 206, 255, 0.3);
     --team-atmo-dot: rgba(178, 214, 255, 0.34);
@@ -188,8 +187,8 @@
             overflow: visible;
             background: transparent;
             z-index: 2;
-                border: 1px solid rgba(100, 200, 255, 0.4);
-        //   box-shadow: 0 0 30px rgba(100, 200, 255, 0.3), 0 0 60px rgba(100, 200, 255, 0.2), inset 0 1px 3px rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(100, 200, 255, 0.4);
+            //   box-shadow: 0 0 30px rgba(100, 200, 255, 0.3), 0 0 60px rgba(100, 200, 255, 0.2), inset 0 1px 3px rgba(255, 255, 255, 0.15);
 
             &::before {
                 content: '';
@@ -250,6 +249,7 @@
         padding: 48px 24px;
 
         .about-team-atmosphere-layer {
+
             .curve-2,
             .path-2,
             .node-2,
@@ -280,10 +280,17 @@
         }
     }
 
+    @media (max-width: 500px) {
+        .about-us-team-img {
+            max-height: 170px;
+        }
+    }
+
     @media (max-width: 700px) {
         padding: 42px 18px;
 
         .about-team-atmosphere-layer {
+
             .team-atmo-orbit,
             .curve-1,
             .path-1,

@@ -242,10 +242,6 @@
     overflow: hidden;
     background: rgba(255, 255, 255, 0.05);
 
-    @media only screen and (max-width: 420px) {
-        width: 320px;
-    }
-
     .events-info-content-container {
         padding: 20px 15px;
     }
@@ -278,7 +274,6 @@
         margin-bottom: 20px;
 
         @media only screen and (max-width: 420px) {
-            margin-bottom: 25px;
             gap: 10px;
         }
 
