@@ -16,10 +16,14 @@ const Newsletter = () => {
 
     useFadeInOnScroll('.fade-in');
 
-    const featuredArticle = newsletterArticles.find(article => article.isHighlighted);
-    const favoriteArticles = newsletterArticles.filter(article => !article.isHighlighted).slice(0, 4);
-    const allArticlesList = newsletterArticles.filter(article => !article.isHighlighted);
-    const displayedArticles = showAllArticles ? allArticlesList : allArticlesList.slice(0, 5);
+    const featuredArticle = newsletterArticles.find(article => article.isFeatured);
+    const favoriteArticles = newsletterArticles.filter(article => !article.isFeatured).slice(0, 4);
+    const allArticlesList = newsletterArticles;
+    const visibleArticlesLimit = 5;
+    const canCollapseArticles = allArticlesList.length > visibleArticlesLimit;
+    const displayedArticles = showAllArticles || !canCollapseArticles
+      ? allArticlesList
+      : allArticlesList.slice(0, visibleArticlesLimit);
     
     // Get events and webinars (try to get upcoming ones, fallback to all)
     const today = new Date();
@@ -99,7 +103,7 @@ const Newsletter = () => {
             {/* Articles Section with Load More */}
             <section className="articles-section fade-in">
               <h2 className="articles-section-title">Latest Articles</h2>
-              <div className={`articles-grid-container ${!showAllArticles ? 'has-fade' : ''}`}>
+              <div className={`articles-grid-container ${canCollapseArticles && !showAllArticles ? 'has-fade' : ''}`}>
                 <div className="articles-grid">
                   {displayedArticles.map((article) => (
                     <Link key={article.id} to={`/newsletter/${article.id}`} className="article-card">
@@ -119,7 +123,7 @@ const Newsletter = () => {
                     </Link>
                   ))}
                 </div>
-                {!showAllArticles && allArticlesList.length > 5 && (
+                {canCollapseArticles && !showAllArticles && (
                   <div className="articles-fade-overlay">
                     <button 
                       className="load-more-button"
@@ -130,7 +134,7 @@ const Newsletter = () => {
                   </div>
                 )}
               </div>
-              {showAllArticles && allArticlesList.length > 5 && (
+              {canCollapseArticles && showAllArticles && (
                 <div className="show-less-container">
                   <button 
                     className="show-less-button"

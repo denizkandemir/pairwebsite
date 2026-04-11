@@ -70,6 +70,10 @@ body {
   overflow: hidden;
 }
 
+.link {
+  text-decoration: none;
+  color: inherit;
+}
 
 .no-scroll {
   overflow: hidden;

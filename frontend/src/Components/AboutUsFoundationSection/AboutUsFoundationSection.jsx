@@ -235,8 +235,8 @@ const splitIntoSentenceChunks = (text, sentencesPerChunk = 2) => {
                     <span className="foundation-module-particle depth-sm p3"></span>
                     <span className="foundation-module-particle depth-sm p4"></span>
                     <span className="foundation-module-particle depth-md p5"></span>
-                    <span className="foundation-module-particle depth-sm p6"></span>
-                    <span className="foundation-module-particle depth-lg p7"></span>
+                    <span className="foundation-module-particle depth-sm p6 expanded-only"></span>
+                    <span className="foundation-module-particle depth-lg p7 expanded-only"></span>
                     <span className="foundation-module-particle depth-sm p8 expanded-only"></span>
                     <span className="foundation-module-particle depth-md p9 expanded-only"></span>
                     <span className="foundation-module-particle depth-sm p10 expanded-only"></span>

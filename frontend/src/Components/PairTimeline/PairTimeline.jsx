@@ -19,17 +19,15 @@ const pairContent = [
         title: "Artificial Intelligence ",
         className: "ai-orb-img",
         svg: contentImg2,
-        text: "The simulation of human intelligence processes by machines, especially computer systems."
+        text: "The simulation of human intelligence processes by machines, especially in learning and decision-making."
     },
-
-   
 
     {
         id: 3,
         title: "Research Laboratory",
         className: "research-orb-img",
         svg: contentImg3,
-        text: "A dedicated facility for systematic investigation and experimentation to advance knowledge."
+        text: "A dedicated space for investigation, collaboration, and transforming ideas into meaningful insight."
     }
 ];
 

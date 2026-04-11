@@ -139,8 +139,7 @@ const Header = () => {
                             </motion.h1>
                         </AnimatePresence>
                         <p className="header-text">
-                            PAIR is a university-affiliated interdisciplinary lab advancing cognitive science through
-                            artificial intelligence, psychological theory, and rigorous empirical research.
+                           PAIR is a pioneering student organization dedicated to exploring the novel relationship between psychology and artificial intelligence. We combine rigorous scientific research with bold and innovative thinking to make complex findings clear, engaging and accessible.
                         </p>
 
                         {/* <div className="header-badges" aria-label="PAIR interdisciplinary focus">
