@@ -66,6 +66,9 @@ body {
   transform: translateX(0);
 }
 
+.about-us-page-container {
+  overflow: hidden;
+}
 
 
 .no-scroll {

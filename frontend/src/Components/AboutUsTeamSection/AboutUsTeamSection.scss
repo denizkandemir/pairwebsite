@@ -1,0 +1,325 @@
+
+.about-us-team-container {
+    --team-atmo-line: rgba(164, 206, 255, 0.3);
+    --team-atmo-dot: rgba(178, 214, 255, 0.34);
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 58px 40px;
+    position: relative;
+    // overflow: hidden;
+    isolation: isolate;
+
+    .about-team-atmosphere-layer {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.56;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(0.5px);
+        }
+
+        &::before {
+            width: clamp(200px, 28vw, 360px);
+            height: clamp(200px, 28vw, 360px);
+            top: -3%;
+            right: -6%;
+            background: radial-gradient(circle at 36% 36%, rgba(118, 185, 255, 0.2), rgba(46, 110, 196, 0.08) 48%, transparent 76%);
+        }
+
+        &::after {
+            width: clamp(180px, 24vw, 320px);
+            height: clamp(180px, 24vw, 320px);
+            left: -9%;
+            bottom: -22%;
+            background: radial-gradient(circle at 65% 52%, rgba(135, 194, 255, 0.14), rgba(22, 68, 138, 0.05) 52%, transparent 80%);
+        }
+
+        .team-atmo-orbit,
+        .team-atmo-curve {
+            position: absolute;
+            border: 1px dashed var(--team-atmo-line);
+            border-radius: 999px;
+        }
+
+        .team-atmo-orbit {
+            opacity: 0.54;
+        }
+
+        .orbit-1 {
+            width: 300px;
+            height: 300px;
+            top: 1%;
+            right: -90px;
+            mask-image: linear-gradient(126deg, transparent 0%, rgba(0, 0, 0, 0.94) 40%, transparent 88%);
+        }
+
+        .orbit-2 {
+            width: 236px;
+            height: 236px;
+            left: -76px;
+            bottom: 4%;
+            opacity: 0.5;
+            border-style: solid;
+            border-color: rgba(150, 199, 255, 0.24);
+            mask-image: linear-gradient(146deg, transparent 0%, rgba(0, 0, 0, 0.84) 45%, transparent 90%);
+        }
+
+        .team-atmo-curve {
+            border-style: solid;
+            opacity: 0.46;
+            border-color: rgba(160, 203, 255, 0.24);
+            mask-image: linear-gradient(95deg, transparent 0%, rgba(0, 0, 0, 0.95) 50%, transparent 100%);
+        }
+
+        .curve-1 {
+            width: 252px;
+            height: 92px;
+            right: 9%;
+            top: 19%;
+            transform: rotate(15deg);
+        }
+
+        .curve-2 {
+            width: 214px;
+            height: 84px;
+            left: -5%;
+            bottom: 5%;
+            transform: rotate(-14deg);
+        }
+
+        .team-atmo-path {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(165, 205, 255, 0), rgba(178, 214, 255, 0.48), rgba(165, 205, 255, 0));
+            transform-origin: left center;
+            opacity: 0.56;
+        }
+
+        .path-1 {
+            width: 148px;
+            right: 12%;
+            top: 32%;
+            transform: rotate(-20deg);
+        }
+
+        .path-2 {
+            width: 126px;
+            left: -1%;
+            bottom: 12%;
+            transform: rotate(8deg);
+            opacity: 0.34;
+        }
+
+        .team-atmo-dots {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--team-atmo-dot);
+        }
+
+        .dots-1 {
+            right: 16%;
+            top: 13%;
+            box-shadow:
+                11px 8px 0 rgba(178, 214, 255, 0.28),
+                21px 0 0 rgba(178, 214, 255, 0.22),
+                30px 13px 0 rgba(178, 214, 255, 0.26),
+                16px 25px 0 rgba(178, 214, 255, 0.2);
+        }
+
+        .dots-2 {
+            left: 2%;
+            bottom: 7%;
+            box-shadow:
+                12px 8px 0 rgba(178, 214, 255, 0.24),
+                24px 2px 0 rgba(178, 214, 255, 0.2),
+                34px 12px 0 rgba(178, 214, 255, 0.22);
+        }
+
+        .team-atmo-node {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(196, 226, 255, 0.48);
+            box-shadow: 0 0 0 1px rgba(13, 36, 72, 0.42), 0 0 8px rgba(133, 196, 255, 0.24);
+        }
+
+        .node-1 {
+            right: 20%;
+            top: 29%;
+        }
+
+        .node-2 {
+            left: 4%;
+            bottom: 14%;
+            opacity: 0.72;
+        }
+    }
+
+    .about-us-team-content-container {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+
+        .about-us-team-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            border-radius: 20px;
+            overflow: visible;
+            background: transparent;
+            z-index: 2;
+                border: 1px solid rgba(100, 200, 255, 0.4);
+        //   box-shadow: 0 0 30px rgba(100, 200, 255, 0.3), 0 0 60px rgba(100, 200, 255, 0.2), inset 0 1px 3px rgba(255, 255, 255, 0.15);
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: -18px -20px;
+                border-radius: 32px;
+                background:
+                    radial-gradient(circle at 70% 38%, rgba(88, 160, 255, 0.34), rgba(28, 74, 150, 0.16) 44%, transparent 74%),
+                    radial-gradient(circle at 24% 70%, rgba(108, 187, 255, 0.2), rgba(12, 53, 120, 0.12) 54%, transparent 84%);
+                filter: blur(28px);
+                opacity: 0.62;
+                z-index: -1;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset: -30px;
+                border-radius: 42px;
+                background: radial-gradient(circle at 52% 42%, rgba(86, 165, 255, 0.12), rgba(40, 93, 176, 0.07) 46%, transparent 78%);
+                filter: blur(34px);
+                opacity: 0.44;
+                pointer-events: none;
+                z-index: -2;
+            }
+
+            .about-us-team-img {
+                width: 100%;
+                max-height: 350px;
+                border-radius: 20px;
+                object-fit: cover;
+                display: block;
+                box-shadow: 0 14px 26px rgba(3, 11, 25, 0.32), 0 0 0 1px rgba(164, 205, 255, 0.16);
+            }
+        }
+
+        .about-us-team-texts-container {
+            width: 100%;
+            display: grid;
+            gap: 14px;
+            position: relative;
+            z-index: 3;
+            isolation: isolate;
+
+            .about-us-team-text {
+                margin: 0;
+                padding: 0;
+                color: rgba(227, 240, 255, 0.95);
+                font-size: clamp(1.02rem, 1.36vw, 1.14rem);
+                line-height: 1.72;
+                letter-spacing: 0.01em;
+                text-shadow: none;
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        padding: 48px 24px;
+
+        .about-team-atmosphere-layer {
+            .curve-2,
+            .path-2,
+            .node-2,
+            .dots-2 {
+                display: none;
+            }
+
+            .orbit-1 {
+                width: 236px;
+                height: 236px;
+                right: -74px;
+            }
+
+            .path-1 {
+                top: 28%;
+                right: 14%;
+            }
+        }
+
+        .about-us-team-content-container {
+            gap: 24px;
+
+            .about-us-team-img-container {
+                .about-us-team-img {
+                    max-height: 340px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 700px) {
+        padding: 42px 18px;
+
+        .about-team-atmosphere-layer {
+            .team-atmo-orbit,
+            .curve-1,
+            .path-1,
+            .dots-1,
+            .node-1 {
+                display: none;
+            }
+        }
+
+        .about-us-team-content-container {
+            .about-us-team-img-container {
+                overflow: hidden;
+
+                .about-us-team-img {
+                    max-height: 310px;
+                }
+
+                &::before {
+                    inset: -10px;
+                    filter: blur(18px);
+                    opacity: 0.5;
+                }
+
+                &::after {
+                    inset: -18px;
+                    filter: blur(24px);
+                    opacity: 0.36;
+                }
+            }
+
+            .about-us-team-texts-container {
+                .about-us-team-text {
+                    font-size: 0.98rem;
+                    line-height: 1.66;
+                }
+            }
+        }
+    }
+}

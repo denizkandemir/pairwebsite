@@ -28,11 +28,11 @@ const Header = () => {
             highlight: "Human Intelligence",
         },
         {
-            text: "Forefront of Modern Research",
+            text: "The Forefront of Modern Research",
             highlight: "Modern Research",
         },
         {
-            text: "Advancing Cognitive Science through AI",
+            text: "Advancing Cognitive Science Through AI",
             highlight: "Cognitive Science",
         }
     ];
@@ -150,8 +150,8 @@ const Header = () => {
                         </div> */}
 
                         <div className="header-actions">
-                            <Link className="header-button primary" to="/newsletter">Explore Our Research</Link>
-                            <Link className="header-button secondary" to="/events">View Events</Link>
+                            <Link className="header-button primary" to="/aboutUs">Find Out More</Link>
+                            <Link className="header-button secondary" to="/newsletter">View Events</Link>
                         </div>
                     </div>
 

@@ -8,7 +8,7 @@ import contentImg3 from "/research.png";
 const pairContent = [
     {
         id: 1,
-        title: "Psychology &",
+        title: "Psychology ",
         svg: contentImg1,
         className: "psychology-orb-img",
         text: "The study of mind and behavior, exploring how individuals think, feel, and act in various contexts."
@@ -26,7 +26,7 @@ const pairContent = [
 
     {
         id: 3,
-        title: "Research Lab",
+        title: "Research Laboratory",
         className: "research-orb-img",
         svg: contentImg3,
         text: "A dedicated facility for systematic investigation and experimentation to advance knowledge."
@@ -59,7 +59,7 @@ const PairTimeline = () => {
             <div className="pair-timeline-content-container">
                 <div className="pair-timeline-titles-container ">
                     <h2 className="pair-timeline-title ">We Are PAIR</h2>
-                    <p className="pair-timeline-p ">Combining Psychology, Artificial Intelligence, and Research Lab</p>
+                    <p className="pair-timeline-p ">Combining Psychology, Artificial Intelligence and Research </p>
                 </div>
 
                 <div className="floating-orbs-container">

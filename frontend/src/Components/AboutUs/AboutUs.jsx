@@ -1,48 +1,33 @@
 import "./AboutUs.scss";
 import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
-import aboutMainImg from "/aboutUsImgMain4.png";
-import aboutUsTeam from "/aboutUsTeam.jpeg";
-
 
 const AboutUs = () => {
     useFadeInOnScroll(); 
 
     return (
         <div className="about-hero-container">
+            <div className="about-hero-atmosphere" aria-hidden="true">
+                <span className="about-energy-particle p1"></span>
+                <span className="about-energy-particle p2"></span>
+                <span className="about-energy-particle p3"></span>
+                <span className="about-energy-particle p4"></span>
+                <span className="about-energy-particle p5"></span>
+                <span className="about-energy-particle p6"></span>
+                <span className="about-energy-particle p7"></span>
+                <span className="about-energy-particle p8"></span>
+            </div>
             <div className="about-hero-content fade-in">
                 <div className="about-hero-text">
                     <p className="about-hero-kicker">About PAIR</p>
                     <h1 className="about-hero-title">
-                        Where Collaborative Minds Advance
-                        <span className="about-hero-title-highlight"> Psychology + AI</span>
+                        <span className="about-hero-title-highlight"> PAIR : </span>
+                         Revolutinizing Psychology                
                     </h1>
                     <p className="about-hero-description">
-                        PAIR is a university-affiliated initiative that brings together psychology,
-                        artificial intelligence, and rigorous inquiry to build a collaborative research culture
-                        where ideas, methods, and people grow together.
+                      Combining the realms of human cognition and technology is no simple task. At PAIR, we believe meeting that challenge requires a revolutionary kind of research culture: one that is both intellectually serious and genuinely enjoyable. We explore how mind and machine shape one another, transforming difficult research and complex findings into clear, goal-driven insight through innovative and creative means.
                     </p>
-                    <div className="about-hero-chips" aria-label="About PAIR focus areas">
-                        <span className="about-chip">Interdisciplinary</span>
-                        <span className="about-chip">Research Community</span>
-                    </div>
                 </div>
-
-                <div className="about-hero-visual" aria-hidden="true">
-                    <div className="about-visual-glow"></div>
-                    <div className="about-main-visual">
-                        <img src={aboutUsTeam} alt="About PAIR" className="about-hero-image about-img-main" />
-                    </div>
-                    <div className="about-stats-card">
-                        <p className="about-stats-badge">COMMUNITY</p>
-                        <p className="about-stats-value">15+</p>
-                        <p className="about-stats-label">Active Research Collaborations</p>
-                    </div>
-                    <div className="about-team-card">
-                        <img src={aboutUsTeam} alt="PAIR research community" className="about-team-image" />
-                        <p className="about-team-label">Collaborative Team</p>
-                    </div>
-                    <p className="about-micro-label">Interdisciplinary Network</p>
-                </div>
+                <div className="banner-line" aria-hidden="true"></div>
             </div>
         </div>
     );

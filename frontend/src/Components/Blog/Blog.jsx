@@ -2,6 +2,7 @@ import "./Blog.scss";
 import React, { use } from "react";
 import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
 import blogImg from "/blog3.png";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
 
@@ -22,7 +23,12 @@ const Blog = () => {
                     </p>
                     <p className="blog-description fade-in">
                         Check out our blog to stay updated with fresh research insights, practical reflections, and expert perspectives. Explore how new ideas in psychology and AI shape the future of intelligent systems.                    </p>
-                    <button className="blog-button"> Find Articles </button>
+                    
+                    <Link to="/newsletter">
+                    <button className="blog-button">
+                        Read Our Articles
+                    </button>
+                    </Link  >
                 </div>
             </div>
         </div>

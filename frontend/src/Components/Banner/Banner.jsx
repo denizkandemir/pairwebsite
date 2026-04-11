@@ -22,7 +22,9 @@ const Banner = ({
     primaryCtaHref,
     secondaryCtaLabel,
     secondaryCtaHref,
+    bannerClass = "",
     detailVariant = "default",
+    imageScale = "default",
     align = "left",
     buttonText
 }) => {
@@ -34,7 +36,9 @@ const Banner = ({
     const resolvedPrimaryCta = primaryCta || (primaryCtaLabel ? { label: primaryCtaLabel, href: primaryCtaHref } : null) || (buttonText ? { label: buttonText } : null);
     const resolvedSecondaryCta = secondaryCta || (secondaryCtaLabel ? { label: secondaryCtaLabel, href: secondaryCtaHref } : null);
     const allowedDetailVariants = ["default", "about", "events", "newsletter", "contact"];
+    const allowedImageScales = ["default", "large"];
     const resolvedDetailVariant = allowedDetailVariants.includes(detailVariant) ? detailVariant : "default";
+    const resolvedImageScale = allowedImageScales.includes(imageScale) ? imageScale : "default";
 
     const renderTitle = () => {
         if (!titleHighlight || !title || !title.includes(titleHighlight)) {
@@ -74,7 +78,7 @@ const Banner = ({
     };
 
     return (
-        <div className={`banner-container banner-detail-${resolvedDetailVariant} ${imagePosition === "left" ? "image-left" : "image-right"}`}>
+        <div className={`banner-container banner-detail-${resolvedDetailVariant} ${bannerClass} ${imagePosition === "left" ? "image-left" : "image-right"}`}>
             <div className="banner-content-container">
                 <div className={`banner-text-container ${align === "center" ? "banner-text-center" : ""}`}>
                     {badgeText && <p className="banner-badge">{badgeText}</p>}
@@ -134,7 +138,7 @@ const Banner = ({
                             </span>
                         ))}
                     </div>
-                    <img src={resolvedImageSrc} alt={resolvedImageAlt} className={`banner-background-img ${imgClass || ''}`} />
+                    <img src={resolvedImageSrc} alt={resolvedImageAlt} className={`banner-background-img banner-image-${resolvedImageScale} ${imgClass || ''}`} />
                 </div>
             </div>
         </div>

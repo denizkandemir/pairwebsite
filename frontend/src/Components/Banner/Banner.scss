@@ -37,7 +37,7 @@
         right: 0;
         bottom: 0;
         height: 90px;
-        background: linear-gradient(180deg, rgba(1, 20, 40, 0) 0%, rgba(2, 27, 52, 0.24) 100%);
+        // background: linear-gradient(180deg, rgba(1, 20, 40, 0) 0%, rgba(2, 27, 52, 0.24) 100%);
         pointer-events: none;
         z-index: 0;
     }
@@ -483,6 +483,10 @@
                 position: relative;
                 z-index: 2;
                 filter: drop-shadow(0 18px 28px rgba(2, 13, 30, 0.3));
+
+                &.banner-image-large {
+                    max-width: 558px;
+                }
             }
 
             .banner-img-float {
@@ -517,6 +521,40 @@
         --detail-dot-opacity: 0.36;
         --detail-orbit-opacity: 0.57;
         --detail-curve-opacity: 0.54;
+    }
+
+    &.about-page-banner {
+        padding: 84px 0 64px;
+
+        .banner-content-container {
+            .banner-background-img-container {
+                .banner-floating-system {
+                    .orbit-2 {
+                        left: auto;
+                        right: -4%;
+                        bottom: 8%;
+                        width: 154px;
+                        height: 154px;
+                        transform: rotate(18deg);
+                        opacity: 0.5;
+                    }
+
+                    .dot-field-2 {
+                        left: auto;
+                        right: 8%;
+                        bottom: 18%;
+                        opacity: calc(var(--detail-dot-opacity) * 0.86);
+                    }
+
+                    .marker-2 {
+                        left: auto;
+                        right: 18%;
+                        bottom: 24%;
+                        opacity: 0.38;
+                    }
+                }
+            }
+        }
     }
 
     &.banner-detail-events {
@@ -568,6 +606,30 @@
 
                 .banner-background-img {
                     max-width: 460px;
+
+                    &.banner-image-large {
+                        max-width: 502px;
+                    }
+                }
+            }
+        }
+
+        &.about-page-banner {
+            padding: 56px 0 44px;
+
+            .banner-content-container {
+                .banner-background-img-container {
+                    .banner-floating-system {
+                        .orbit-2 {
+                            right: 2%;
+                            bottom: 10%;
+                        }
+
+                        .dot-field-2 {
+                            right: 10%;
+                            bottom: 20%;
+                        }
+                    }
                 }
             }
         }
@@ -677,6 +739,23 @@
 
                 .banner-background-img {
                     max-width: 390px;
+
+                    &.banner-image-large {
+                        max-width: 430px;
+                    }
+                }
+            }
+        }
+
+        &.about-page-banner {
+            .banner-content-container {
+                .banner-background-img-container {
+                    .banner-floating-system {
+                        .dot-field-2,
+                        .orbit-2 {
+                            display: none;
+                        }
+                    }
                 }
             }
         }

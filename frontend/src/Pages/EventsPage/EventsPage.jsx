@@ -3,6 +3,8 @@ import eventsBannerImg from "/eventsBackground.png";
 import "./EventsPage.scss";
 import EventsCards from "../../Components/EventsCards/EventsCards";
 import UpcomingEvent from "../../Components/UpComingEvent/UpcomingEvent";
+import aboutMainImg from "/aboutUsBannerImg1.png";
+
 
 const EventsPage = () => {
 

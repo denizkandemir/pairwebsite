@@ -1,35 +1,60 @@
 @use '../../styles/styles.scss' as styles;
 
 .about-hero-container {
-    padding: 82px 0 66px;
+    padding: 84px 0 0;
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    isolation: isolate;
 
     &::before {
         content: '';
         position: absolute;
-        top: -18%;
-        left: -8%;
-        width: 42%;
-        height: 72%;
-        background: radial-gradient(circle, rgba(96, 165, 255, 0.16) 0%, rgba(96, 165, 255, 0.05) 52%, transparent 74%);
+        inset: 0;
+        background:
+            radial-gradient(ellipse at 50% 28%, rgba(92, 163, 255, 0.16), rgba(92, 163, 255, 0) 60%),
+            linear-gradient(180deg, rgba(137, 194, 255, 0.06), rgba(137, 194, 255, 0) 38%);
         z-index: 1;
         pointer-events: none;
     }
 
     &::after {
-        content: '';
+        content: none;
+    }
+
+    .about-hero-atmosphere {
         position: absolute;
-        right: -8%;
-        bottom: -22%;
-        width: 48%;
-        height: 68%;
-        background: radial-gradient(circle, rgba(151, 146, 248, 0.12) 0%, rgba(110, 171, 255, 0.06) 50%, transparent 74%);
-        z-index: 1;
+        inset: 0;
         pointer-events: none;
+        z-index: 1;
+
+        .about-energy-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232, 248, 255, 0.96) 0%, rgba(170, 222, 255, 0.92) 36%, rgba(94, 191, 255, 0.35) 78%, rgba(94, 191, 255, 0.08) 100%);
+            box-shadow: 0 0 3px rgba(218, 244, 255, 0.84), 0 0 8px rgba(126, 206, 255, 0.56);
+            opacity: 0.66;
+            animation: about-energy-drift 12s ease-in-out infinite;
+        }
+
+        .p1 { left: 10%; top: 22%; animation-delay: -1.2s; }
+        .p2 { left: 18%; top: 38%; animation-delay: -4.6s; animation-duration: 13.5s; }
+        .p3 { left: 26%; bottom: 14%; animation-delay: -3.1s; }
+        .p4 { right: 12%; top: 24%; animation-delay: -6.2s; animation-duration: 14.6s; }
+        .p5 { right: 18%; top: 42%; animation-delay: -2.4s; }
+        .p6 { right: 26%; bottom: 17%; animation-delay: -8s; animation-duration: 15s; }
+        .p7 { left: 50%; top: 18%; animation-delay: -5s; }
+        .p8 { left: 54%; bottom: 12%; animation-delay: -7s; animation-duration: 13.8s; }
+    }
+
+    .banner-line {
+        width: 100%;
+        border-top: 1px solid rgba(181, 211, 252, 0.46);
+        box-shadow: 0 0 8px rgba(118, 182, 255, 0.14);
     }
 
     .about-hero-content {
@@ -37,14 +62,19 @@
         width: 100%;
         padding: 0 44px;
         position: relative;
-        z-index: 2;
-        display: grid;
-        grid-template-columns: 1.02fr 0.98fr;
-        gap: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        z-index: 2;
 
         .about-hero-text {
-            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           
+            position: relative;
+            text-align: center;
 
             .about-hero-kicker {
                 display: inline-flex;
@@ -62,22 +92,23 @@
             }
 
             .about-hero-title {
-                font-size: clamp(2.35rem, 4.85vw, 4.2rem);
+                font-size: clamp(2.48rem, 5.45vw, 5.95rem);
                 font-weight: 800;
                 color: #f5fbff;
                 margin-bottom: 20px;
                 line-height: 1.08;
                 letter-spacing: -0.02em;
-                max-width: 13.8ch;
+              
                 text-wrap: balance;
 
                 .about-hero-title-highlight {
-                    display: block;
-                    background: linear-gradient(97deg, #72d0ff 8%, #7db5ff 52%, #a093ff 100%);
+               
+                    background: linear-gradient(96deg, #73d0ff 8%, #7db4ff 52%, #a192ff 100%);
                     -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
                     background-clip: text;
-                    text-shadow: 0 0 8px rgba(104, 180, 255, 0.22), 0 0 14px rgba(136, 125, 245, 0.12);
+                    color: transparent;
+                    text-shadow: 0 0 12px rgba(102, 177, 255, 0.3), 0 0 20px rgba(132, 126, 246, 0.16);
+                
                 }
             }
 
@@ -85,192 +116,19 @@
                 font-size: clamp(1rem, 1.42vw, 1.12rem);
                 color: rgba(229, 240, 255, 0.9);
                 line-height: 1.69;
-                max-width: 56ch;
+             
                 margin-bottom: 22px;
-            }
-
-            .about-hero-chips {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 9px;
-
-                .about-chip {
-                    border-radius: 999px;
-                    border: 1px solid rgba(151, 191, 245, 0.35);
-                    background: linear-gradient(130deg, rgba(9, 33, 68, 0.74), rgba(8, 23, 47, 0.58));
-                    color: #d7e8ff;
-                    font-size: 0.76rem;
-                    padding: 6px 11px;
-                    letter-spacing: 0.05em;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                }
-            }
-        }
-
-        .about-hero-visual {
-            position: relative;
-            min-height: 442px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 14px;
-
-            .about-visual-glow {
-                position: absolute;
-                width: min(92%, 440px);
-                aspect-ratio: 1 / 1;
-                border-radius: 50%;
-                background: radial-gradient(circle, rgba(71, 129, 228, 0.26), rgba(17, 39, 77, 0.08) 58%, transparent 73%);
-                filter: blur(3px);
-                z-index: 0;
-            }
-
-            .about-main-visual {
-                width: 100%;
-                max-width: 484px;
-                border-radius: 22px;
-                overflow: hidden;
-                border: 1px solid rgba(164, 202, 255, 0.28);
-                background: linear-gradient(145deg, rgba(9, 28, 58, 0.7), rgba(9, 22, 43, 0.64));
-                box-shadow: 0 16px 34px rgba(0, 7, 20, 0.36);
-                position: relative;
-                z-index: 2;
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(4, 18, 38, 0.18));
-                    pointer-events: none;
-                }
-            }
-
-            .about-hero-image {
-                width: 100%;
-                height: auto;
-                display: block;
-                object-fit: cover;
-            }
-
-            .about-stats-card {
-                position: absolute;
-                left: 2%;
-                bottom: 6%;
-                border-radius: 14px;
-                padding: 12px 14px;
-                min-width: 208px;
-                max-width: 236px;
-                background: linear-gradient(130deg, rgba(11, 31, 62, 0.86), rgba(10, 24, 48, 0.82));
-                border: 1px solid rgba(167, 206, 255, 0.42);
-                box-shadow: 0 10px 20px rgba(2, 13, 30, 0.3), 0 0 10px rgba(95, 171, 246, 0.1);
-                backdrop-filter: blur(8px);
-                z-index: 3;
-
-                .about-stats-badge {
-                    margin: 0 0 8px;
-                    width: fit-content;
-                    border-radius: 999px;
-                    border: 1px solid rgba(166, 206, 255, 0.34);
-                    background: rgba(14, 36, 70, 0.75);
-                    color: #cfe5ff;
-                    font-size: 0.66rem;
-                    letter-spacing: 0.11em;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    padding: 5px 10px;
-                }
-
-                .about-stats-value {
-                    margin: 0;
-                    color: #f5fbff;
-                    font-size: clamp(1.95rem, 4vw, 2.6rem);
-                    line-height: 1;
-                    font-weight: 800;
-                }
-
-                .about-stats-label {
-                    margin: 6px 0 0;
-                    color: rgba(225, 238, 255, 0.92);
-                    font-size: 0.8rem;
-                    line-height: 1.35;
-                    font-weight: 600;
-                }
-            }
-
-            .about-team-card {
-                position: absolute;
-                right: -2%;
-                bottom: 4.5%;
-                width: clamp(150px, 20vw, 188px);
-                border-radius: 14px;
-                overflow: hidden;
-                border: 1px solid rgba(167, 206, 255, 0.36);
-                background: linear-gradient(145deg, rgba(9, 28, 58, 0.78), rgba(9, 22, 43, 0.7));
-                box-shadow: 0 10px 22px rgba(2, 13, 30, 0.32), 0 0 10px rgba(95, 171, 246, 0.08);
-                z-index: 3;
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    background: linear-gradient(180deg, rgba(12, 35, 68, 0.14), rgba(8, 22, 44, 0.34));
-                    pointer-events: none;
-                }
-
-                .about-team-image {
-                    width: 100%;
-                    aspect-ratio: 1.28 / 1;
-                    object-fit: cover;
-                    display: block;
-                }
-
-                .about-team-label {
-                    position: absolute;
-                    left: 9px;
-                    bottom: 8px;
-                    margin: 0;
-                    border-radius: 999px;
-                    border: 1px solid rgba(173, 210, 255, 0.46);
-                    background: rgba(8, 27, 54, 0.78);
-                    color: #d9edff;
-                    font-size: 0.56rem;
-                    letter-spacing: 0.09em;
-                    text-transform: uppercase;
-                    padding: 5px 8px;
-                    z-index: 1;
-                }
-            }
-
-            .about-micro-label {
-                position: absolute;
-                right: 4%;
-                top: 10%;
-                margin: 0;
-                border-radius: 999px;
-                border: 1px solid rgba(166, 206, 255, 0.42);
-                background: linear-gradient(130deg, rgba(11, 30, 58, 0.74), rgba(9, 24, 48, 0.66));
-                color: #d7ecff;
-                font-size: 0.62rem;
-                letter-spacing: 0.1em;
-                text-transform: uppercase;
-                padding: 6px 10px;
-                box-shadow: 0 7px 14px rgba(3, 17, 38, 0.22), 0 0 8px rgba(86, 161, 238, 0.08);
-                z-index: 3;
             }
         }
 
         @media (max-width: 1100px) {
-            grid-template-columns: 1fr;
-            gap: 36px;
             padding: 0 30px;
 
             .about-hero-text {
                 max-width: 100%;
                 text-align: center;
 
-                .about-hero-kicker,
-                .about-hero-chips {
+                .about-hero-kicker {
                     justify-content: center;
                 }
 
@@ -281,27 +139,10 @@
                     max-width: 100%;
                 }
             }
-
-            .about-hero-visual {
-                width: min(690px, 100%);
-                margin: 0 auto;
-
-                .about-stats-card {
-                    left: 6%;
-                    bottom: 5%;
-                }
-
-                .about-team-card {
-                    right: 4%;
-                    bottom: 3.5%;
-                    width: clamp(146px, 27vw, 180px);
-                }
-            }
         }
 
         @media (max-width: 768px) {
             padding: 0 20px;
-            gap: 26px;
 
             .about-hero-text {
                 .about-hero-title {
@@ -311,50 +152,6 @@
                 .about-hero-description {
                     margin-bottom: 20px;
                     line-height: 1.66;
-                }
-
-                .about-hero-chips {
-                    gap: 8px;
-
-                    .about-chip {
-                        font-size: 0.72rem;
-                        padding: 6px 10px;
-                    }
-                }
-            }
-
-            .about-hero-visual {
-                min-height: 350px;
-
-                .about-main-visual {
-                    max-width: 420px;
-                }
-
-                .about-stats-card {
-                    min-width: 180px;
-                    max-width: 204px;
-                    padding: 12px 13px;
-                    left: 2%;
-                    bottom: 4%;
-
-                    .about-stats-label {
-                        font-size: 0.78rem;
-                    }
-                }
-
-                .about-team-card {
-                    width: 150px;
-                    right: 2%;
-                    bottom: 3.5%;
-
-                    .about-team-label {
-                        font-size: 0.53rem;
-                        padding: 4px 7px;
-                    }
-                }
-
-                .about-micro-label {
-                    display: none;
                 }
             }
         }
@@ -367,27 +164,25 @@
                     font-size: clamp(1.95rem, 10vw, 2.35rem);
                 }
             }
-
-            .about-hero-visual {
-                min-height: 300px;
-
-                .about-main-visual {
-                    max-width: 100%;
-                }
-
-                .about-stats-card {
-                    position: static;
-                    margin-top: 12px;
-                    min-width: 100%;
-                    max-width: 100%;
-                }
-
-                .about-team-card {
-                    position: static;
-                    width: min(78%, 280px);
-                    margin: 10px auto 0;
-                }
-            }
         }
+    }
+}
+
+@keyframes about-energy-drift {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 0.36;
+    }
+    30% {
+        transform: translate3d(8px, -9px, 0) scale(1.08);
+        opacity: 0.78;
+    }
+    66% {
+        transform: translate3d(-7px, -16px, 0) scale(0.96);
+        opacity: 0.48;
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 0.36;
     }
 }

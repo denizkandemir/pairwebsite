@@ -185,7 +185,7 @@ const eventsCards = ({ }) => {
                                                         View More
                                                         <span className="events-cards-blob-btn__inner">
                                                             <span className="events-cards-blob-btn__blobs">
-                                                                <span className="events-cards-blob-btn__blob"></span>
+                                                                <span clbassName="events-cards-blob-btn__blob"></span>
                                                                 <span className="events-cards-blob-btn__blob"></span>
                                                                 <span className="events-cards-blob-btn__blob"></span>
                                                                 <span className="events-cards-blob-btn__blob"></span>
