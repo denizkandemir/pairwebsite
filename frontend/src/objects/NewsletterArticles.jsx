@@ -1,196 +1,140 @@
+import articleImg1 from "/articleImg1.jpeg";
+import article1 from "/article1.pdf";
+import suggestionImg1 from "/suggestionImg1.jpeg";
+import suggestion1 from "/suggestion1.docx?url";
+import articleImg2 from "/articleImg2.jpeg";
+import article2 from "/article2.pdf";
+import suggestionImg2 from "/suggestionImg2.jpeg";
+import suggestion2 from "/suggestion2.docx?url";
+
 export const newsletterArticles = [
     {
         id: 1,
         category: "AI",
-        readTime: "5 min read",
-        title: "AI chatbots are the new storefront",
-        shortDescription: "AI-powered chatbots are transforming digital storefronts into interactive, intelligent environments. They redefine how users discover, evaluate, and purchase products online.",
-        description: "Artificial intelligence-driven chatbots are no longer simple customer service tools; they are rapidly becoming the primary interface between brands and consumers. Acting as digital storefronts, these systems personalize recommendations, simulate human conversation, and collect behavioral data in real time. This shift is fundamentally changing how users explore products, form trust, and make purchasing decisions. By combining natural language processing, predictive analytics, and behavioral psychology principles, AI chatbots are reshaping digital commerce into a dynamic, conversational ecosystem.",
-        date: "2025-12-22",
-        image: "/eventsImage2.png",
+        readTime: "20 min read",
+        title: "PAIR Research #1: AI & Psychology - The Baseline",
+        shortDescription:
+            "This first PAIR literature review explores how AI works, how it affects the human psyche, and how psychology can help us better understand increasingly influential intelligent systems.",
+        texts: [
+            {
+                id: 1,
+                text: "The field of AI research is a constantly evolving landscape. New models are released all the time, breaking milestones and changing what we think is possible to achieve with them."
+            },
+            {
+                id: 2,
+                text: "Through all of the chaos and sensationalism surrounding the subject, it is important to take a step back and ask: How does AI actually work? What are its impacts on the human psyche? And can psychology actually help us understand the workings of the machine? The first PAIR Literature Review aims to answer these exact questions. By establishing the baseline between psychology and AI research, it is our goal to help our readers better understand this increasingly complex and influential domain."
+            },
+            {
+                id: 4,
+                text: "Artificial intelligence-driven chatbots are no longer simple customer service tools; they are rapidly becoming the primary interface between brands and consumers. Acting as digital storefronts, these systems personalize recommendations, simulate human conversation, and collect behavioral data in real time. This shift is fundamentally changing how users explore products, form trust, and make purchasing decisions."
+            },
+            {
+                id: 6,
+                text: "By combining natural language processing, predictive analytics, and behavioral psychology principles, AI chatbots are reshaping digital commerce into a dynamic, conversational ecosystem."
+            }
+        ],
+        date: "12-22-2025",
+        image: articleImg1,
+        pdf: article1,
         isFeatured: false,
         authors: [
-            { name: "Dr. Sarah Mitchell", title: "AI Research Lead" },
-            { name: "Prof. James Chen", title: "Cognitive Science Expert" },
-            { name: "Dr. Emily Rodriguez", title: "UX Psychology Specialist" }
+            { name: "PAIR Research Team", title: "" },
         ]
     },
+
     {
         id: 2,
-        category: "RESEARCH & STRATEGY",
-        readTime: "9 min read",
-        title: "How user ratings can make or break your mobile app's success",
-        shortDescription: "User ratings strongly influence app adoption and retention. Psychological perception often outweighs technical performance in digital marketplaces.",
-        description: "User ratings and reviews serve as powerful social proof mechanisms within competitive app marketplaces. Beyond numerical scores, they reflect collective trust, emotional reactions, and perceived value. Research in behavioral economics and social psychology shows that even minor rating fluctuations can significantly impact download decisions and long-term retention rates. Understanding how cognitive biases—such as negativity bias and bandwagon effects—shape user perception is essential for developers seeking sustainable digital success.",
-        date: "2024-11-12",
-        image: "/eventsImage2.png",
-        isFeatured: false,
+        category: "AI in Psychotherapy",
+        readTime: "25 min read",
+        title: "PAIR Research #2: AI in Psychotherapy",
+        shortDescription:
+            "This second PAIR literature review explores one of today’s most urgent psychotherapy questions: can AI replace therapists? It examines the current relationship between artificial intelligence and psychotherapy by highlighting AI’s strengths, limits, and practical implications.",
+        texts: [
+            {
+                id: 1,
+                text: "In line with our recent conference, one of the most pressing questions for current practitioners and students of psychotherapy is: Can AI replace therapists?"
+            },
+            {
+                id: 2,
+                text: "The second release of the PAIR literature review aims to address exactly this issue, focusing on the current relationship between artificial intelligence and psychotherapy."
+            },
+            {
+                id: 3,
+                text: "By examining AI’s strengths, weaknesses, and our own reflections on the topic, we aim to offer a clear discussion of where psychotherapy currently stands in relation to rapidly developing intelligent systems."
+            }
+        ],
+        date: "12-22-2025",
+        image: articleImg2,
+        pdf: article2,
+        isFeatured: true,
         authors: [
-            { name: "Dr. Michael Thompson", title: "Behavioral Economics Researcher" },
-            { name: "Dr. Lisa Wang", title: "User Experience Strategist" },
-            { name: "Prof. Ahmed Hassan", title: "Digital Psychology Professor" }
+            { name: "PAIR Research Team", title: "" },
         ]
     },
+
     {
         id: 3,
-        category: "RESEARCH & STRATEGY",
-        readTime: "7 min read",
-        title: "The power of triangulation in user experience research",
-        shortDescription: "Triangulation strengthens research validity by combining multiple methods. It provides a multidimensional understanding of user behavior.",
-        description: "Triangulation in user experience research refers to the strategic integration of quantitative, qualitative, and observational methods to enhance validity and reliability. By converging findings from surveys, usability testing, interviews, and analytics data, researchers reduce bias and uncover deeper behavioral patterns. This multidimensional approach not only strengthens methodological rigor but also produces insights that are more actionable and contextually grounded. In complex digital ecosystems, triangulation is essential for evidence-based design decisions.",
-        date: "2024-11-04",
-        image: "/eventsImage3.png",
+        category: "Research Tools",
+        readTime: "10 min read",
+        title: "PAIR Recommends: Research Rabbit",
+        shortDescription:
+            "Research Rabbit is a tool that helps researchers discover, connect, and track academic papers through dynamic citation networks, making the research process faster, more visual, and easier to manage.",
+        texts: [
+            {
+                id: 1,
+                text: "Research Rabbit is a discovery tool designed to help students and researchers explore past studies more effectively. Instead of relying only on traditional search engines or journal browsing, it offers a more connected and visual way to find relevant literature."
+            },
+            {
+                id: 2,
+                text: "Its main strength lies in building networks of related papers, citations, and topics through nodes. This allows users to see how studies connect to one another, follow new publications in their area of interest, and even track specific authors over time."
+            },
+            {
+                id: 3,
+                text: "Research Rabbit also includes practical features such as note-taking, exporting references in formats like BibTeX or RIS, and sharing collections for collaboration. Overall, it is a useful tool for speeding up literature review, identifying knowledge gaps, and generating new research ideas."
+            }
+        ],
+        date: "12-22-2025",
+        image: suggestionImg1,
+        pdf: suggestion1,
         isFeatured: false,
         authors: [
-            { name: "Dr. Rachel Green", title: "Research Methodology Expert" },
-            { name: "Prof. David Kim", title: "UX Research Lead" },
-            { name: "Dr. Maria Santos", title: "Qualitative Analysis Specialist" },
-            { name: "Dr. Robert Brown", title: "Data Science Researcher" }
+            { name: "PAIR Research Team", title: "" },
         ]
     },
+
     {
         id: 4,
-        category: "DESIGN",
-        readTime: "17 min read",
-        title: "A comprehensive guide to low-code and no-code",
-        shortDescription: "Low-code and no-code platforms democratize software creation. They shift the balance between developers and domain experts.",
-        description: "Low-code and no-code platforms are transforming the traditional boundaries of software development by enabling non-technical professionals to build functional digital solutions. These platforms reduce development cycles, foster rapid prototyping, and empower interdisciplinary collaboration. However, their rise also raises strategic and ethical questions regarding scalability, security, and long-term sustainability. By examining both opportunities and structural limitations, this guide provides a critical overview of how these tools are redefining design and innovation workflows.",
-        date: "2024-10-21",
-        image: "/eventsImage4.png",
-        isFeatured: false,
-        authors: [
-            { name: "Dr. Jennifer Park", title: "Software Architecture Expert" },
-            { name: "Prof. Thomas Anderson", title: "Innovation Technology Professor" }
-        ]
-    },
-    {
-        id: 5,
-        category: "NEWS & CULTURE",
+        category: "Research Tools",
         readTime: "10 min read",
-        title: "IT Industry Outlook for 2026",
-        shortDescription: "The IT landscape in 2026 will be shaped by AI acceleration and global talent shifts. Strategic adaptability will define long-term competitiveness.",
-        description: "The 2026 IT industry landscape is expected to be defined by intensified AI integration, evolving regulatory frameworks, and ongoing global talent competition. Organizations must navigate rapid automation, hybrid work cultures, and geopolitical influences on technology infrastructure. Insights from industry leaders highlight that adaptability, ethical AI governance, and strategic workforce development will determine resilience. This outlook synthesizes market trends, innovation trajectories, and socio-economic implications shaping the future of technology.",
-        date: "2026-01-15",
-        image: "/eventsImage3.png",
-        isFeatured: true,
-        isHighlighted: true,
-        authors: [
-            { name: "Dr. Alex Turner", title: "Technology Trends Analyst" },
-            { name: "Prof. Nina Patel", title: "Industry Research Director" },
-            { name: "Dr. Marcus Lee", title: "Strategic Innovation Lead" }
-        ]
-    },
-    {
-        id: 6,
-        category: "PSYCHOLOGY",
-        readTime: "8 min read",
-        title: "Understanding cognitive biases in AI-human interaction",
-        shortDescription: "Human cognitive biases influence how we interpret AI behavior. These biases shape trust, dependency, and decision-making.",
-        description: "Human interaction with artificial intelligence systems is deeply shaped by cognitive biases such as automation bias, confirmation bias, and anthropomorphism. Users often overestimate AI accuracy or attribute human-like intentions to algorithmic outputs. These psychological patterns directly impact trust formation, risk assessment, and ethical evaluation of intelligent systems. By understanding these biases, researchers and designers can create AI interfaces that encourage critical thinking and responsible engagement.",
-        date: "2025-11-28",
-        image: "/eventsImage2.png",
+        title: "PAIR Recommends: NotebookLM",
+        shortDescription:
+            "NotebookLM is a research and note-taking tool that helps users organize sources, interact with material through AI, and turn research into practical outputs such as summaries, audio overviews, and study aids.",
+        texts: [
+            {
+                id: 1,
+                text: "NotebookLM is presented as a natural follow-up to tools like Research Rabbit: once you have gathered articles, insights, and sources, you still need a way to organize and work with them in a clear and useful format."
+            },
+            {
+                id: 2,
+                text: "Developed within Google’s broader AI ecosystem, NotebookLM allows users to collect different kinds of materials, including PDFs, websites, and other sources, and keep them in one place for structured research work."
+            },
+            {
+                id: 3,
+                text: "Its interface is built around three main functions: managing sources, chatting with an AI assistant about the collected material, and using the Studio tools to generate outputs such as audio overviews, mind maps, flashcards, and reports."
+            },
+            {
+                id: 4,
+                text: "Overall, NotebookLM is a practical and user-friendly tool for researchers and students who want more control over their notes and sources. While privacy and accuracy still require attention, it offers a strong first step toward more personalized and productive AI-supported research workflows."
+            }
+        ],
+        date: "12-22-2025",
+        image: suggestionImg2,
+        pdf: suggestion2,
         isFeatured: false,
         authors: [
-            { name: "Dr. Sophia Martinez", title: "Cognitive Psychology Researcher" },
-            { name: "Prof. Kevin O'Brien", title: "Human-AI Interaction Expert" },
-            { name: "Dr. Yuki Tanaka", title: "Behavioral Science Analyst" }
-        ]
-    },
-    {
-        id: 7,
-        category: "TECHNOLOGY",
-        readTime: "12 min read",
-        title: "Neural networks and the future of machine learning",
-        shortDescription: "Advanced neural architectures are redefining machine learning capabilities. Scalability and interpretability remain key challenges.",
-        description: "Modern neural network architectures—including transformers and deep reinforcement learning systems—are pushing the boundaries of machine learning performance. These models demonstrate remarkable capabilities in language processing, image recognition, and predictive analytics. However, challenges related to explainability, energy consumption, and data dependency remain unresolved. This article explores both the technological advancements and structural limitations shaping the next phase of AI research.",
-        date: "2025-10-15",
-        image: "/eventsImage2.png",
-        isFeatured: false,
-        authors: [
-            { name: "Dr. William Zhang", title: "Machine Learning Researcher" },
-            { name: "Prof. Emma Watson", title: "Deep Learning Specialist" },
-            { name: "Dr. Carlos Ruiz", title: "AI Architecture Lead" },
-            { name: "Dr. Anna Kowalski", title: "Neural Networks Expert" }
-        ]
-    },
-    {
-        id: 8,
-        category: "AI & RESEARCH",
-        readTime: "6 min read",
-        title: "Bridging psychology and artificial intelligence",
-        shortDescription: "Psychology provides foundational insights for intelligent system design. Human cognition remains central to AI innovation.",
-        description: "The intersection of psychology and artificial intelligence reveals how human cognitive principles inform machine learning architectures and interface design. Concepts such as attention, memory, and decision-making inspire algorithmic modeling and user-centered innovation. By integrating psychological research with computational methods, interdisciplinary collaboration enables more adaptive, ethical, and human-aware systems. This bridge between disciplines is essential for sustainable AI development.",
-        date: "2025-09-20",
-        image: "/eventsImage2.png",
-        isFeatured: false,
-        authors: [
-            { name: "Dr. Oliver Schmidt", title: "Interdisciplinary Research Lead" },
-            { name: "Prof. Grace Chen", title: "Computational Psychology Expert" },
-            { name: "Dr. Fatima Al-Rashid", title: "AI Ethics Researcher" }
-        ]
-    },
-    {
-        id: 9,
-        category: "DESIGN",
-        readTime: "12 min read",
-        title: "Top 10 UX design agencies to work with in 2026",
-        shortDescription: "Leading UX agencies combine research, design thinking, and technological expertise. Strategic partnerships drive digital excellence.",
-        description: "In 2026, top UX design agencies distinguish themselves through rigorous research methodologies, cross-functional collaboration, and measurable impact. These firms integrate psychology, usability testing, and advanced prototyping to deliver user-centered solutions. Beyond aesthetics, their work emphasizes behavioral insight and long-term product strategy. This overview highlights agencies shaping digital experience standards through innovation and empirical design practices.",
-        date: "2026-01-22",
-        image: "/ai4.png",
-        isFeatured: false,
-        authors: [
-            { name: "Dr. Isabella Romano", title: "UX Design Director" },
-            { name: "Prof. Jacob Miller", title: "Design Thinking Specialist" }
-        ]
-    },
-    {
-        id: 10,
-        category: "NEUROSCIENCE",
-        readTime: "14 min read",
-        title: "Mapping the brain's response to digital interfaces",
-        shortDescription: "Neuroimaging studies reveal how the brain processes digital stimuli. Interface design influences cognitive load and attention.",
-        description: "Recent neuroimaging research using fMRI and EEG technologies demonstrates how digital interfaces activate neural networks associated with attention, reward, and memory. Interface complexity, visual hierarchy, and interaction speed directly affect cognitive load and emotional response. Understanding these neural mechanisms enables the development of more intuitive and cognitively sustainable technologies. This article synthesizes neuroscientific findings with practical design implications.",
-        date: "2025-08-10",
-        image: "/eventBrain.png",
-        isFeatured: false,
-        authors: [
-            { name: "Dr. Lucas Bergman", title: "Neuroscience Researcher" },
-            { name: "Prof. Olivia Chang", title: "Cognitive Neuroscience Expert" },
-            { name: "Dr. Hassan Ibrahim", title: "Neuroimaging Specialist" }
-        ]
-    },
-    {
-        id: 11,
-        category: "AI ETHICS",
-        readTime: "11 min read",
-        title: "Ethical frameworks for autonomous systems",
-        shortDescription: "Autonomous systems require structured ethical governance. Responsibility and accountability remain central concerns.",
-        description: "As autonomous systems become increasingly embedded in transportation, healthcare, and finance, ethical governance becomes imperative. Frameworks addressing transparency, fairness, accountability, and bias mitigation guide responsible development. However, operationalizing ethical principles into enforceable technical standards remains a challenge. This article examines global policy approaches and interdisciplinary strategies for aligning AI innovation with human values.",
-        date: "2025-07-18",
-        image: "/eventBrain2.png",
-        isFeatured: false,
-        authors: [
-            { name: "Dr. Victoria Larsen", title: "AI Ethics & Governance Lead" },
-            { name: "Prof. Samuel Johnson", title: "Applied Ethics Professor" },
-            { name: "Dr. Priya Sharma", title: "Policy & Technology Researcher" },
-            { name: "Dr. Erik Johansson", title: "Autonomous Systems Expert" }
-        ]
-    },
-    {
-        id: 12,
-        category: "RESEARCH METHODS",
-        readTime: "9 min read",
-        title: "Quantitative vs qualitative research in UX",
-        shortDescription: "Both quantitative and qualitative methods provide essential UX insights. Method selection depends on research objectives.",
-        description: "Quantitative and qualitative research methodologies offer complementary strengths in user experience investigation. While quantitative data provides measurable patterns and statistical validation, qualitative methods uncover motivations, emotions, and contextual depth. Effective UX research requires strategic alignment between research questions and methodological design. This comparative analysis outlines when and how to integrate both approaches for comprehensive user insight generation.",
-        date: "2025-06-25",
-        image: "/target.png",
-        isFeatured: false,
-        authors: [
-            { name: "Dr. Rebecca Foster", title: "Research Methods Expert" },
-            { name: "Prof. Daniel Wright", title: "Mixed Methods Researcher" },
-            { name: "Dr. Ayesha Khan", title: "UX Research Strategist" }
+            { name: "NotebookLM", title: "" },
         ]
     }
+
+
 ];

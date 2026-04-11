@@ -111,15 +111,11 @@ const UpcomingEvent = () => {
                   </div>
                   <h3>{event.title}</h3>
                   {
-                    event.texts.slice(0, 1).map((text) => (
-                      <p key={text.id} className="events-info-text"> {text.text} </p>
-                    ))
+                    // event.texts.slice(0, 1).map((text) => (
+                    //   <p key={text.id} className="events-info-text"> {text.text} </p>
+                    // ))
+                    event.cardText && <p className="events-info-text">{event.cardText}</p>
                   }
-
-                  <div className="events-speaker-container">
-                    <img className="events-speaker-img" src={speakerImg} alt="Speaker" />
-                    <span className="events-speaker-text">{event.speaker}</span>
-                  </div>
 
                   {countdown && !countdown.isExpired ? (
                     <div className="countdown">
@@ -141,7 +137,11 @@ const UpcomingEvent = () => {
                       </div>
                     </div>
                   ) : (
-                    <p className="event-started">Event has started!</p>
+                    <p className="event-started" role="status" aria-live="polite">
+                      <span className="event-started__dot" aria-hidden="true"></span>
+                      <span className="event-started__label">Live now</span>
+                      <span className="event-started__text">Event has started!</span>
+                    </p>
                   )}
                 </div>
               </div>

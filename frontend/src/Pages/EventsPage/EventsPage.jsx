@@ -1,30 +1,36 @@
-import Banner from "../../Components/Banner/Banner"
-import eventsBannerImg from "/eventsBackground.png"
-import "./EventsPage.scss"
-import EventsCards from "../../Components/EventsCards/EventsCards"
-import UpcomingEvent from "../../Components/UpComingEvent/UpcomingEvent"
+import Banner from "../../Components/Banner/Banner";
+import eventsBannerImg from "/eventsBackground.png";
+import "./EventsPage.scss";
+import EventsCards from "../../Components/EventsCards/EventsCards";
+import UpcomingEvent from "../../Components/UpComingEvent/UpcomingEvent";
+import aboutMainImg from "/aboutUsBannerImg1.png";
+
 
 const EventsPage = () => {
 
- const eventsBannerTexts = [
-    {
-        id:1,
-        text:"Explore our upcoming webinars and events designed to bring professionals together around meaningful ideas, emerging trends, and real-world insights.",
-    },
+   const eventsDescription = "Explore upcoming webinars and events designed to connect researchers, students, and professionals around meaningful ideas and emerging evidence.";
+   const eventsSecondaryDescription = "Through expert-led sessions and interactive discussions, we create a space where learning, collaboration, and inspiration meet.";
 
-    {
-        id:2,
-        text:"Through expert-led sessions and interactive discussions, we aim to create an engaging space where learning, collaboration, and inspiration meet.",
-    }
- ]
+   return (
+      <div className="events-page-container">
+         <Banner
+            badgeText="Upcoming Sessions"
+            title="Our Events and Webinars"
+            titleHighlight="Webinars"
+            titleClass="events-banner-title"
+            imageSrc={eventsBannerImg}
+            imageAlt="PAIR events and webinars"
+            description={eventsDescription}
+            secondaryDescription={eventsSecondaryDescription}
+            chips={["Talks", "Sessions", "Community"]}
+            floatingLabels={["Talks", "Sessions", "Community"]}
+            detailVariant="events"
+            imgClass={"events-page-img"}
+         />
+         <UpcomingEvent />
+         <EventsCards />
+      </div>
+   );
+};
 
- return (
-    <div className="events-page-container">
-       <Banner title={"Our Events and Webinars"} titleClass={"events-banner-title"} backgroundImage={eventsBannerImg} texts={eventsBannerTexts} imgClass={"events-page-img"}/>
-       <UpcomingEvent/>
-       <EventsCards/>
-    </div>
- )
-}
-
-export default EventsPage
+export default EventsPage;

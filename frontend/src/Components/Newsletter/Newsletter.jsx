@@ -11,24 +11,19 @@ const Newsletter = () => {
 
     const [showAllArticles, setShowAllArticles] = useState(false);
 
-    const newsletterTexts = [
-    {
-        id: 1,
-        text: "Stay connected with the latest insights at the intersection of psychology and artificial intelligence. Our newsletter brings you curated research highlights, upcoming events, and thought-provoking discussions."
-    },
-
-    {
-        id: 2,
-        text: "Join a growing academic community where ideas evolve into dialogue, and dialogue evolves into innovation. Subscribe to receive updates, opportunities, and exclusive content directly in your inbox."
-    }
-  ];
+    const newsletterDescription = "Stay connected with curated insights at the intersection of psychology and artificial intelligence through research highlights, publications, and thought-provoking commentary.";
+    const newsletterSecondaryDescription = "Join a growing academic community where ideas evolve into dialogue and dialogue evolves into responsible innovation.";
 
     useFadeInOnScroll('.fade-in');
 
-    const featuredArticle = newsletterArticles.find(article => article.isHighlighted);
-    const favoriteArticles = newsletterArticles.filter(article => !article.isHighlighted).slice(0, 4);
-    const allArticlesList = newsletterArticles.filter(article => !article.isHighlighted);
-    const displayedArticles = showAllArticles ? allArticlesList : allArticlesList.slice(0, 5);
+    const featuredArticle = newsletterArticles.find(article => article.isFeatured);
+    const favoriteArticles = newsletterArticles.filter(article => !article.isFeatured).slice(0, 4);
+    const allArticlesList = newsletterArticles;
+    const visibleArticlesLimit = 5;
+    const canCollapseArticles = allArticlesList.length > visibleArticlesLimit;
+    const displayedArticles = showAllArticles || !canCollapseArticles
+      ? allArticlesList
+      : allArticlesList.slice(0, visibleArticlesLimit);
     
     // Get events and webinars (try to get upcoming ones, fallback to all)
     const today = new Date();
@@ -50,10 +45,17 @@ const Newsletter = () => {
     
         <div className="newsletter-page">
           <Banner 
-            title="Newsletter" 
+            badgeText="PAIR Updates"
+            title="Newsletter and Research Insights"
+            titleHighlight="Research Insights"
             titleClass="newsletter-banner-title"
-            backgroundImage={bannerImg} 
-            texts={newsletterTexts} 
+            imageSrc={bannerImg}
+            imageAlt="PAIR newsletter and research updates"
+            description={newsletterDescription}
+            secondaryDescription={newsletterSecondaryDescription}
+            chips={["Psychology", "Artificial Intelligence", "Monthly Updates"]}
+            floatingLabels={["Monthly", "AI + Psychology", "Insights", ]}
+            detailVariant="newsletter"
             imgClass={"banner-img"} 
           />
 
@@ -101,7 +103,7 @@ const Newsletter = () => {
             {/* Articles Section with Load More */}
             <section className="articles-section fade-in">
               <h2 className="articles-section-title">Latest Articles</h2>
-              <div className={`articles-grid-container ${!showAllArticles ? 'has-fade' : ''}`}>
+              <div className={`articles-grid-container ${canCollapseArticles && !showAllArticles ? 'has-fade' : ''}`}>
                 <div className="articles-grid">
                   {displayedArticles.map((article) => (
                     <Link key={article.id} to={`/newsletter/${article.id}`} className="article-card">
@@ -121,7 +123,7 @@ const Newsletter = () => {
                     </Link>
                   ))}
                 </div>
-                {!showAllArticles && allArticlesList.length > 5 && (
+                {canCollapseArticles && !showAllArticles && (
                   <div className="articles-fade-overlay">
                     <button 
                       className="load-more-button"
@@ -132,7 +134,7 @@ const Newsletter = () => {
                   </div>
                 )}
               </div>
-              {showAllArticles && allArticlesList.length > 5 && (
+              {canCollapseArticles && showAllArticles && (
                 <div className="show-less-container">
                   <button 
                     className="show-less-button"

@@ -34,17 +34,20 @@ const Footer = () => {
                         <Link className="footer-link" to="/"> <p className="footer-p "> Homepage </p> </Link>
                         <Link className="footer-link" to="/aboutus"> <p className="footer-p"> About Us  </p></Link>
                         <Link className="footer-link" to="/events"> <p className="footer-p"> Events  </p></Link>
-                        <Link className="footer-link" to="/blog"> <p className="footer-p"> Blog  </p></Link>
+                        <Link className="footer-link" to="/newsletter"> <p className="footer-p"> Articles & Updaes  </p></Link>
                         <Link className="footer-link" to="/contact"> <p className="footer-p"> Contact  </p></Link>
                     </div>
 
                     <div className="footer-menu-container">
                         <h3 className="footer-title"> Our University </h3>
-                        <a className="footer-link" target="blank" href="https://en.uw.edu.pl"> <p className="footer-p"> University Of Warsaw </p> </a>
-                        <a className="footer-link" target="blank" href="https://psych.uw.edu.pl"> <p className="footer-p"> Faculty Of Psychology </p></a>
+                        <a className="footer-link" target="blank" href="https://en.uw.edu.pl"> <p className="footer-p"> University of Warsaw </p> </a>
+                        <a className="footer-link" target="blank" href="https://psych.uw.edu.pl"> <p className="footer-p"> Faculty of Psychology </p></a>
                         <a className="footer-link" target="blank" href="https://wisp.uw.edu.pl"> <p className="footer-p"> Warsaw International Students in Psychology </p></a>
                     </div>
+
                 </div>
+
+             
             </div>
         </>
     )

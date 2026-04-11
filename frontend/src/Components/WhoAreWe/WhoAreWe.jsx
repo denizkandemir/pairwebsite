@@ -1,5 +1,5 @@
 import "./WhoAreWe.scss";
-import React, { use } from "react";
+import React from "react";
 import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";    
 import cardImg1 from "/info.png";
 import cardImg2 from "/target2.png";
@@ -10,7 +10,7 @@ const whoCardsData = [
     {
         title: "Who We Are",
         image: cardImg1,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        description: "PAIR is a student-led initiative exploring the meeting point of psychology and artificial intelligence through research, discussion, and innovation."
     },
     
 
@@ -18,13 +18,13 @@ const whoCardsData = [
     {
         title: "Our Community",
         image: cardImg3,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        description: "We bring together curious students, researchers, and creators who share a passion for understanding mind, behavior, and emerging technology."
     },
 
         {
         title: "Our Mission",
         image: cardImg2,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        description: "Our mission is to make complex ideas clear, engaging, and meaningful while expanding knowledge at the intersection of psychology and AI."
     },
 ];
 
@@ -35,6 +35,14 @@ const WhoAreWe = () => {
 
     return(
         <div className="who-container">
+            <div className="who-atmosphere-layer" aria-hidden="true">
+                <span className="who-atmo-orbit who-orbit-left"></span>
+                <span className="who-atmo-orbit who-orbit-right"></span>
+                <span className="who-atmo-curve who-curve-left"></span>
+                <span className="who-atmo-curve who-curve-right"></span>
+                <span className="who-atmo-dots who-dots-left"></span>
+                <span className="who-atmo-dots who-dots-right"></span>
+            </div>
             <div className="who-content-container fade-in">
                 {whoCardsData.map((card, index) => (
                     <div className="who-card" key={index}>

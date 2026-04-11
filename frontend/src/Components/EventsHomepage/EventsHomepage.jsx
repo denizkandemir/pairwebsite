@@ -25,7 +25,7 @@ const EventsHomepage = () => {
             <div className="events-homepage-content-container">
                 <div className="events-center-container">
                     <div className="events-text-container">
-                        <p className="events-little-title fade-in"> PAIR Proudly Organizes </p>
+                        {/* <p className="events-little-title fade-in"> PAIR Proudly Organizes </p> */}
                         <h2 className="events-title fade-in"> Join Our Events and Webinars </h2>
                         <p className="events-text fade-in">
                             PAIR hosts focused events and webinars exploring the intersection of psychology and artificial intelligence. We bring together researchers and learners to discuss new findings, methods, and ideas shaping these fields.                        </p>

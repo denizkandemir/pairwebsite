@@ -59,11 +59,11 @@ const eventsCards = ({ }) => {
             setComingEvents(sortedEvents);
         }
         else if (selectedOption === 'event') {
-           const filteredEvents = baseEvents.filter(event => event.type === "Event");
+           const filteredEvents = baseEvents.filter(event => event.type?.toLowerCase() === "event");
            setComingEvents(filteredEvents);
         }
         else if (selectedOption === 'webinar') {   
-            const filteredWebinars = baseEvents.filter(event => event.type === "Webinar");
+            const filteredWebinars = baseEvents.filter(event => event.type?.toLowerCase() === "webinar");
             setComingEvents(filteredWebinars);
         }
         else {
@@ -149,25 +149,20 @@ const eventsCards = ({ }) => {
                                                     <span className="events-info-meta">•</span>
                                                     <span className="events-info-meta">{events.date}</span>
                                                 </div>
-                                                <div className="events-location-container">
+                                             
+                                            </div>
+                                            <p className="events-info-p"> {events.title} </p>
+                                        </div>
+                                        {
+                                         events.cardTextShort && <p className="events-info-text">{events.cardTextShort }</p> 
+                                        }
+                                           <div className="events-location-container">
                                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.8)" strokeWidth="2">
                                                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                                         <circle cx="12" cy="10" r="3"></circle>
                                                     </svg>
                                                     <span className="events-info-meta">{events.location}</span>
                                                 </div>
-                                            </div>
-                                            <p className="events-info-p"> {events.title} </p>
-                                        </div>
-                                        {
-                                            events.texts.slice(0, 1).map((text) => (
-                                                <p key={text.id} className="events-info-text"> {text.text} </p>
-                                            ))
-                                        }
-                                        <div className="events-speaker-container">
-                                            <img className="events-speaker-img" src={speakerImg} alt="Speaker" />
-                                            <span className="events-speaker-text">{events.speaker}</span>
-                                        </div>
                                     </div>
                                     <div className="events-info-button-container">
                                         <div className="events-info-logo-container">

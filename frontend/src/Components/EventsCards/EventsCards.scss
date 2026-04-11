@@ -165,6 +165,7 @@
 
     }
 
+    
     .events-cards-p {
         color: rgba(0, 0, 0, 0.8);
         font-size: 20px;
@@ -206,6 +207,19 @@
         @media only screen and (max-width: 420px) {
             grid-template-columns: repeat(auto-fill, 320px);
         }
+    }
+}
+
+.event-map-wrapper {
+    margin-top: 24px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(79, 195, 247, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+
+    iframe {
+        display: block;
+        width: 100%;
     }
 }
 
@@ -269,7 +283,7 @@
         }
 
         .events-info-p {
-            font-size: 24px;
+            font-size: 23px;
             margin-top: 8px;
             font-weight: 600;
             overflow: hidden;
@@ -282,7 +296,7 @@
         }
 
         .events-info-text {
-            color: rgba(255, 255, 255, 0.94);
+            color: rgba(255, 255, 255, 0.80);
             font-size: 19px;
             font-weight: 500;
             overflow: hidden;

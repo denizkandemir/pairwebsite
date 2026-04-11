@@ -8,6 +8,7 @@ import EventsPage from './Pages/EventsPage/EventsPage';
 import EventDetailPage from './Pages/EventDetailPage';
 import NewsletterPage from './Pages/NewsletterPage';
 import NewsletterDetailPage from './Pages/NewsletterDetailPage';
+import AboutUsPage from './Pages/AboutUsPage';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/contact" element={<ContactPage/>} />
             <Route path="/events" element={<EventsPage />} />
+            <Route path="/aboutUs" element={<AboutUsPage />} />
             <Route path="/events/:id" element={<EventDetailPage />} />
             <Route path="/newsletter" element={<NewsletterPage />} />
             <Route path="/newsletter/:id" element={<NewsletterDetailPage />} />

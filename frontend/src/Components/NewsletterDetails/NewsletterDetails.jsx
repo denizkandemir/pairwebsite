@@ -23,13 +23,13 @@ const NewsletterDetails = () => {
             if (foundArticle) {
                 setArticle(foundArticle);
                 setLoadingArticle(false);
-                
+
                 // Get related articles (same category, different id)
                 const related = newsletterArticles
                     .filter(a => a.category === foundArticle.category && a.id !== foundArticle.id)
                     .slice(0, 3);
                 setRelatedArticles(related);
-                
+
                 // Allow DOM to update before triggering fade-in
                 setTimeout(() => {
                     setFadeReady(true);
@@ -122,10 +122,9 @@ const NewsletterDetails = () => {
                         <div className="article-description-section">
                             <h2>Full Article</h2>
                             <div className="article-description">
-                                <p>{article.description}</p>
-                                {/* You can add more paragraphs or content here */}
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                {article.texts && article.texts.map((textObj) => (
+                                    <p key={textObj.id}>{textObj.text}</p>
+                                ))}
                             </div>
                         </div>
 
@@ -174,7 +173,7 @@ const NewsletterDetails = () => {
                                     <img src={pairLogo} alt="PAIR Logo" />
                                 </div>
                             </div>
-                            
+
                             <div className="cta-content">
                                 <div className="cta-category-info">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -186,14 +185,20 @@ const NewsletterDetails = () => {
                                     </div>
                                 </div>
 
-                                <button className="download-button" onClick={handleDownloadPDF}>
+
+                                <a
+                                    href={article.pdf}
+                                    download
+                                    className="link download-button"
+                                >
                                     <span>Download PDF</span>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                         <polyline points="7 10 12 15 17 10"></polyline>
                                         <line x1="12" y1="15" x2="12" y2="3"></line>
                                     </svg>
-                                </button>
+                                </a>
+
 
                                 <div className="cta-divider"></div>
 
@@ -226,8 +231,8 @@ const NewsletterDetails = () => {
                         <h2>Other Articles You May Like</h2>
                         <div className="related-articles-grid">
                             {newsletterArticles.slice(0, 3).map((relatedArticle) => (
-                                <Link 
-                                    key={relatedArticle.id} 
+                                <Link
+                                    key={relatedArticle.id}
                                     to={`/newsletter/${relatedArticle.id}`}
                                     className="related-article-card"
                                 >

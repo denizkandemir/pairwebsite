@@ -66,7 +66,14 @@ body {
   transform: translateX(0);
 }
 
+.about-us-page-container {
+  overflow: hidden;
+}
 
+.link {
+  text-decoration: none;
+  color: inherit;
+}
 
 .no-scroll {
   overflow: hidden;

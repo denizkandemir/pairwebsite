@@ -6,9 +6,8 @@ import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
 import Slide from "../Slide/Slide";
 import { allEvents } from "../../objects/Events";
 import pairLogo from "/pairLogo.png";
-import speakerImg from "/speaker.png";
 
-const EventDetails = ({  }) => {
+const EventDetails = ({ }) => {
 
     const { id } = useParams();
 
@@ -16,6 +15,7 @@ const EventDetails = ({  }) => {
     const [loadingEvent, setLoadingEvent] = useState(true);
     const [relatedEvents, setRelatedEvents] = useState([]);
     const [fadeReady, setFadeReady] = useState(false);
+    const [activeSpeakerIndex, setActiveSpeakerIndex] = useState(null);
 
     useEffect(() => {
         setFadeReady(false);
@@ -24,13 +24,14 @@ const EventDetails = ({  }) => {
             if (foundEvent) {
                 setEvent(foundEvent);
                 setLoadingEvent(false);
-                
+
                 // Get related events (same type, different id)
                 const related = allEvents
                     .filter(e => e.type === foundEvent.type && e.id !== foundEvent.id)
                     .slice(0, 3);
                 setRelatedEvents(related);
-                
+                setActiveSpeakerIndex(null);
+
                 // Allow DOM to update before triggering fade-in
                 setTimeout(() => {
                     setFadeReady(true);
@@ -57,12 +58,12 @@ const EventDetails = ({  }) => {
             {/* Hero Section with Image Slider */}
             <div className="event-hero-section fade-in">
                 <div className="event-hero-overlay"></div>
-                <Slide 
-                    SlideImgs={event.imgs} 
-                    id={event.id} 
-                    container={"event-hero-slide-container"} 
+                <Slide
+                    SlideImgs={event.imgs}
+                    id={event.id}
+                    container={"event-hero-slide-container"}
                     imgClass={"event-hero-img"}
-                    openSlide={() => {}}
+                    openSlide={() => { }}
                 />
                 <div className="event-hero-badge">
                     <span className="badge-label">{event.type}</span>
@@ -102,45 +103,61 @@ const EventDetails = ({  }) => {
                         </div>
 
                         <div className="event-speaker-section">
-                            <h3>Speaker</h3>
-                            <div className="speaker-card">
-                                {/* Compact View - Default */}
-                                <div className="speaker-compact">
-                                    <img src={speakerImg} alt={event.speaker} />
-                                    <div className="speaker-info">
-                                        <h4>{event.speaker}</h4>
-                                        <p>Event Speaker</p>
-                                    </div>
-                                </div>
-                                
-                                {/* Expanded View - On Hover */}
-                                <div className="speaker-expanded">
-                                    <div className="speaker-expanded-header">
-                                        <img src={speakerImg} alt={event.speaker} />
-                                    </div>
-                                    <div className="speaker-expanded-content">
-                                        <h3>{event.speaker}</h3>
-                                        <p className="speaker-title">Associate Professor of Cognitive Science</p>
-                                        <p className="speaker-university">University of Warsaw</p>
-                                        
-                                        <div className="speaker-divider"></div>
-                                        
-                                        <div className="speaker-bio">
-                                            <h4>Biography</h4>
-                                            <p>Dr. {event.speaker} is a leading researcher in cognitive psychology and artificial intelligence, with over 15 years of experience in the field.</p>
-                                        </div>
-                                        
-                                        <div className="speaker-interests">
-                                            <h4>Research Interests</h4>
-                                            <ul>
-                                                <li>Cognitive Psychology</li>
-                                                <li>Machine Learning</li>
-                                                <li>Human-AI Interaction</li>
-                                                <li>Neural Networks</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                            <h3>Speakers</h3>
+                            <div className="speaker-grid" role="list">
+                                {event.speakers &&
+                                    event.speakers.map((speaker, index) => (
+                                            <button
+                                                key={speaker.id || index}
+                                                type="button"
+                                                role="listitem"
+                                                className={`speaker-grid-card ${activeSpeakerIndex === index ? "is-active" : ""} ${activeSpeakerIndex !== null && activeSpeakerIndex !== index ? "is-suppressed" : ""}`}
+                                                onClick={() => setActiveSpeakerIndex((prev) => (prev === index ? null : index))}
+                                                aria-expanded={activeSpeakerIndex === index}
+                                            >
+                                                <div className="speaker-grid-card__compact">
+                                                    <div className="speaker-grid-card__avatar-wrap">
+                                                        <img src={speaker.img} alt={speaker.name} />
+                                                    </div>
+                                                    <div className="speaker-grid-card__info">
+                                                        <h4>{speaker.name}</h4>
+                                                     
+                                                    </div>
+                                                    {
+                                                        activeSpeakerIndex === index ? (
+                                                            <span className="speaker-grid-card__cue" aria-hidden="true">
+                                                                →
+                                                            </span>  ) : ( <span className="speaker-grid-card__cue" aria-hidden="true">
+                                                         ↗
+                                                    </span>)
+                                                    }
+                                                   
+                                                </div>
+
+                                                <div
+                                                    className={`speaker-grid-card__expandable ${activeSpeakerIndex === index ? "is-open" : ""}`}
+                                                    aria-hidden={activeSpeakerIndex !== index}
+                                                >
+                                                       <p className="speaker-grid-card__university"> {speaker.title}</p>
+                                                    <div className="speaker-grid-card__divider"></div>
+                                                    <p className="speaker-grid-card__university">{speaker.university}</p>
+                                                    <div className="speaker-grid-card__bio">
+                                                        <h5>Biography</h5>
+                                                        <p>
+                                                            {speaker.bio}
+                                                        </p>
+                                                    </div>
+                                                    <div className="speaker-grid-card__interests">
+                                                        <h5>Research Interests</h5>
+                                                        <ul>
+                                                            {speaker.interests.map((interest, idx) => (
+                                                                <li key={idx}>{interest}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        ))}
                             </div>
                         </div>
 
@@ -162,8 +179,8 @@ const EventDetails = ({  }) => {
                                         <polyline points="12 6 12 12 16 14"></polyline>
                                     </svg>
                                     <div>
-                                        <h4>Duration</h4>
-                                        <p>1 hour</p>
+                                        <h4>Start Time</h4>
+                                        <p>{event.startTime}</p>
                                     </div>
                                 </div>
                                 <div className="highlight-card">
@@ -185,7 +202,7 @@ const EventDetails = ({  }) => {
                                     </svg>
                                     <div>
                                         <h4>Audience</h4>
-                                        <p>All Levels</p>
+                                        <p>{event.audience || "All Levels"}</p>
                                     </div>
                                 </div>
                             </div>
@@ -194,58 +211,77 @@ const EventDetails = ({  }) => {
 
                     {/* Right Column - CTA Card */}
                     <div className="event-sidebar fade-in">
-                        <div className="event-cta-card">
-                            <div className="cta-header">
-                                <div className="cta-logo">
-                                    <img src={pairLogo} alt="PAIR Logo" />
-                                </div>
-                            </div>
-                            
-                            <div className="cta-content">
-                                <div className="cta-price">
-                                    <span className="price-label">Free</span>
-                                </div>
-                                
-                                <div className="cta-date-info">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                                    </svg>
-                                    <div>
-                                        <p className="date-label">{event.date}</p>
+                        <div className="event-sidebar-sticky">
+                            <div className="event-cta-card">
+                                <div className="cta-header">
+                                    <div className="cta-logo">
+                                        <img src={pairLogo} alt="PAIR Logo" />
                                     </div>
                                 </div>
 
-                                <button className="reserve-button">
-                                    <span>Reserve a Spot</span>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                        <polyline points="12 5 19 12 12 19"></polyline>
-                                    </svg>
-                                </button>
-
-                                <div className="cta-divider"></div>
-
-                                <div className="cta-info-list">
-                                    <div className="info-item">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <polyline points="12 6 12 12 16 14"></polyline>
-                                        </svg>
-                                        <span>1 hour duration</span>
+                                <div className="cta-content">
+                                    <div className="cta-price">
+                                        <span className="price-label">Free</span>
                                     </div>
-                                    <div className="info-item">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                            <circle cx="12" cy="10" r="3"></circle>
+
+                                    <div className="cta-date-info">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
                                         </svg>
-                                        <span>{event.location}</span>
+                                        <div>
+                                            <p className="date-label">{event.date}</p>
+                                        </div>
+                                    </div>
+
+                                    <button className="reserve-button">
+                                       
+                                       <a className="link" href=" https://pair-conference.pl/register.html">
+                                          <span>Reserve a Spot</span>
+                                        </a> 
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </button>
+
+                                    <div className="cta-divider"></div>
+
+                                    <div className="cta-info-list">
+                                        <div className="info-item">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12 6 12 12 16 14"></polyline>
+                                            </svg>
+                                            <span>{event.startTime}</span>
+                                        </div>
+                                        <div className="info-item">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                <circle cx="12" cy="10" r="3"></circle>
+                                            </svg>
+                                            <span>{event.location}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div className="event-map-wrapper">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d706.1256625987585!2d20.98593909497691!3d52.212312004853516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecb87ffd85def%3A0x1b3838cd631aba26!2sFaculty%20of%20Psychology%2C%20University%20of%20Warsaw!5e0!3m2!1str!2spl!4v1775878868094!5m2!1str!2spl"
+                                width="100%"
+                                height="300"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="Faculty of Psychology, University of Warsaw Map"
+                            />
+                        </div>
+
                     </div>
                 </div>
 
@@ -255,8 +291,8 @@ const EventDetails = ({  }) => {
                         <h2>Other Events You May Like</h2>
                         <div className="related-events-grid">
                             {relatedEvents.map((relatedEvent) => (
-                                <Link 
-                                    key={relatedEvent.id} 
+                                <Link
+                                    key={relatedEvent.id}
                                     to={`/events/${relatedEvent.id}`}
                                     className="related-event-card"
                                 >
