@@ -28,7 +28,9 @@ const Subscribe = ({title}) => {
 
                 <div className="subscribe-content">
                     <h2 className="subscribe-title">{title}</h2>
-                    <p className="subscribe-text">Psychology & AI research updates delivered monthly.</p>
+                    <p className="subscribe-text">
+                        Exclusive AI offers and research highlights delivered straight to your mailbox.
+                    </p>
 
                     <form className="subscribe-form">
                         {/* <input type="email" placeholder="Enter your email..." /> */}

@@ -2,7 +2,7 @@ import "./EventsHomepage.scss";
 import React, { use } from "react";
 import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
 import { Link } from "react-router-dom";
-import eventBrain from "/eventBrain6.png";
+import eventBrain from "/teamPicturePair.jpeg";
 import { useState, useEffect } from "react";
 
 const EventsHomepage = () => {
@@ -28,9 +28,10 @@ const EventsHomepage = () => {
                         {/* <p className="events-little-title fade-in"> PAIR Proudly Organizes </p> */}
                         <h2 className="events-title fade-in"> Join Our Events and Webinars </h2>
                         <p className="events-text fade-in">
-                            PAIR hosts focused events and webinars exploring the intersection of psychology and artificial intelligence. We bring together researchers and learners to discuss new findings, methods, and ideas shaping these fields.                        </p>
+                            Are you a student who wants to learn more about artificial intelligence? Curious about how it can affect you or how you can use it in your future professional careers? Join our lectures and conferences! It’s completely free and you’ll get to hear about the most recent academic findings from leading researchers, professors and experts!
+                        </p>
                         <p className="events-text event-text-2 fade-in">
-                            Our sessions cover topics like cognitive processes, machine learning, and human–AI interaction. Join us to gain clear insights, engage with experts, and stay connected to emerging research.
+                            We cover topics such as human-AI interaction, effects of AI on our brain and how the mind can help reshape our understanding of machine learning. Together, we aim to connect and grow the academic community, in order to provide you with the latest knowledge through our special-made lectures and conferences.
                         </p>
                     </div>
                     <div className="events-button-container">

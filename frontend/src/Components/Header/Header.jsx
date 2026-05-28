@@ -183,7 +183,7 @@ const Header = () => {
             <Blog />
             <WhoAreWe />
             <EventsHomepage />
-            <Subscribe title={"Stay in the Loop"} />
+            <Subscribe title={"Stay Ahead With One Click"} />
         </div>
     )
 };

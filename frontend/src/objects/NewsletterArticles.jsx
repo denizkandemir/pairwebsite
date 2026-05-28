@@ -24,14 +24,7 @@ export const newsletterArticles = [
                 id: 2,
                 text: "Through all of the chaos and sensationalism surrounding the subject, it is important to take a step back and ask: How does AI actually work? What are its impacts on the human psyche? And can psychology actually help us understand the workings of the machine? The first PAIR Literature Review aims to answer these exact questions. By establishing the baseline between psychology and AI research, it is our goal to help our readers better understand this increasingly complex and influential domain."
             },
-            {
-                id: 4,
-                text: "Artificial intelligence-driven chatbots are no longer simple customer service tools; they are rapidly becoming the primary interface between brands and consumers. Acting as digital storefronts, these systems personalize recommendations, simulate human conversation, and collect behavioral data in real time. This shift is fundamentally changing how users explore products, form trust, and make purchasing decisions."
-            },
-            {
-                id: 6,
-                text: "By combining natural language processing, predictive analytics, and behavioral psychology principles, AI chatbots are reshaping digital commerce into a dynamic, conversational ecosystem."
-            }
+    
         ],
         date: "12-22-2025",
         image: articleImg1,

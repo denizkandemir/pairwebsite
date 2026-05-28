@@ -8,20 +8,18 @@ import aboutMainImg from "/aboutUsBannerImg1.png";
 
 const EventsPage = () => {
 
-   const eventsDescription = "Explore upcoming webinars and events designed to connect researchers, students, and professionals around meaningful ideas and emerging evidence.";
-   const eventsSecondaryDescription = "Through expert-led sessions and interactive discussions, we create a space where learning, collaboration, and inspiration meet.";
+   const eventsDescription = "Our events will help you grow and become more confident in your future prospects. Entirely for free, you can attend lectures and day-long conferences held by leading researchers and AI developers. Ultimately, we aim to create a community of experts that will synthesize the fields of artificial intelligence and psychology. Join us, and become part of the very forefront of academic research.";
 
    return (
       <div className="events-page-container">
          <Banner
             badgeText="Upcoming Sessions"
-            title="Our Events and Webinars"
-            titleHighlight="Webinars"
+            title="Learn About AI Directly from Experts"
+            titleHighlight="Learn About AI"
             titleClass="events-banner-title"
             imageSrc={eventsBannerImg}
             imageAlt="PAIR events and webinars"
             description={eventsDescription}
-            secondaryDescription={eventsSecondaryDescription}
             chips={["Talks", "Sessions", "Community"]}
             floatingLabels={["Talks", "Sessions", "Community"]}
             detailVariant="events"

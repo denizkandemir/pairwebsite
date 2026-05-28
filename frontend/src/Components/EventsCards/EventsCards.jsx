@@ -5,6 +5,7 @@ import speakerImg from "/speaker.png";
 import { useState, useEffect, useMemo } from "react";
 import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
 import { allEvents } from "../../objects/Events";
+import notFoundImg from "/noEventsPicture.png";
 
 const eventsCards = ({ }) => {
 
@@ -128,6 +129,14 @@ const eventsCards = ({ }) => {
                     )}
                 </div>
             </div>
+            {
+                comingEvents.length === 0 ? (
+                    <div className="no-events-container ">
+                        <p className="no-events-text">No Upcoming Events at The Moment</p>
+                        <img src={notFoundImg} alt="No events found" className="no-events-img" />
+                    </div>
+                ) : (
+            
             <div className="events-cards-container">
                 <div className={`events-cards-content-container ${fadeClass}`}>
                     {
@@ -209,6 +218,8 @@ const eventsCards = ({ }) => {
                                   
                 </div>
             </div>
+                )
+            }
         </>
     )
 }

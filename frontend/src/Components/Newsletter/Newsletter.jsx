@@ -11,8 +11,8 @@ const Newsletter = () => {
 
     const [showAllArticles, setShowAllArticles] = useState(false);
 
-    const newsletterDescription = "Stay connected with curated insights at the intersection of psychology and artificial intelligence through research highlights, publications, and thought-provoking commentary.";
-    const newsletterSecondaryDescription = "Join a growing academic community where ideas evolve into dialogue and dialogue evolves into responsible innovation.";
+    const newsletterDescription = "Learn more about how AI can affect you in the future through our very own research articles. We tailor them specifically for students to cover relevant topics about their developing psychological, academic or therapeutic careers. On top of that, we recommend the latest elite models that make your academic and professional life easier.";
+    const newsletterSecondaryDescription = "AI no longer needs to be anxiety-inducing. By reading our articles, you will acquire enough knowledge and skills in very little time to handle the future with a renewed sense of confidence in yourself.";
 
     useFadeInOnScroll('.fade-in');
 
@@ -46,8 +46,8 @@ const Newsletter = () => {
         <div className="newsletter-page">
           <Banner 
             badgeText="PAIR Updates"
-            title="Newsletter and Research Insights"
-            titleHighlight="Research Insights"
+            title="Scientific Excellence, Entirely for Students"
+            titleHighlight="Entirely for Students"
             titleClass="newsletter-banner-title"
             imageSrc={bannerImg}
             imageAlt="PAIR newsletter and research updates"

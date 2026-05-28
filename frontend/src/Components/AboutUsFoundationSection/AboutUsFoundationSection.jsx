@@ -2,7 +2,7 @@ import "./AboutUsFoundationSection.scss";
 import logo from "/pairLogo.png";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import aboutUsFoundationImg from "/pairPresident.jpeg";
+import aboutUsFoundationImg from "/juliaPair.jpeg";
 import modalePicture2 from "/aboutUsModulePicture2.jpg";
 
 const AboutUsFoundationSection = () => {

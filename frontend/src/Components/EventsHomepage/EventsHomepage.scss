@@ -1,5 +1,4 @@
 @use '../../styles/styles.scss' as styles;
-
 .events-homepage-container {
     display: flex;
     justify-content: center;
@@ -7,7 +6,6 @@
     position: relative;
     overflow: hidden;
     isolation: isolate;
-
     &::before {
         content: '';
         position: absolute;
@@ -21,7 +19,6 @@
         mask-image: linear-gradient(128deg, transparent 0%, rgba(0, 0, 0, 0.84) 38%, transparent 90%);
         pointer-events: none;
     }
-
     &::after {
         content: '';
         position: absolute;
@@ -31,38 +28,28 @@
         bottom: 14%;
         border-radius: 50%;
         background: rgba(178, 214, 255, 0.44);
-        box-shadow:
-            11px 8px 0 rgba(178, 214, 255, 0.3),
-            22px 0 0 rgba(178, 214, 255, 0.24),
-            33px 12px 0 rgba(178, 214, 255, 0.28);
+        box-shadow: 11px 8px 0 rgba(178, 214, 255, 0.3), 22px 0 0 rgba(178, 214, 255, 0.24), 33px 12px 0 rgba(178, 214, 255, 0.28);
         pointer-events: none;
     }
-
     @media (max-width: 1200px) {
         padding: 35px 0px;
     }
-
     @media (max-width: 768px) {
         padding: 30px 0px;
-
         &::before {
             opacity: 0.32;
         }
-
         &::after {
             opacity: 0.68;
         }
     }
-
     @media (max-width: 500px) {
         padding: 25px 0px;
-
         &::before,
         &::after {
             display: none;
         }
     }
-
     .events-homepage-content-container {
         max-width: 1250px;
         width: 100%;
@@ -70,7 +57,6 @@
         justify-content: space-between;
         padding: 0 40px;
         gap: 40px;
-
         @media (max-width: 1200px) {
             flex-direction: column-reverse;
             gap: 30px;
@@ -78,37 +64,29 @@
             align-items: center;
             padding: 0 30px;
         }
-
-
         .event-img-collage {
             object-fit: cover;
-            height: 370px;
-            max-width: 580px;
-            border-radius: 20px;
+            height: 420px;
+            max-width: 650px;
+            border-radius: 15px;
             box-shadow: 0 0 10px rgba(100, 200, 255, 0.2), 0 0 50px rgba(100, 200, 255, 0.15), inset 0 1px 3px rgba(255, 255, 255, 0.12);
             transition: all 1s ease-out;
-
             &.fade-in-right {
                 transform: translateX(30%);
             }
-
             &.fade-in-right.show {
                 transform: translateX(0);
             }
-
             @media (max-width: 700px) {
                 width: 100%;
                 max-width: 100%;
                 height: auto;
             }
         }
-
-
         .events-center-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
-
             .events-little-title {
                 font-size: 17px;
                 color: #ffffff;
@@ -116,13 +94,10 @@
                 margin-bottom: 5px;
                 letter-spacing: 1px;
                 margin-left: 5px;
-
             }
-
             .event-text-2 {
                 margin-top: 20px;
             }
-
             .events-title {
                 font-size: 34px;
                 font-weight: 700;
@@ -130,7 +105,6 @@
                 margin-bottom: 15px;
                 text-shadow: 0 0 3px rgba(255, 249, 239, 0.2), 0 0 16px rgba(255, 249, 239, 0.1);
             }
-
             .events-text {
                 font-size: 21px;
                 max-width: 600px;
@@ -138,9 +112,7 @@
                 font-weight: 520;
                 line-height: 27px;
             }
-
             .events-button-container {
-
                 .event-button {
                     background: rgba(31, 31, 31, 0.6);
                     border: 1px solid #7BB8D9;
@@ -157,7 +129,6 @@
                     box-shadow: 0 0 15px rgba(139, 92, 246, 0.3), 0 4px 20px rgba(0, 0, 0, 0.2);
                     text-transform: none;
                     letter-spacing: 0.5px;
-
                     &::before {
                         content: '';
                         position: absolute;
@@ -168,23 +139,19 @@
                         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
                         transition: left 0.5s ease;
                     }
-
                     &:hover {
                         transform: translateY(-2px);
                         box-shadow: 0 0 18px rgba(139, 92, 246, 0.35), 0 4px 15px rgba(0, 0, 0, 0.25);
                         background: #003b56;
-
                         &::before {
                             left: 100%;
                         }
                     }
-
                     &:active {
                         transform: translateY(-1px);
                     }
                 }
             }
         }
-
     }
 }

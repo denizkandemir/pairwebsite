@@ -1,5 +1,4 @@
 @use '../../styles/styles.scss' as vars;
-
 .events-cards-buttons-container {
     display: flex;
     justify-content: space-between;
@@ -11,15 +10,12 @@
     position: relative;
     flex-wrap: wrap;
     z-index: 10000;
-
-    @media(max-width:1160px) {
+    @media(max-width: 1160px) {
         padding: 30px 30px 20px;
     }
-
     @media (max-width:800px) {
         justify-content: center;
     }
-
     @media(max-width:550px) {
         padding: 20px 30px 20px;
         gap: 20px;
@@ -35,7 +31,6 @@
     padding: 6px;
     border: 2px solid rgba(79, 195, 247, 0.3);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-
     &::before {
         content: '';
         position: absolute;
@@ -49,22 +44,18 @@
         box-shadow: 0 4px 15px rgba(38, 132, 199, 0.5);
         z-index: 0;
     }
-
     &.past-active::before {
         transform: translateX(100%);
         border-radius: 0 12px 12px 0;
     }
-
     @media(max-width:550px) {
-       width: 345px;
+        width: 345px;
     }
-
-      @media(max-width:400px) {
-       width: 300px;
+    @media(max-width:400px) {
+        width: 300px;
     }
-
- @media(max-width:300px) {
-       width: 300px;
+    @media(max-width:300px) {
+        width: 300px;
     }
 }
 
@@ -82,12 +73,10 @@
     position: relative;
     z-index: 1;
     white-space: nowrap;
-
-    @media(max-width:550px) {
+    @media(max-width: 550px) {
         padding: 12px 30px;
         font-size: 15px;
     }
-
     @media(max-width:420px) {
         padding: 10px 20px;
         font-size: 14px;
@@ -100,7 +89,6 @@
 
 .events-cards-inactive-btn {
     color: rgba(255, 255, 255, 0.7);
-
     &:hover {
         color: rgba(255, 255, 255, 0.9);
     }
@@ -112,40 +100,33 @@
     padding: 50px 0;
     padding-bottom: 60px;
     padding-top: 30px;
-
     @media(max-width: 768px) {
         padding: 40px 0;
         padding-bottom: 50px;
         padding-top: 20px;
     }
-
     @media(max-width: 500px) {
         padding: 30px 0;
         padding-bottom: 40px;
         padding-top: 15px;
     }
-
     .events-cards-content-container {
         max-width: 1200px;
         display: flex;
         position: relative;
-        
         gap: 60px;
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
         transition: opacity 0.3s ease-in-out;
-
         &.fade-in-active {
             opacity: 1;
             animation: fadeIn 0.4s ease-in-out;
         }
-
         &.fade-out {
             opacity: 0;
         }
     }
-
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -156,16 +137,12 @@
             transform: translateY(0);
         }
     }
-
     .events-cards-title-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
     }
-
-    
     .events-cards-p {
         color: rgba(0, 0, 0, 0.8);
         font-size: 20px;
@@ -175,7 +152,6 @@
         font-weight: 500;
         max-width: 900px;
         word-spacing: 0.8px;
-
         @media only screen and (max-width: 550px) {
             text-align: left;
             font-size: 19px;
@@ -183,14 +159,12 @@
             margin-bottom: 25px;
         }
     }
-
     .events-cards-title {
         font-size: 45px;
         line-height: 52px;
         text-align: center;
         font-weight: 700;
     }
-
     .events-cards-data-container {
         display: flex;
         align-items: stretch;
@@ -199,11 +173,9 @@
         flex-wrap: wrap;
         position: relative;
         z-index: 10;
-
         @media only screen and (max-width: 840px) {
             justify-content: center;
         }
-
         @media only screen and (max-width: 420px) {
             grid-template-columns: repeat(auto-fill, 320px);
         }
@@ -216,7 +188,6 @@
     overflow: hidden;
     border: 1px solid rgba(79, 195, 247, 0.25);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-
     iframe {
         display: block;
         width: 100%;
@@ -232,7 +203,6 @@
     flex-direction: column;
     justify-content: space-between;
     background: transparent;
-
     backdrop-filter: blur(15px);
     border-radius: 20px;
     max-width: 350px;
@@ -241,22 +211,17 @@
     border: 1px solid rgba(79, 195, 247, 0.2);
     overflow: hidden;
     background: rgba(255, 255, 255, 0.05);
-
     .events-info-content-container {
         padding: 20px 15px;
     }
-
     .events-info-img-container {
         width: 100%;
     }
-
     .events-info-meta {
         font-size: 15px;
         color: rgba(255, 255, 255, 0.8);
-
         font-weight: 500;
     }
-
     .events-info-info-img {
         object-fit: cover;
         width: 100%;
@@ -264,19 +229,15 @@
         border-top-right-radius: 10px;
         height: 200px;
     }
-
     .events-info-text-container {
-
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 15px;
         margin-bottom: 20px;
-
         @media only screen and (max-width: 420px) {
             gap: 10px;
         }
-
         .events-info-p {
             font-size: 23px;
             margin-top: 8px;
@@ -289,7 +250,6 @@
             -webkit-box-orient: vertical;
             color: rgba(255, 255, 255, 0.95);
         }
-
         .events-info-text {
             color: rgba(255, 255, 255, 0.80);
             font-size: 19px;
@@ -300,50 +260,39 @@
             line-clamp: 4;
             display: -webkit-box;
             -webkit-box-orient: vertical;
-
             @media only screen and (max-width: 420px) {
                 font-size: 17px;
             }
         }
     }
-
     .events-info-button-container {
         display: flex;
         justify-content: space-between;
         width: 100%;
         align-items: center;
-
         .events-info-logo-container {
             display: flex;
             gap: 5px;
-
             .fcl-logo-texts-container {
                 display: flex;
                 gap: 5px;
                 align-items: center;
-
                 .fcl-text {
                     font-weight: 500;
                     font-size: 10px;
-
                 }
-
                 .fcl-bottom-text {
                     // color: #5999cf;
                     color: #04bce8;
                     margin-top: 1px;
                     font-size: 8px;
                 }
-
                 .events-info-logo {
                     object-fit: contain;
                     max-width: 100px;
                 }
             }
-
-
         }
-
         .events-info-button {
             // background-color: black;
             color: white;
@@ -354,7 +303,6 @@
             border-radius: 5px;
         }
     }
-
     .events-info-meta-wrapper {
         display: flex;
         align-items: center;
@@ -362,7 +310,6 @@
         flex-wrap: wrap;
         justify-content: space-between;
     }
-
     .events-speaker-container {
         display: flex;
         align-items: center;
@@ -374,18 +321,15 @@
             object-fit: contain;
         }
     }
-
     .events-info-date-type-container {
         display: flex;
         align-items: center;
         gap: 6px;
     }
-
     .events-location-container {
         display: flex;
         align-items: center;
         gap: 4px;
-
         svg {
             width: 14px;
             height: 14px;
@@ -401,7 +345,6 @@
     border-radius: 10px;
     height: 42px;
     max-width: 111px;
-
     @media only screen and (max-width: 420px) {
         max-width: 120px;
     }
@@ -416,7 +359,6 @@
     color: white;
     font-size: 15px;
     font-weight: bold;
-
     outline: none;
     border: none;
     transition: color 0.5s;
@@ -427,11 +369,9 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
     color: #fff;
-
     @media only screen and (max-width: 420px) {
         font-size: 13px;
     }
-
     &:before {
         content: "";
         z-index: 1;
@@ -443,7 +383,6 @@
         border-radius: 5px;
         border: none;
     }
-
     &:after {
         content: "";
         z-index: -2;
@@ -452,14 +391,11 @@
         top: vars.$borderW*1.5;
         width: 100%;
         height: 100%;
-
         transition: all 0.3s 0.2s;
         border-radius: 5px;
     }
-
     &:hover {
         border-radius: 5px;
-
         &:after {
             transition: all 0.3s;
             left: 0;
@@ -467,7 +403,6 @@
             border-radius: 5px;
         }
     }
-
     &__inner {
         z-index: -1;
         overflow: hidden;
@@ -478,51 +413,42 @@
         height: 100%;
         border-radius: 5px;
     }
-
     &__blobs {
         position: relative;
         display: block;
         height: 100%;
         filter: url('#goo');
     }
-
     &__blob {
         position: absolute;
         width: 100% / $numOfBlobs;
         height: 100%;
         // background-color: vars.$blue-color5;
         background-color: #060f88;
-
         border-radius: 100%;
         transform: translate3d(0, 150%, 0) scale(1.7);
         transition: transform 0.45s;
-
         @supports(filter: url('#goo')) {
             transform: translate3d(0, 150%, 0) scale(1.4);
         }
-
         @for $i from 1 through $numOfBlobs {
             &:nth-child(#{$i}) {
                 left: ($i - 1) * (120% / $numOfBlobs);
                 transition-delay: ($i - 1) * 0.08s;
             }
         }
-
         .events-cards-blob-btn:hover & {
             transform: translateZ(0) scale(1.7);
-
             @supports(filter: url('#goo')) {
                 transform: translateZ(0) scale(1.4);
             }
         }
     }
-
 }
 
 .sort-by-container {
     position: relative;
     z-index: 1000;
-
     .sort-by-dropdown {
         display: flex;
         align-items: center;
@@ -541,43 +467,35 @@
         transition: all 0.3s ease;
         user-select: none;
         white-space: nowrap;
-
-        @media(max-width:550px) {
+        @media(max-width: 550px) {
             padding: 18px 30px;
             font-size: 15px;
             width: 345px;
         }
-
         @media(max-width:400px) {
             font-size: 14px;
             width: 300px;
         }
-
-          @media(max-width:300px) {
+        @media(max-width:300px) {
             font-size: 14px;
             width: 250px;
         }
-
         &:hover {
             border-color: rgba(79, 195, 247, 0.5);
             background: rgba(255, 255, 255, 0.12);
             box-shadow: 0 4px 20px rgba(38, 132, 199, 0.3);
         }
-
         .dropdown-selected {
             flex: 1;
         }
-
         .dropdown-arrow {
             transition: transform 0.3s ease;
             flex-shrink: 0;
-
             &.open {
                 transform: rotate(180deg);
             }
         }
     }
-
     .dropdown-menu {
         position: absolute;
         top: calc(100% + 8px);
@@ -591,7 +509,6 @@
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         z-index: 1001;
         animation: dropdownFadeIn 0.2s ease;
-
         @keyframes dropdownFadeIn {
             from {
                 opacity: 0;
@@ -602,7 +519,6 @@
                 transform: translateY(0);
             }
         }
-
         .dropdown-item {
             padding: 12px 20px;
             color: rgba(255, 255, 255, 0.85);
@@ -611,27 +527,43 @@
             cursor: pointer;
             transition: all 0.2s ease;
             border-bottom: 1px solid rgba(79, 195, 247, 0.1);
-
             &:last-child {
                 border-bottom: none;
             }
-
             &:hover {
                 background: linear-gradient(135deg, rgba(30, 64, 175, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%);
                 color: rgba(255, 255, 255, 0.95);
                 padding-left: 25px;
             }
-
             &.active {
                 background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
                 color: white;
                 font-weight: 600;
             }
-
             @media(max-width:550px) {
                 padding: 10px 18px;
                 font-size: 14px;
             }
         }
+    }
+}
+
+.no-events-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+    .no-events-text {
+        font-size: 40px;
+        color: rgba(241, 241, 241, 0.8);
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .no-events-img {
+        max-width: 500px;
+        width: 100%;
+        object-fit: contain;
+        height: auto;
     }
 }
