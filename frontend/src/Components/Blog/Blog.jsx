@@ -16,7 +16,7 @@ const Blog = () => {
                 </div>
                 <div className="blog-text-container ">
                     <h2 className="blog-title fade-in">
-                        From Mind to Machine: New Insights Uncovered
+                        Innovation Materialized
                     </h2>
                     <p className="blog-description fade-in">
 At PAIR, all of our contributions depend on sharing ideas. From our very own original studies and literature reviews to lecture summaries and recommendations of AI tools, we are dedicated to expanding the knowledge at the intersection of psychology and AI.                    </p>

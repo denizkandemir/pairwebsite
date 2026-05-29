@@ -30,7 +30,7 @@ const ContactContent = () => {
                         }
                     </div>
                     <div className="contact-subscribe-container">
-                        <Subscribe title={"Get in Touch"} />
+                        <Subscribe title={"Stay Ahead With One Click"} />
                     </div>
                 </div>
             </div>

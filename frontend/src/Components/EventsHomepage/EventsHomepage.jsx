@@ -26,7 +26,9 @@ const EventsHomepage = () => {
                 <div className="events-center-container">
                     <div className="events-text-container">
                         {/* <p className="events-little-title fade-in"> PAIR Proudly Organizes </p> */}
-                        <h2 className="events-title fade-in"> Join Our Events and Webinars </h2>
+                        <h2 className="events-title fade-in">
+                            Undertstand AI and the Mind
+                        </h2>
                         <p className="events-text fade-in">
                             Are you a student who wants to learn more about artificial intelligence? Curious about how it can affect you or how you can use it in your future professional careers? Join our lectures and conferences! It’s completely free and you’ll get to hear about the most recent academic findings from leading researchers, professors and experts!
                         </p>
