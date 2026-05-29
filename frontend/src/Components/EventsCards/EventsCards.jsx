@@ -133,7 +133,7 @@ const eventsCards = ({ }) => {
                 comingEvents.length === 0 ? (
                     <div className="no-events-container ">
                         <p className="no-events-text">No Upcoming Events at The Moment</p>
-                        <img src={notFoundImg} alt="No events found" className="no-events-img" />
+                        <img src={notFoundImg} alt="No events found" className="no-events-img" loading="lazy" decoding="async" />
                     </div>
                 ) : (
             
@@ -145,7 +145,7 @@ const eventsCards = ({ }) => {
                                 <div className="events-info-img-container">
                                     {
                                         events.imgs.slice(0, 1).map((img) => (
-                                            <img key={img.id} src={img.url} className="events-info-info-img" alt={events.title} />
+                                            <img key={img.id} src={img.url} className="events-info-info-img" alt={`${events.title} event image`} loading="lazy" decoding="async" />
                                         ))
                                     }
                                 </div>
@@ -176,7 +176,7 @@ const eventsCards = ({ }) => {
                                     <div className="events-info-button-container">
                                         <div className="events-info-logo-container">
                                             <div className="fcl-logo-texts-container">
-                                                <img className="events-info-logo" src={pairLogo} alt="" />
+                                                <img className="events-info-logo" src={pairLogo} alt="PAIR Research Lab logo" loading="lazy" decoding="async" />
                                             </div>
                                         </div>
                                         <Link

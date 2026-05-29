@@ -23,7 +23,7 @@ const Subscribe = ({title}) => {
             <div className="subscribe-content-container">
 
                 <div className={`subscribe-img-container ${isSmallScreen ? "fade-in" : "fade-in-left"}`}>
-                   <img src={subscribeMail} alt="" className="subscribe-img" />
+                   <img src={subscribeMail} alt="Email subscription illustration" className="subscribe-img" loading="lazy" decoding="async" />
                 </div>
 
                 <div className="subscribe-content">
@@ -42,7 +42,7 @@ const Subscribe = ({title}) => {
 
                 
                 <div className={`subscribe-img-container ${isSmallScreen ? "fade-in" : "fade-in-right"}`}>
-                   <img src={subscribePlane} alt="" className="subscribe-img plane-img" />
+                   <img src={subscribePlane} alt="Newsletter delivery illustration" className="subscribe-img plane-img" loading="lazy" decoding="async" />
                 </div>
             </div>
       

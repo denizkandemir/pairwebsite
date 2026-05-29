@@ -37,7 +37,7 @@ const EventsHomepage = () => {
                         </p>
                     </div>
                     <div className="events-button-container">
-                        <Link to={"events"}>
+                        <Link to="/events">
                             <button className="event-button fade-in">
                                 Our Events
                             </button>
@@ -46,7 +46,7 @@ const EventsHomepage = () => {
                 </div>
 
                 <div className="events-img-container">
-                    <img src={eventBrain} alt="" className={`event-img-collage ${isSmallScreen ? "fade-in" : "fade-in-right"}`} />
+                    <img src={eventBrain} alt="PAIR events and research collaboration collage" className={`event-img-collage ${isSmallScreen ? "fade-in" : "fade-in-right"}`} loading="lazy" decoding="async" />
                 </div>
             </div>
         </div>

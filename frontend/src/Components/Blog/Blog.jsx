@@ -12,7 +12,7 @@ const Blog = () => {
         <div className="blog-container">
             <div className="blog-content-container">
                 <div className="blog-img-container fade-in-right">
-                    <img src={blogImg} alt="" className="blog-img" />
+                    <img src={blogImg} alt="PAIR research and article feature image" className="blog-img" loading="lazy" decoding="async" />
                 </div>
                 <div className="blog-text-container ">
                     <h2 className="blog-title fade-in">

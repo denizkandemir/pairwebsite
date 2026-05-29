@@ -43,7 +43,7 @@ const AboutUsTeamSection = () => {
             </div>
             <div className="about-us-team-content-container">
                 <div className="about-us-team-img-container fade-in">
-                    <img src={aboutUsTeam} alt="About Us Team" className="about-us-team-img" />
+                    <img src={aboutUsTeam} alt="PAIR Research Lab team" className="about-us-team-img" loading="lazy" decoding="async" />
                 </div>
                 <div className="about-us-team-texts-container">
                     {

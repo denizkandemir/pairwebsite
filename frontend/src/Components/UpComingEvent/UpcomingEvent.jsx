@@ -90,7 +90,7 @@ const UpcomingEvent = () => {
               <div key={event.id} className="upcoming-event-card">
                 <div className="upcoming-event-image">
                   {event.imgs && event.imgs[0] && (
-                    <img src={event.imgs[0].url} alt={event.title} />
+                    <img src={event.imgs[0].url} alt={`${event.title} event image`} loading="lazy" decoding="async" />
                   )}
                 </div>
 

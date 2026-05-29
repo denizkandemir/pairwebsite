@@ -6,6 +6,8 @@ import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
 import { newsletterArticles } from "../../objects/NewsletterArticles";
 import pairLogo from "/pairLogo.png";
 import speakerImg from "/speaker.png";
+import useSeoMeta from "../../hooks/useSeoMeta";
+import { buildArticlePageSeo, pageSeo } from "../../seo/pageSeo";
 
 const NewsletterDetails = () => {
 
@@ -40,6 +42,9 @@ const NewsletterDetails = () => {
 
     useFadeInOnScroll('.fade-in', fadeReady);
 
+    const seoConfig = article ? buildArticlePageSeo(article) : pageSeo.newsletter;
+    useSeoMeta(seoConfig);
+
     const handleDownloadPDF = () => {
         // PDF download functionality
         alert(`Downloading ${article.title} as PDF...`);
@@ -63,7 +68,7 @@ const NewsletterDetails = () => {
             <div className="article-hero-section fade-in">
                 <div className="article-hero-overlay"></div>
                 <div className="article-hero-image-container">
-                    <img src={article.image} alt={article.title} className="article-hero-img" />
+                    <img src={article.image} alt={article.title} className="article-hero-img" loading="eager" fetchPriority="high" decoding="async" />
                 </div>
                 <div className="article-hero-badge">
                     <span className="badge-label">{article.category}</span>
@@ -108,7 +113,7 @@ const NewsletterDetails = () => {
                                 {article.authors && article.authors.map((author, index) => (
                                     <div key={index} className="author-card">
                                         <div className="author-compact">
-                                            <img src={speakerImg} alt={author.name} />
+                                            <img src={speakerImg} alt={author.name} loading="lazy" decoding="async" />
                                             <div className="author-info">
                                                 <h4>{author.name}</h4>
                                                 <p>{author.title}</p>
@@ -170,7 +175,7 @@ const NewsletterDetails = () => {
                         <div className="article-cta-card">
                             <div className="cta-header">
                                 <div className="cta-logo">
-                                    <img src={pairLogo} alt="PAIR Logo" />
+                                        <img src={pairLogo} alt="PAIR Research Lab logo" loading="lazy" decoding="async" />
                                 </div>
                             </div>
 
@@ -237,7 +242,7 @@ const NewsletterDetails = () => {
                                     className="related-article-card"
                                 >
                                     <div className="related-article-image">
-                                        <img src={relatedArticle.image} alt={relatedArticle.title} />
+                                        <img src={relatedArticle.image} alt={relatedArticle.title} loading="lazy" decoding="async" />
                                         <div className="related-article-category">{relatedArticle.category}</div>
                                     </div>
                                     <div className="related-article-content">

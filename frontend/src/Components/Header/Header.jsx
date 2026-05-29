@@ -150,7 +150,7 @@ const Header = () => {
 
                         <div className="header-actions">
                             <Link className="header-button primary" to="/aboutUs">Find Out More</Link>
-                            <Link className="header-button secondary" to="/newsletter">View Events</Link>
+                            <Link className="header-button secondary" to="/events">View Events</Link>
                         </div>
                     </div>
 
@@ -166,7 +166,7 @@ const Header = () => {
                             <span className="connector connector-2"></span>
                             <span className="connector connector-3"></span>
                         </div>
-                        <img src={headerImg} alt="PAIR interdisciplinary research team" className="header-img" />
+                        <img src={headerImg} alt="PAIR interdisciplinary research team" className="header-img" fetchPriority="high" decoding="async" />
                         <div className="floating-panel panel-left">
                             <p className="panel-label">Cognitive Modeling</p>
                             <p className="panel-value">Human-AI Alignment</p>

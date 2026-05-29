@@ -261,7 +261,7 @@ const splitIntoSentenceChunks = (text, sentencesPerChunk = 2) => {
                 >
                     <span className="foundation-energy-trigger__orb" aria-hidden="true"></span>
                     <span className="foundation-energy-trigger__preview" aria-hidden="true">
-                        <img src={logo} alt="" className="foundation-energy-trigger__preview-img" />
+                        <img src={logo} alt="PAIR Research Lab preview" className="foundation-energy-trigger__preview-img" loading="lazy" decoding="async" />
                     </span>
                     <span className="foundation-energy-trigger__content">
                         <span className="foundation-energy-trigger__kicker">Foundation Module</span>
@@ -312,7 +312,7 @@ const splitIntoSentenceChunks = (text, sentencesPerChunk = 2) => {
                             </motion.div>
 
                             <motion.div className="about-us-foundation-img-container" variants={imageItemVariants}>
-                                <img src={aboutUsFoundationImg} alt="About Us Foundation" className="about-us-foundation-img" />
+                                <img src={aboutUsFoundationImg} alt="PAIR foundation team" className="about-us-foundation-img" loading="lazy" decoding="async" />
                             </motion.div>
                         </motion.div>
 
@@ -337,7 +337,7 @@ const splitIntoSentenceChunks = (text, sentencesPerChunk = 2) => {
                             </motion.div>
 
                             <motion.div className="about-us-foundation-img-container " variants={imageItemVariants}>
-                                <img src={modalePicture2} alt="About Us Foundation" className="about-us-foundation-img module-img-2" />
+                                <img src={modalePicture2} alt="PAIR foundation module" className="about-us-foundation-img module-img-2" loading="lazy" decoding="async" />
                             </motion.div>
                         </motion.div>
 

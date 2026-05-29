@@ -57,7 +57,7 @@ const AboutUsStats = () => {
                 <div className="about-images-grid">
                     {images.map((img, index) => (
                         <div className="about-image-card" key={index}>
-                            <img src={img} alt={`About PAIR ${index + 1}`} className="about-image" />
+                            <img src={img} alt={`PAIR research visual ${index + 1}`} className="about-image" loading="lazy" decoding="async" />
                             <div className="image-overlay"></div>
                         </div>
                     ))}

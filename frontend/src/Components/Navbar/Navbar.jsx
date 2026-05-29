@@ -15,10 +15,10 @@ const Navbar = ({ setSidebarOpen }) => {
             <div className="navbar-content-container">
                 <div className="logo-container">
                     <Link to={"/"}>
-                        <img src={pairLogo} alt="" className="logo-img pair-logo" />
+                        <img src={pairLogo} alt="PAIR Research Lab logo" className="logo-img pair-logo" loading="eager" decoding="async" />
                     </Link>
                     <a className="link" target="blank" href="https://en.uw.edu.pl"> 
-                        <img src={schoolLogo} alt="" className="logo-img school-logo" />
+                        <img src={schoolLogo} alt="University of Warsaw logo" className="logo-img school-logo" loading="eager" decoding="async" />
                     </a>
                 </div>
                 <div className="navbar-center-container">

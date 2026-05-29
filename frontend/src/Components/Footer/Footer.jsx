@@ -12,8 +12,8 @@ const Footer = () => {
                 <div className="footer-content-container">
 
                     <div className="footer-logo-container">
-                        <img src={schoolLogo} alt="School Logo" className="footer-logo-img school-logo" />
-                        <img src={pairLogo} alt="Pair Logo" className="footer-logo-img pair-logo" />
+                        <img src={schoolLogo} alt="University of Warsaw logo" className="footer-logo-img school-logo" loading="lazy" decoding="async" />
+                        <img src={pairLogo} alt="PAIR Research Lab logo" className="footer-logo-img pair-logo" loading="lazy" decoding="async" />
                     </div>
 
                     <div className="footer-menu-container  footer-contact-svg-container">
@@ -32,7 +32,7 @@ const Footer = () => {
                     <div className="footer-menu-container">
                         <h3 className="footer-title"> Menu </h3>
                         <Link className="footer-link" to="/"> <p className="footer-p "> Homepage </p> </Link>
-                        <Link className="footer-link" to="/aboutus"> <p className="footer-p"> About Us  </p></Link>
+                        <Link className="footer-link" to="/aboutUs"> <p className="footer-p"> About Us  </p></Link>
                         <Link className="footer-link" to="/events"> <p className="footer-p"> Events  </p></Link>
                         <Link className="footer-link" to="/newsletter"> <p className="footer-p"> Articles & Updaes  </p></Link>
                         <Link className="footer-link" to="/contact"> <p className="footer-p"> Contact  </p></Link>

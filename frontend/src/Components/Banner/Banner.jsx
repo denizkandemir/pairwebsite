@@ -138,7 +138,7 @@ const Banner = ({
                             </span>
                         ))}
                     </div>
-                    <img src={resolvedImageSrc} alt={resolvedImageAlt} className={`banner-background-img banner-image-${resolvedImageScale} ${imgClass || ''}`} />
+                    <img src={resolvedImageSrc} alt={resolvedImageAlt} className={`banner-background-img banner-image-${resolvedImageScale} ${imgClass || ''}`} loading="eager" fetchPriority="high" decoding="async" />
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ const ContactContent = () => {
                                     <div className="contact-card">
                                         <Link className="contact-card-link" to={info.link}>
                                             <div className="contact-card-link">
-                                                <img src={info.img} alt="" className="contact-card-img" />
+                                                    <img src={info.img} alt={info.title} className="contact-card-img" loading="lazy" decoding="async" />
                                                 <h4 className="contact-card-title main-title">  {info.title}  </h4>
                                                 <h4 className="contact-card-title"> {info.info} </h4>
                                             </div>

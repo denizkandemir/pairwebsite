@@ -5,8 +5,12 @@ import Banner from "../Components/Banner/Banner";
 import aboutMainImg from "/aboutUsBannerImg1.png";
 import AboutUsTeamSection from "../Components/AboutUsTeamSection/AboutUsTeamSection";
 import AboutUsFoundationSection from "../Components/AboutUsFoundationSection/AboutUsFoundationSection";
+import useSeoMeta from "../hooks/useSeoMeta";
+import { pageSeo } from "../seo/siteSeo";
 
 const AboutUsPage = () => {
+    useSeoMeta(pageSeo.about);
+
     return (
         <div className="about-us-page-container">
             <AboutUs />

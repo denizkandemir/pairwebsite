@@ -26,7 +26,7 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
                 <div className="sidebar-center-container">
                     <Link onClick={() => closeSidebar()} className="sidebar-link" to="/newsletter">Newsletter</Link>
                     <Link onClick={() => closeSidebar()} className="sidebar-link" to="/events">Events</Link>
-                    <Link onClick={() => closeSidebar()} className="sidebar-link" to="/aboutus">About Us</Link>
+                    <Link onClick={() => closeSidebar()} className="sidebar-link" to="/aboutUs">About Us</Link>
                     <Link onClick={() => closeSidebar()}  className="sidebar-link" to="/contact">Contact</Link>
                 </div>
 

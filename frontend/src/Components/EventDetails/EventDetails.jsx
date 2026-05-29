@@ -6,6 +6,8 @@ import useFadeInOnScroll from "../../hooks/FadeInAnimation/FadeInAnimation";
 import Slide from "../Slide/Slide";
 import { allEvents } from "../../objects/Events";
 import pairLogo from "/pairLogo.png";
+import useSeoMeta from "../../hooks/useSeoMeta";
+import { buildEventPageSeo, pageSeo } from "../../seo/pageSeo";
 
 const EventDetails = ({ }) => {
 
@@ -41,6 +43,9 @@ const EventDetails = ({ }) => {
     }, [id]);
 
     useFadeInOnScroll('.fade-in', fadeReady);
+
+    const seoConfig = event ? buildEventPageSeo(event) : pageSeo.events;
+    useSeoMeta(seoConfig);
 
     if (loadingEvent || !event) {
         return (
@@ -117,7 +122,7 @@ const EventDetails = ({ }) => {
                                             >
                                                 <div className="speaker-grid-card__compact">
                                                     <div className="speaker-grid-card__avatar-wrap">
-                                                        <img src={speaker.img} alt={speaker.name} />
+                                                        <img src={speaker.img} alt={speaker.name} loading="lazy" decoding="async" />
                                                     </div>
                                                     <div className="speaker-grid-card__info">
                                                         <h4>{speaker.name}</h4>
@@ -215,7 +220,7 @@ const EventDetails = ({ }) => {
                             <div className="event-cta-card">
                                 <div className="cta-header">
                                     <div className="cta-logo">
-                                        <img src={pairLogo} alt="PAIR Logo" />
+                                        <img src={pairLogo} alt="PAIR Research Lab logo" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
 
@@ -297,7 +302,7 @@ const EventDetails = ({ }) => {
                                     className="related-event-card"
                                 >
                                     <div className="related-event-image">
-                                        <img src={relatedEvent.imgs[0].url} alt={relatedEvent.title} />
+                                        <img src={relatedEvent.imgs[0].url} alt={`${relatedEvent.title} event image`} loading="lazy" decoding="async" />
                                         <div className="related-event-type">{relatedEvent.type}</div>
                                     </div>
                                     <div className="related-event-content">

@@ -52,10 +52,10 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen , containerRef,
                                 }}
                                 
                             >
-                                {SlideImgs.map((img) => (
-                                    <SwiperSlide key={img._id}>
+                                {SlideImgs.map((img, index) => (
+                                    <SwiperSlide key={img._id || img.id || index}>
                                         <div  className="slide-container">
-                                            <img onClick={() => openSlide()} className={imgClass} src={img.url} alt="" />
+                                            <img onClick={() => openSlide()} className={imgClass} src={img.url} alt={`PAIR event image ${index + 1}`} loading="eager" fetchPriority="high" decoding="async" />
                                         </div>
                                     </SwiperSlide>
                                 ))}

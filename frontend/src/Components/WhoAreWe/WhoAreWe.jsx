@@ -47,7 +47,7 @@ const WhoAreWe = () => {
                 {whoCardsData.map((card, index) => (
                     <div className="who-card" key={index}>
                         <div className="who-card-img-container">
-                            <img src={card.image} alt={card.title} className="who-card-img" />
+                            <img src={card.image} alt={card.title} className="who-card-img" loading="lazy" decoding="async" />
                         </div>
                         <h2 className="who-card-title">{card.title}</h2>
                         <p className="who-card-description">{card.description}</p>

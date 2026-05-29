@@ -6,6 +6,8 @@ import Footer from "./Components/Footer/Footer";
 import ScrollToTop from "./hooks/ScrollToTop";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import { useState, useEffect } from "react";
+import useSeoMeta from "./hooks/useSeoMeta";
+import { buildOrganizationSchema, buildWebsiteSchema, pageSeo } from "./seo/siteSeo";
 
 export function Layout() {
 
@@ -15,6 +17,18 @@ export function Layout() {
     const isLogin = location.pathname === "/login";
 
     const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+    useSeoMeta({
+        title: pageSeo.home.title,
+        description: pageSeo.home.description,
+        path: location.pathname,
+        image: pageSeo.home.image,
+        keywords: pageSeo.home.keywords,
+        schemas: [
+            { key: 'organization', data: buildOrganizationSchema() },
+            { key: 'website', data: buildWebsiteSchema() },
+        ],
+    });
 
     useEffect(() => {
         const root = document.querySelector("#root");

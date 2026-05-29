@@ -23,6 +23,8 @@ export const allEvents = [
             { id: 2, url: eventImage1 },
          ],
         title: "Rethinking AI in Psychotherapy",
+        startDate: "2026-04-11T10:00:00+02:00",
+        organizer: "PAIR Research Lab",
         cardText: "The 1st National PAIR Conference explores the intersection of psychology and artificial intelligence through lectures, discussion, and research. This free event covers ethics, human–AI relationships, and the role of AI in psychological practice.",
         cardTextShort: "The 1st National PAIR Conference explores the intersection of psychology and artificial intelligence through lectures, discussion, and research.",
 

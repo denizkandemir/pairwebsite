@@ -67,7 +67,7 @@ const Newsletter = () => {
                   <Link to={`/newsletter/${featuredArticle.id}`} className="featured-article">
                     <div className="featured-badge">HIGHLIGHTED ARTICLE</div>
                     <div className="featured-image-container">
-                      <img src={featuredArticle.image} alt={featuredArticle.title} />
+                      <img src={featuredArticle.image} alt={featuredArticle.title} loading="eager" fetchPriority="high" decoding="async" />
                     </div>
                     <div className="featured-meta">
                       <span className="featured-category">[{featuredArticle.category}]</span>
@@ -108,7 +108,7 @@ const Newsletter = () => {
                   {displayedArticles.map((article) => (
                     <Link key={article.id} to={`/newsletter/${article.id}`} className="article-card">
                       <div className="article-image">
-                        <img src={article.image} alt={article.title} />
+                        <img src={article.image} alt={article.title} loading="lazy" decoding="async" />
                       </div>
                       <div className="article-content">
                         <div className="article-meta">
@@ -157,7 +157,7 @@ const Newsletter = () => {
                 {displayEvents.map((event) => (
                   <article key={event.id} className="must-read-card">
                     <div className="must-read-image">
-                      <img src={event.imgs[0].url} alt={event.title} />
+                      <img src={event.imgs[0].url} alt={`${event.title} event image`} loading="lazy" decoding="async" />
                       <div className="event-type-badge">{event.type}</div>
                     </div>
                     <div className="must-read-content">

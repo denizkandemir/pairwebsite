@@ -13,6 +13,8 @@ export const newsletterArticles = [
         category: "AI",
         readTime: "20 min read",
         title: "PAIR Research #1: AI & Psychology - The Baseline",
+        datePublished: "2025-12-22",
+        dateModified: "2025-12-22",
         shortDescription:
             "This first PAIR literature review explores how AI works, how it affects the human psyche, and how psychology can help us better understand increasingly influential intelligent systems.",
         texts: [
@@ -40,6 +42,8 @@ export const newsletterArticles = [
         category: "AI in Psychotherapy",
         readTime: "25 min read",
         title: "PAIR Research #2: AI in Psychotherapy",
+        datePublished: "2025-12-22",
+        dateModified: "2025-12-22",
         shortDescription:
             "This second PAIR literature review explores one of today’s most urgent psychotherapy questions: can AI replace therapists? It examines the current relationship between artificial intelligence and psychotherapy by highlighting AI’s strengths, limits, and practical implications.",
         texts: [
@@ -70,6 +74,8 @@ export const newsletterArticles = [
         category: "Research Tools",
         readTime: "10 min read",
         title: "PAIR Recommends: Research Rabbit",
+        datePublished: "2025-12-22",
+        dateModified: "2025-12-22",
         shortDescription:
             "Research Rabbit is a tool that helps researchers discover, connect, and track academic papers through dynamic citation networks, making the research process faster, more visual, and easier to manage.",
         texts: [
@@ -100,6 +106,8 @@ export const newsletterArticles = [
         category: "Research Tools",
         readTime: "10 min read",
         title: "PAIR Recommends: NotebookLM",
+        datePublished: "2025-12-22",
+        dateModified: "2025-12-22",
         shortDescription:
             "NotebookLM is a research and note-taking tool that helps users organize sources, interact with material through AI, and turn research into practical outputs such as summaries, audio overviews, and study aids.",
         texts: [
