@@ -73,12 +73,18 @@
                 margin-bottom: 22px;
                 text-wrap: balance;
                 max-width: 14.5ch;
+                @media screen and (max-width: 1100px) {
+                    text-align: center;
+                }
                 .banner-title-highlight {
                     background: linear-gradient(96deg, #73d0ff 8%, #7db4ff 52%, #a192ff 100%);
                     -webkit-background-clip: text;
                     background-clip: text;
                     color: transparent;
                     text-shadow: 0 0 12px rgba(102, 177, 255, 0.3), 0 0 20px rgba(132, 126, 246, 0.16);
+                    @media screen and (max-width: 1100px) {
+                        text-align: center;
+                    }
                 }
             }
             .newsletter-banner-title {
@@ -88,6 +94,9 @@
             .events-banner-title {
                 max-width: 28ch;
                 font-size: 60px;
+                @media screen and (max-width: 1100px) {
+                    text-align: center;
+                }
             }
             .banner-text {
                 font-size: clamp(1rem, 1.45vw, 1.15rem);
