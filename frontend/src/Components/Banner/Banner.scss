@@ -58,7 +58,8 @@
                 font-size: 0.78rem;
                 letter-spacing: 0.12em;
                 text-transform: uppercase;
-                font-weight: 700;
+                font-family: styles.$font-ui;
+                font-weight: styles.$fw-button;
                 color: #b8d9ff;
                 border: 1px solid rgba(148, 196, 255, 0.32);
                 background: linear-gradient(120deg, rgba(7, 26, 55, 0.84), rgba(15, 41, 82, 0.62));
@@ -68,7 +69,8 @@
                 font-size: clamp(2.35rem, 4.9vw, 4.4rem);
                 line-height: 1.08;
                 letter-spacing: -0.02em;
-                font-weight: 800;
+                font-family: styles.$font-heading;
+                font-weight: styles.$fw-display;
                 color: #f5fbff;
                 margin-bottom: 22px;
                 text-wrap: balance;
@@ -101,7 +103,7 @@
             .banner-text {
                 font-size: clamp(1rem, 1.45vw, 1.15rem);
                 line-height: 1.72;
-                font-weight: 500;
+                font-weight: styles.$fw-body;
                 max-width: 60ch;
                 color: rgba(228, 240, 255, 0.9);
                 margin-bottom: 16px;
@@ -124,7 +126,8 @@
                     padding: 7px 12px;
                     letter-spacing: 0.04em;
                     text-transform: uppercase;
-                    font-weight: 600;
+                    font-family: styles.$font-ui;
+                    font-weight: styles.$fw-button;
                 }
             }
             .banner-cta-row {
@@ -137,7 +140,8 @@
                     text-decoration: none;
                     border-radius: 12px;
                     font-size: 0.94rem;
-                    font-weight: 700;
+                    font-family: styles.$font-ui;
+                    font-weight: styles.$fw-button;
                     letter-spacing: 0.02em;
                     padding: 12px 22px;
                     transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;

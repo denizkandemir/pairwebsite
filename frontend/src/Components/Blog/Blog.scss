@@ -1,3 +1,5 @@
+@use '../../styles/styles.scss' as styles;
+
 .blog-container {
     // WhoAreWe'den uyumlu geçiş için gradual color transition
 
@@ -118,7 +120,8 @@
 
             .blog-title {
                 font-size: 45px;
-                font-weight: 700;
+                font-family: styles.$font-heading;
+                font-weight: styles.$fw-heading;
                 margin-bottom: 24px;
                 line-height: 1.2;
                 color: rgba(255, 255, 255, 0.89);
@@ -216,7 +219,8 @@
             backdrop-filter: blur(10px);
             padding: 12px 32px;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-family: styles.$font-ui;
+            font-weight: styles.$fw-button;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;

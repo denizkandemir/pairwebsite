@@ -1,3 +1,5 @@
+@use '../../styles/styles.scss' as styles;
+
 .upcoming-events-container {
   display: flex;
   flex-direction: column;
@@ -102,7 +104,8 @@
   font-size: 15px;
   color: rgba(255, 255, 255, 0.8);
  text-decoration: none;
-  font-weight: 500;
+  font-family: styles.$font-ui;
+  font-weight: styles.$fw-nav;
 }
 
 .events-info-link {
@@ -113,7 +116,7 @@
 .events-info-text {
   color: rgba(255, 255, 255, 0.80);
   font-size: 21px;
-  font-weight: 500;
+  font-weight: styles.$fw-body;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 4;
@@ -257,7 +260,8 @@
 
 .countdown-value {
   font-size: 28px;
-  font-weight: 700;
+  font-family: styles.$font-heading;
+  font-weight: styles.$fw-display;
   color: white;
   line-height: 1;
 
@@ -341,7 +345,8 @@
 
   .event-started__label {
     font-size: 13px;
-    font-weight: 800;
+    font-family: styles.$font-heading;
+    font-weight: styles.$fw-heading;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: rgba(150, 229, 255, 0.9);
@@ -360,7 +365,8 @@
 
   .event-started__text {
     font-size:20px;
-    font-weight: 700;
+    font-family: styles.$font-ui;
+    font-weight: styles.$fw-button;
     line-height: 1.1;
     background: linear-gradient(100deg, #90deff, #f6fdff 45%, #8dd8ff);
     background-size: 200% 100%;
@@ -445,7 +451,8 @@
   gap: 8px;
   color: rgba(255, 255, 255, 0.85);
   font-size: 16px;
-  font-weight: 500;
+  font-family: styles.$font-ui;
+  font-weight: styles.$fw-nav;
 
   svg {
     flex-shrink: 0;
@@ -466,7 +473,8 @@
   padding: 12px 24px;
   border-radius: 10px;
   font-size: 16px;
-  font-weight: 600;
+  font-family: styles.$font-ui;
+  font-weight: styles.$fw-button;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 10px;

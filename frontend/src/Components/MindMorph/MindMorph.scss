@@ -1,0 +1,119 @@
+.mind-morph {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 520px);
+    height: 620px;
+    // Kafanın arkasını hafifçe karartarak arka plandan ayırır
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 8% 10%;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(2, 10, 28, 0.6), rgba(2, 10, 28, 0.25) 45%, transparent 70%);
+        filter: blur(10px);
+        pointer-events: none;
+    }
+    // Sahne masaüstünde yukarı doğru uzar (ağacın üst dalları için); tıklamaları engellemez
+    &__stage {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        pointer-events: none;
+    }
+
+    canvas {
+        position: relative;
+        touch-action: pan-y;
+    }
+    @media (max-width: 768px) {
+        height: 420px;
+    }
+}
+// AI kavram küresi: seçili kümenin üç kavram etiketi (konumu JS'ten --x / --y ile gelir)
+.mind-labels {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.mind-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    font-family: "JetBrains Mono", Consolas, monospace;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #f4fbff;
+    white-space: nowrap;
+    text-shadow: 0 0 10px rgba(92, 240, 224, 0.55), 0 1px 2px rgba(2, 10, 28, 0.9);
+    // Yoğun galaksinin üstünde okunabilsin diye hafif koyu zemin
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: rgba(3, 9, 26, 0.55);
+    backdrop-filter: blur(2px);
+    will-change: transform, opacity;
+
+    // focus: noktanın solunda
+    &--0 {
+        transform: translate(var(--x), var(--y)) translate(-100%, -50%) translateX(-12px);
+    }
+
+    // attention: noktanın sağ üstünde
+    &--1 {
+        transform: translate(var(--x), var(--y)) translate(10px, -100%) translateY(-6px);
+    }
+
+    // distraction: noktanın sağ altında
+    &--2 {
+        transform: translate(var(--x), var(--y)) translate(10px, 6px);
+    }
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+// Galaksi: "Explore the concept clusters" ipucu (konumu JS'ten gelir)
+.mind-hint {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(190, 220, 255, 0.85);
+    white-space: nowrap;
+    text-shadow: 0 1px 6px rgba(2, 8, 23, 0.9);
+    will-change: transform, opacity;
+
+    // Mobilde galakside balon gösterilmediği için ipucu görünür; dar ekrana sığsın diye küçülür
+    @media (max-width: 768px) {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+    }
+}
+
+// Etiketler ve galaksi yazısı kod karakterlerinden düşerek gelir
+.mind-label.is-decoding,
+.mind-hint.is-decoding {
+    animation: mindCodeDrop 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes mindCodeDrop {
+    from {
+        translate: 0 -12px;
+        filter: blur(3px);
+        color: #5cf0e0;
+    }
+
+    to {
+        translate: 0 0;
+        filter: blur(0);
+    }
+}

@@ -37,7 +37,8 @@
 
             .about-values-title {
                 font-size: 2.8rem;
-                font-weight: 700;
+                font-family: styles.$font-heading;
+                font-weight: styles.$fw-heading;
                 color: white;
                 margin-bottom: 20px;
                 background: linear-gradient(135deg, styles.$pairYellow 0%, white 100%);
@@ -155,7 +156,8 @@
 
                 .value-title {
                     font-size: 1.8rem;
-                    font-weight: 700;
+                    font-family: styles.$font-heading;
+                    font-weight: styles.$fw-heading;
                     color: styles.$pairYellow;
                     margin-bottom: 18px;
                     text-shadow: 0 0 15px rgba(193, 255, 114, 0.3);
@@ -217,7 +219,8 @@
 
             .join-cta-title {
                 font-size: 2.5rem;
-                font-weight: 800;
+                font-family: styles.$font-heading;
+                font-weight: styles.$fw-heading;
                 color: white;
                 margin-bottom: 20px;
                 position: relative;
@@ -251,7 +254,8 @@
                 background: linear-gradient(135deg, styles.$pairYellow 0%, #a8ff3a 100%);
                 color: styles.$pairDarkBlue;
                 font-size: 1.1rem;
-                font-weight: 700;
+                font-family: styles.$font-ui;
+                font-weight: styles.$fw-button;
                 padding: 18px 50px;
                 border: none;
                 border-radius: 50px;

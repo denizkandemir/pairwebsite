@@ -45,6 +45,8 @@
 
             .sidebar-link {
                 font-size: 1.5rem;
+                font-family: styles.$font-ui;
+                font-weight: styles.$fw-nav;
                 color: #eefaff;
                 text-decoration: none;
                 transition: color 0.3s ease;

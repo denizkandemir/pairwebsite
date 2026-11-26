@@ -1,3 +1,97 @@
+// ============================================================
+// FONT AYARLARI — tüm site fontları buradan yönetilir
+// ------------------------------------------------------------
+// Font değiştirmek için: aşağıdaki rol satırlarından birini açıp
+// (// kaldır) aynı roldeki diğerini kapat (// ekle).
+// YENİ bir font eklerken index.html'deki Google Fonts linkine de
+// o fontu ve kullanılan ağırlıkları eklemeyi unutma!
+//   Space Grotesk ve Inter zaten yüklü. Diğerleri için örnek:
+//   &family=Manrope:wght@400;500;600;700
+//   &family=Sora:wght@400;500;600;700
+//   &family=IBM+Plex+Sans:wght@400;500;600;700
+//   &family=DM+Sans:wght@400;500;600;700
+// ============================================================
+// Başlıklar (h1-h6, hero, bölüm ve makale başlıkları)
+// $font-heading-value: "Space Grotesk", system-ui, sans-serif;
+// $font-heading-value: "Inter", system-ui, sans-serif;
+// $font-heading-value: "Manrope", system-ui, sans-serif;
+// $font-heading-value: "Sora",
+// system-ui,
+// sans-serif;
+$font-heading-value: "IBM Plex Sans",
+system-ui,
+sans-serif;
+// $font-heading-value: "DM Sans", system-ui, sans-serif;
+// Metin ve paragraflar
+$font-body-value: "Inter",
+system-ui,
+sans-serif;
+// $font-body-value: "Space Grotesk", system-ui, sans-serif;
+// $font-body-value: "Manrope", system-ui, sans-serif;
+// $font-body-value: "Sora", system-ui, sans-serif;
+// $font-body-value: "IBM Plex Sans", system-ui, sans-serif;
+// $font-body-value: "DM Sans", system-ui, sans-serif;
+// Arayüz: navigasyon, butonlar, rozetler, etiketler
+$font-ui-value: "Inter",
+system-ui,
+sans-serif;
+// $font-ui-value: "Space Grotesk", system-ui, sans-serif;
+// $font-ui-value: "Manrope", system-ui, sans-serif;
+// $font-ui-value: "Sora", system-ui, sans-serif;
+// $font-ui-value: "IBM Plex Sans", system-ui, sans-serif;
+// $font-ui-value: "DM Sans", system-ui, sans-serif;
+// Ağırlıklar
+$fw-display-value: 700; // ana başlıklar (hero h1)
+$fw-heading-value: 600; // bölüm / makale başlıkları
+$fw-nav-value: 500; // navigasyon ve küçük arayüz metinleri
+$fw-body-value: 400; // paragraflar
+$fw-button-value: 600; // butonlar ve linkli butonlar
+// Bileşenlerde kullanılacak SCSS değişkenleri: yalnızca custom property'lere
+// referans verir, böylece değer çalışma anında da tek yerden değişir.
+$font-heading: var(--font-heading);
+$font-body: var(--font-body);
+$font-ui: var(--font-ui);
+$fw-display: var(--fw-display);
+$fw-heading: var(--fw-heading);
+$fw-nav: var(--fw-nav);
+$fw-body: var(--fw-body);
+$fw-button: var(--fw-button);
+// :root ve global taban kuralları. Bu dosya her bileşende @use edildiği için
+// CSS'i burada doğrudan basmıyoruz (her bileşende kopyalanırdı); mixin olarak
+// tanımlanıp yalnızca src/styles/global.scss içinde bir kez çağrılıyor.
+@mixin font-globals {
+     :root {
+        --font-heading: #{$font-heading-value};
+        --font-body: #{$font-body-value};
+        --font-ui: #{$font-ui-value};
+        --fw-display: #{$fw-display-value};
+        --fw-heading: #{$fw-heading-value};
+        --fw-nav: #{$fw-nav-value};
+        --fw-body: #{$fw-body-value};
+        --fw-button: #{$fw-button-value};
+    }
+    html,
+    body {
+        font-family: var(--font-body);
+        font-weight: var(--fw-body);
+    }
+    button,
+    input,
+    textarea,
+    select {
+        font-family: inherit;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-heading);
+        font-weight: var(--fw-heading);
+    }
+}
+
 $logoColor: #F6FFA0;
 $orangeColor: #FFA07A;
 $softOrangeColor: #FFBD88;
@@ -5,21 +99,17 @@ $softOrangeColor2:#ffa076;
 $lavenderColor: #E4D6FF;
 $softVioletColor: #D7C9F7;
 $brightGold:#FFE135;
-
 //color plate
-
 $pairBrowmn: #dd4515;
-$pairGrey : #fff9ef;
+$pairGrey: #fff9ef;
 $pairDarkBlue: #00167a;
 $pairBlue: #1800ad;
 $pairYellow: #c1ff72;
 $githubBlack:#0d1117;
-
 //box shadows
-$primaryBoxShadow: 0 0 30px rgba(100, 200, 255, 0.4), 0 0 60px rgba(100, 200, 255, 0.2), inset 0 1px 3px rgba(255, 255, 255, 0.15);
-
-
-$primary-font: "Nunito",  sans-serif;
+$primaryBoxShadow: 0 0 30px rgba(100, 200, 255, 0.4),
+0 0 60px rgba(100, 200, 255, 0.2),
+inset 0 1px 3px rgba(255, 255, 255, 0.15);
 $borderW: 2px;
 $school-color:#1B3C28;
 $grey-color: #eff0f3;
@@ -40,7 +130,11 @@ $blue-color2:#235e83;
 $blue-color3:#043d60;
 $blue-color4:#040b4b;
 $blue-color5:#5f72a1;
-$wrapper-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-$card-box-shadow:0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
-$threed-box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15), 0 16px 24px rgba(0, 0, 0, 0.2), 0 24px 32px rgba(0, 0, 0, 0.15);
-
+$wrapper-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+$card-box-shadow:0 10px 15px rgba(0, 0, 0, 0.2),
+0 4px 6px rgba(0, 0, 0, 0.2);
+$threed-box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15),
+0 16px 24px rgba(0, 0, 0, 0.2),
+0 24px 32px rgba(0, 0, 0, 0.15);

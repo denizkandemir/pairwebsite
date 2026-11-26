@@ -1,7 +1,8 @@
 import "./Header.scss";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import Navbar from "../Navbar/Navbar";
-import headerImg from "/pairHeader1.png";
+// Eski tasarım: sağdaki fotoğraf (MindMorph ile değiştirildi)
+// import headerImg from "/pairHeader1.png";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import WhoAreWe from "../WhoAreWe/WhoAreWe";
@@ -10,6 +11,10 @@ import PairTimeline from "../PairTimeline/PairTimeline";
 import Subscribe from "../Subscribe/Subscribe";
 import EventsHomepage from "../EventsHomepage/EventsHomepage";
 import Sidebar from "../Sidebar/Sidebar";
+import HeroBubbles from "../HeroBubbles/HeroBubbles";
+
+// 3D beyin / PAIR / dünya animasyonu ayrı dosyaya bölünür, sayfa onu beklemeden açılır
+const MindMorph = lazy(() => import("../MindMorph/MindMorph"));
 
 
 const Header = () => {
@@ -39,6 +44,26 @@ const Header = () => {
 
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [selectedHeadlineIndex, setSelectedHeadlineIndex] = useState(0);
+    // Animasyonun o anki aşaması (balonlar buna göre değişir, -1: geçiş anı)
+    const [mindStage, setMindStage] = useState(-1);
+
+    // Açılış animasyonu oturum başına bir kez oynar
+    const [playIntro] = useState(() => {
+        try {
+            const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            return !reduceMotion && !sessionStorage.getItem("pairIntroSeen");
+        } catch {
+            return false;
+        }
+    });
+
+    useEffect(() => {
+        try {
+            sessionStorage.setItem("pairIntroSeen", "1");
+        } catch {
+            // sessionStorage kapalıysa animasyon her girişte oynar
+        }
+    }, []);
 
     useEffect(() => {
         const headlineInterval = setInterval(() => {
@@ -57,6 +82,7 @@ const Header = () => {
         visible: {
             transition: {
                 staggerChildren: 0.06,
+                delayChildren: playIntro && selectedHeadlineIndex === 0 ? 0.5 : 0,
             },
         },
         exit: {
@@ -89,25 +115,26 @@ const Header = () => {
                 <Sidebar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />
             </div>
             <Navbar setSidebarOpen={setSidebarOpen} />
-            <div className="header-container">
+            <div className={playIntro ? "header-container is-intro" : "header-container"}>
+                {playIntro && <div className="hero-intro-veil" aria-hidden="true"></div>}
                 <div className="header-grid-layer"></div>
                 <div className="header-ambient header-ambient-left"></div>
                 <div className="header-ambient header-ambient-right"></div>
                 <div className="header-atmosphere-layer" aria-hidden="true">
                     <span className="atmo-orbit orbit-left"></span>
-                    <span className="atmo-orbit orbit-right"></span>
+                    {/* <span className="atmo-orbit orbit-right"></span> */}
                     <span className="atmo-orbit orbit-lower"></span>
                     <span className="atmo-curve curve-left"></span>
-                    <span className="atmo-curve curve-right"></span>
-                    <span className="atmo-ring ring-right"></span>
+                    {/* <span className="atmo-curve curve-right"></span> */}
+                    {/* <span className="atmo-ring ring-right"></span> */}
                     <span className="atmo-dots dots-left-top"></span>
-                    <span className="atmo-dots dots-right-edge"></span>
+                    {/* <span className="atmo-dots dots-right-edge"></span> */}
                     <span className="atmo-dots dots-lower-left"></span>
                     <span className="atmo-node node-left"></span>
-                    <span className="atmo-node node-right"></span>
+                    {/* <span className="atmo-node node-right"></span> */}
                     <span className="atmo-node node-lower"></span>
                     <span className="atmo-path path-left"></span>
-                    <span className="atmo-path path-right"></span>
+                    {/* <span className="atmo-path path-right"></span> */}
                 </div>
                 <div className="header-content-container">
                     <div className="header-texts-container">
@@ -138,9 +165,10 @@ const Header = () => {
                                 })}
                             </motion.h1>
                         </AnimatePresence>
-                        <p className="header-text">
+                        {/* Başlık satır sayısı değişince paragraf ve butonlar zıplamak yerine kayarak yer değiştirir */}
+                        <motion.p layout="position" transition={{ duration: 0.5, ease: "easeInOut" }} className="header-text">
                            PAIR is a pioneering student organization dedicated to exploring the novel relationship between psychology and artificial intelligence. We combine rigorous scientific research with bold and innovative thinking to make complex findings clear, engaging and accessible.
-                        </p>
+                        </motion.p>
 
                         {/* <div className="header-badges" aria-label="PAIR interdisciplinary focus">
                             <span className="header-badge">Psychology</span>
@@ -148,14 +176,15 @@ const Header = () => {
                             <span className="header-badge">Research Lab</span>
                         </div> */}
 
-                        <div className="header-actions">
+                        <motion.div layout="position" transition={{ duration: 0.5, ease: "easeInOut" }} className="header-actions">
                             <Link className="header-button primary" to="/aboutUs">Find Out More</Link>
                             <Link className="header-button secondary" to="/events">View Events</Link>
-                        </div>
+                        </motion.div>
                     </div>
 
                     <div className="header-visual-container" aria-hidden="true">
                         <div className="visual-radial-glow"></div>
+                        {/* Eski tasarım: fotoğraf, düğüm haritası ve kartlar (MindMorph ile değiştirildi)
                         <div className="node-map">
                             <span className="node node-1"></span>
                             <span className="node node-2"></span>
@@ -176,6 +205,11 @@ const Header = () => {
                             <p className="panel-value">Neural + Behavioral Data</p>
                         </div>
                         <div className="signal-wave"></div>
+                        */}
+                        <Suspense fallback={<div className="mind-morph" />}>
+                            <MindMorph playIntro={playIntro} onStageChange={setMindStage} />
+                        </Suspense>
+                        <HeroBubbles stage={mindStage} />
                     </div>
                 </div>
             </div>

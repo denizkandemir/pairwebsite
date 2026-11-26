@@ -386,7 +386,8 @@
 
 		.foundation-energy-trigger__kicker {
 			font-size: 0.79rem;
-			font-weight: 600;
+			font-family: styles.$font-ui;
+			font-weight: styles.$fw-button;
 			letter-spacing: 0.2em;
 			text-transform: uppercase;
 			color: rgba(182, 219, 255, 0.8);
@@ -396,7 +397,8 @@
 			margin: 0;
 			font-size: clamp(1.85rem, 2.6vw, 2.5rem);
 			line-height: 1.1;
-			font-weight: 700;
+			font-family: styles.$font-heading;
+			font-weight: styles.$fw-heading;
 			color: styles.$pairGrey;
 		}
 
@@ -419,7 +421,8 @@
 			background: linear-gradient(145deg, rgba(11, 38, 72, 0.64), rgba(7, 24, 48, 0.56));
 			box-shadow: 0 0 14px rgba(88, 163, 255, 0.16);
 			font-size: 0.96rem;
-			font-weight: 600;
+			font-family: styles.$font-ui;
+			font-weight: styles.$fw-button;
 			color: rgba(198, 228, 255, 0.96);
 
 			.foundation-energy-trigger__cta-label {
@@ -536,7 +539,8 @@
 			.about-us-foundation-title {
 				margin: 0;
 				font-size: 38px;
-				font-weight: 600;
+				font-family: styles.$font-heading;
+				font-weight: styles.$fw-heading;
 				color: styles.$pairGrey;
 				letter-spacing: 0.5px;
 				line-height: 1.3;
@@ -547,7 +551,7 @@
 				font-size: 20px;
 				max-width: 620px;
 				color: rgba(255, 255, 255, 0.8);
-				font-weight: 520;
+				font-weight: styles.$fw-body;
 				line-height: 1.5;
 
 				.about-us-foundation-text-chunk {
@@ -626,7 +630,8 @@
 		background: linear-gradient(145deg, rgba(10, 33, 67, 0.88), rgba(7, 24, 48, 0.85));
 		color: rgba(220, 239, 255, 0.96);
 		font-size: 0.96rem;
-		font-weight: 600;
+		font-family: styles.$font-ui;
+		font-weight: styles.$fw-button;
 		cursor: pointer;
 		transition: transform 0.26s ease, border-color 0.26s ease, box-shadow 0.26s ease;
 
