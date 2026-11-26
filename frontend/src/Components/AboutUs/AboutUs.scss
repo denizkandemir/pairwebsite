@@ -84,7 +84,8 @@
                 font-size: 0.8rem;
                 letter-spacing: 0.12em;
                 text-transform: uppercase;
-                font-weight: 700;
+                font-family: styles.$font-ui;
+                font-weight: styles.$fw-button;
                 color: #b8d9ff;
                 border: 1px solid rgba(148, 196, 255, 0.32);
                 background: linear-gradient(120deg, rgba(7, 26, 55, 0.84), rgba(15, 41, 82, 0.62));
@@ -93,7 +94,8 @@
 
             .about-hero-title {
                 font-size: clamp(2.48rem, 5.45vw, 5.95rem);
-                font-weight: 800;
+                font-family: styles.$font-heading;
+                font-weight: styles.$fw-display;
                 color: #f5fbff;
                 margin-bottom: 20px;
                 line-height: 1.08;

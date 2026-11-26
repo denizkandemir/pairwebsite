@@ -63,7 +63,8 @@
 .events-cards-inactive-btn {
     padding: 9px 45px;
     font-size: 17px;
-    font-weight: 600;
+    font-family: vars.$font-ui;
+    font-weight: vars.$fw-button;
     border-radius: 8px;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -149,7 +150,7 @@
         text-align: center;
         margin-top: 20px;
         margin-bottom: 45px;
-        font-weight: 500;
+        font-weight: vars.$fw-body;
         max-width: 900px;
         word-spacing: 0.8px;
         @media only screen and (max-width: 550px) {
@@ -163,7 +164,8 @@
         font-size: 45px;
         line-height: 52px;
         text-align: center;
-        font-weight: 700;
+        font-family: vars.$font-heading;
+        font-weight: vars.$fw-heading;
     }
     .events-cards-data-container {
         display: flex;
@@ -220,7 +222,8 @@
     .events-info-meta {
         font-size: 15px;
         color: rgba(255, 255, 255, 0.8);
-        font-weight: 500;
+        font-family: vars.$font-ui;
+        font-weight: vars.$fw-nav;
     }
     .events-info-info-img {
         object-fit: cover;
@@ -241,7 +244,8 @@
         .events-info-p {
             font-size: 23px;
             margin-top: 8px;
-            font-weight: 600;
+            font-family: vars.$font-ui;
+            font-weight: vars.$fw-button;
             overflow: hidden;
             text-overflow: ellipsis;
             -webkit-line-clamp: 1;
@@ -253,7 +257,7 @@
         .events-info-text {
             color: rgba(255, 255, 255, 0.80);
             font-size: 19px;
-            font-weight: 500;
+            font-weight: vars.$fw-body;
             overflow: hidden;
             text-overflow: ellipsis;
             -webkit-line-clamp: 4;
@@ -278,7 +282,8 @@
                 gap: 5px;
                 align-items: center;
                 .fcl-text {
-                    font-weight: 500;
+                    font-family: vars.$font-ui;
+                    font-weight: vars.$fw-nav;
                     font-size: 10px;
                 }
                 .fcl-bottom-text {
@@ -297,7 +302,8 @@
             // background-color: black;
             color: white;
             font-size: 16px;
-            font-weight: 400;
+            font-family: vars.$font-ui;
+            font-weight: vars.$fw-button;
             cursor: pointer;
             border: none;
             border-radius: 5px;
@@ -358,7 +364,8 @@
     text-align: center;
     color: white;
     font-size: 15px;
-    font-weight: bold;
+    font-family: vars.$font-ui;
+    font-weight: vars.$fw-button;
     outline: none;
     border: none;
     transition: color 0.5s;
@@ -456,7 +463,8 @@
         gap: 20px;
         padding: 9px 45px;
         font-size: 17px;
-        font-weight: 600;
+        font-family: vars.$font-ui;
+        font-weight: vars.$fw-button;
         border-radius: 12px;
         cursor: pointer;
         border: 2px solid rgba(79, 195, 247, 0.3);
@@ -523,7 +531,8 @@
             padding: 12px 20px;
             color: rgba(255, 255, 255, 0.85);
             font-size: 15px;
-            font-weight: 500;
+            font-family: vars.$font-ui;
+            font-weight: vars.$fw-nav;
             cursor: pointer;
             transition: all 0.2s ease;
             border-bottom: 1px solid rgba(79, 195, 247, 0.1);
@@ -538,7 +547,8 @@
             &.active {
                 background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
                 color: white;
-                font-weight: 600;
+                font-family: vars.$font-ui;
+                font-weight: vars.$fw-button;
             }
             @media(max-width:550px) {
                 padding: 10px 18px;
@@ -557,7 +567,8 @@
     .no-events-text {
         font-size: 40px;
         color: rgba(241, 241, 241, 0.8);
-        font-weight: 600;
+        font-family: vars.$font-ui;
+        font-weight: vars.$fw-button;
         margin-bottom: 20px;
     }
     .no-events-img {

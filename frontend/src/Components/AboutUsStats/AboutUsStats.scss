@@ -37,7 +37,8 @@
 
             .about-stats-title {
                 font-size: 2.8rem;
-                font-weight: 700;
+                font-family: styles.$font-heading;
+                font-weight: styles.$fw-heading;
                 color: white;
                 margin-bottom: 20px;
                 background: linear-gradient(135deg, white 0%, styles.$pairYellow 100%);
@@ -128,7 +129,8 @@
 
                 .stat-number {
                     font-size: 3rem;
-                    font-weight: 800;
+                    font-family: styles.$font-heading;
+                    font-weight: styles.$fw-display;
                     color: styles.$pairYellow;
                     margin-bottom: 10px;
                     text-shadow: 0 0 20px rgba(193, 255, 114, 0.5);
@@ -141,7 +143,8 @@
                 .stat-label {
                     font-size: 1.1rem;
                     color: rgba(255, 255, 255, 0.8);
-                    font-weight: 500;
+                    font-family: styles.$font-ui;
+                    font-weight: styles.$fw-nav;
                 }
 
                 .stat-glow {

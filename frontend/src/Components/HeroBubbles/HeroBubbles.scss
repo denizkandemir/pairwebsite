@@ -1,0 +1,240 @@
+@use '../../styles/styles.scss' as styles;
+
+.hero-bubble {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+
+    &--left {
+        top: 4%;
+        left: -20%;
+    }
+
+    &--right {
+        right: -17%;
+        bottom: 9%;
+    }
+
+    // Şekilden balona uçan kod karakterleri
+    &__particle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: "JetBrains Mono", Consolas, monospace;
+        font-size: 13px;
+        font-weight: 700;
+        color: #9be6ff;
+        text-shadow: 0 0 8px rgba(127, 220, 255, 0.9);
+    }
+
+    &__shell {
+        transform-origin: var(--tail-origin, center);
+    }
+
+    &--left &__shell {
+        --tail-origin: 85% 110%;
+    }
+
+    &--right &__shell {
+        --tail-origin: 15% -10%;
+    }
+
+    // Cam görünümlü balon: degrade kenarlık, hafif süzülme
+    &__body {
+        position: relative;
+        min-width: 230px;
+        padding: 14px 20px 15px;
+        border-radius: 20px;
+        background:
+            linear-gradient(140deg, rgba(14, 40, 82, 0.78), rgba(8, 22, 50, 0.72)) padding-box,
+            linear-gradient(130deg, rgba(127, 220, 255, 0.75), rgba(161, 146, 255, 0.35) 55%, rgba(127, 220, 255, 0.15)) border-box;
+        border: 1px solid transparent;
+        backdrop-filter: blur(12px);
+        box-shadow:
+            0 16px 36px rgba(2, 10, 30, 0.45),
+            0 0 24px rgba(127, 220, 255, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        animation: bubbleFloat 6s ease-in-out infinite;
+    }
+
+    &--left &__body {
+        border-bottom-right-radius: 6px;
+    }
+
+    &--right &__body {
+        border-top-left-radius: 6px;
+        animation-delay: -3s;
+    }
+
+    // Düşünce noktaları: köşeden şekle doğru küçülerek sırayla parlar
+    &__trail {
+        position: absolute;
+        width: 0;
+        height: 0;
+
+        i {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #d9f4ff, #7fdcff 60%, rgba(127, 220, 255, 0.4));
+            box-shadow: 0 0 10px rgba(127, 220, 255, 0.8);
+            animation: bubbleTrail 1.8s ease-in-out infinite;
+
+            &:nth-child(1) {
+                width: 9px;
+                height: 9px;
+                animation-delay: 0s;
+            }
+
+            &:nth-child(2) {
+                width: 6px;
+                height: 6px;
+                animation-delay: 0.2s;
+            }
+
+            &:nth-child(3) {
+                width: 4px;
+                height: 4px;
+                animation-delay: 0.4s;
+            }
+        }
+    }
+
+    &--left &__trail {
+        right: 2px;
+        bottom: 0;
+
+        i:nth-child(1) { left: -2px; top: 6px; }
+        i:nth-child(2) { left: 8px; top: 16px; }
+        i:nth-child(3) { left: 16px; top: 25px; }
+    }
+
+    &--right &__trail {
+        left: 2px;
+        top: 0;
+
+        i:nth-child(1) { right: -2px; bottom: 6px; }
+        i:nth-child(2) { right: 8px; bottom: 16px; }
+        i:nth-child(3) { right: 16px; bottom: 25px; }
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 6px;
+        font-size: 11px;
+        font-family: styles.$font-ui;
+        font-weight: styles.$fw-button;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(160, 205, 255, 0.85);
+    }
+
+    // "Sinyal var" hissi veren yanıp sönen nokta
+    &__dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #7fdcff;
+        box-shadow: 0 0 10px #7fdcff;
+        animation: bubbleDot 1.6s ease-in-out infinite;
+    }
+
+    &__text {
+        margin: 0;
+        font-size: 17px;
+        font-family: styles.$font-heading;
+        font-weight: styles.$fw-heading;
+        color: #f2f8ff;
+        white-space: pre;
+        text-shadow: 0 0 14px rgba(127, 220, 255, 0.25);
+    }
+
+    // Tek sütunlu tablet düzeni: balonlar küçülür ve kapsayıcının içinde kalır.
+    // Kapsayıcı (680px) 3D sahneden (520px) geniş olduğundan balonlar şeklin kenarına
+    // biner ama merkezini kapatmaz
+    @media (min-width: 769px) and (max-width: 1160px) {
+        &--left {
+            top: 3%;
+            left: 0;
+        }
+
+        &--right {
+            right: 0;
+            bottom: 5%;
+        }
+
+        &__body {
+            min-width: 170px;
+            padding: 10px 14px 11px;
+            border-radius: 16px;
+        }
+
+        &__label {
+            font-size: 10px;
+            margin-bottom: 4px;
+        }
+
+        &__text {
+            font-size: 14px;
+        }
+    }
+
+    // Telefonda balonlar yalnızca PAIR yazısında görünür (seçimi HeroBubbles.jsx yapar).
+    // Yazı yatay ve alçak olduğu için balonlar üst ve alt boşluğa yerleşir
+    @media (max-width: 768px) {
+        &--left {
+            top: 2%;
+            left: 0;
+        }
+
+        &--right {
+            right: 0;
+            bottom: 2%;
+        }
+
+        &__body {
+            min-width: 190px;
+            padding: 11px 15px 12px;
+        }
+
+        &__text {
+            font-size: 14px;
+        }
+    }
+}
+
+@keyframes bubbleFloat {
+    0%,
+    100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -7px;
+    }
+}
+
+@keyframes bubbleTrail {
+    0%,
+    100% {
+        opacity: 0.35;
+        scale: 0.85;
+    }
+
+    40% {
+        opacity: 1;
+        scale: 1.15;
+    }
+}
+
+@keyframes bubbleDot {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}

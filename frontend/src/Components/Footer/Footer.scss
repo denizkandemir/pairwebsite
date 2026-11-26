@@ -85,7 +85,8 @@
 
     .footer-title {
         font-size: 25px;
-        font-weight: 700;
+        font-family: styles.$font-heading;
+        font-weight: styles.$fw-heading;
         color: #ffffff;
         margin-bottom: 5px;
         text-shadow: 0 0 3px rgba(255, 249, 239, 0.2), 0 0 16px rgba(255, 249, 239, 0.1);

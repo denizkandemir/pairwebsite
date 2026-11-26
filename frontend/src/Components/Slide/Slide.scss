@@ -164,10 +164,10 @@
   }
 
   .slide-title {
-    font-family: styles.$primary-font;
+    font-family: styles.$font-heading;
     font-size: 45px;
     color: styles.$blue-color4;
-    font-weight: 600;
+    font-weight: styles.$fw-heading;
     line-height: 50px;
 
     @media(max-width: 992px) {
@@ -187,11 +187,11 @@
   }
 
   .slide-text {
-    font-family: styles.$primary-font;
+    font-family: styles.$font-body;
     color: rgba(0, 0, 0, 0.7);
     font-size: 20px;
     max-width: 300px;
-    font-weight: 500;
+    font-weight: styles.$fw-body;
     // margin-top: 15px;
     margin-bottom: 5px;
     word-spacing: 2px;
@@ -211,9 +211,9 @@
   }
 
   .project-little-title {
-    font-family: styles.$primary-font;
+    font-family: styles.$font-heading;
     color: #817e7e;
-    font-weight: 500;
+    font-weight: styles.$fw-heading;
     font-size: 17px;
     margin-left: 3px;
     margin-bottom: 0px;

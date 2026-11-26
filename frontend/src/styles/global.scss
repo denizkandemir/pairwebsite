@@ -1,0 +1,4 @@
+@use './styles.scss' as styles;
+
+// Global font tabanı (değişkenler styles.scss içinde)
+@include styles.font-globals;

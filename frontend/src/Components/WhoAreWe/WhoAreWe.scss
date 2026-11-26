@@ -226,7 +226,8 @@
 
             .who-card-title {
                 font-size: 1.8rem;
-                font-weight: 700;
+                font-family: styles.$font-heading;
+                font-weight: styles.$fw-heading;
                 margin-bottom: 20px;
                 text-align: center;
                 transition: all 0.3s ease;
